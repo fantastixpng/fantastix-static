@@ -1,0 +1,425 @@
+@use "sass:math";
+
+// Color System
+
+// $white:    #FFF;
+// // $gray-100:      #f6f6f6;
+// // $gray-200:      #eaeaea;
+// $gray-100: #FAFBFE;
+// $gray-200: #eaecf3;
+// $gray-300: #E2E8F0;
+// $gray-400: #CBD5E0;
+// $gray-500: #A0AEC0;
+// $gray-600: #718096;
+// // $gray-600: #6c757d;
+// $gray-700: #4A5568;    // Used for text color
+// $gray-800: #2D3748;    // Used for headings color
+// $gray-900: #273444;
+// $black:    #1F2D3D;
+
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;    // Used for text color
+$gray-800: #343a40;    // Used for headings color
+$gray-900: #212529;
+$black:    #000;
+
+$gray-light:    #cacada;
+$gray-dark:     $gray-800;
+
+$custom-gray: (
+  "gray-light": $gray-light,
+  "gray-dark": $gray-dark
+);
+
+$grays: map-merge($grays, $custom-gray);
+
+$blue:          #0d6efd;
+$blue-light:          #549ef2;
+// $blue:          #007bff;
+$indigo:        #6610f2;
+$purple:        #6f42c1;
+$pink:          #d63384;
+$pink-light:    #e83e8c;
+$red:           #dc3545;
+$red-light:     #ea5353;
+$orange:        #fd7e14;
+$orange-light:  #fcaf4a;
+$yellow:        #ffc107;
+$green:         #198754;
+$green-light:   #28a745;
+$greenish:      #6dde75;
+$teal:          #20c997;
+$cyan:          #45d3d3;
+$cyan-light:    #17a2b8;
+// $cyan:          #0dcaf0;
+$very-dark-blue:#4c4e61;
+$grayish-blue:  #a3a5ae;
+$very-light-gray:#fafafa;
+
+$colors: map-merge((
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+), $colors);
+
+// $primary:       #0074d9;
+// $secondary:     #4340bd;
+// $secondary:     #23e56a;
+// $success:       #3ac97c;
+// $success:       #28a745;
+// $danger:        #d73f30;
+// $danger:        #dc3545;
+// $danger:        #ff4136;
+// $warning:       #ebb20c;
+// $warning:       #ffc107;
+// $info:          #8d4b00;
+// $info:          #17a2b8;
+// $light:         #f8f9fa;
+// $dark:          #212529;
+// $light:         $gray-100;
+// $dark:          $gray-900;
+
+//$primary:       #6236FF;//$blue;
+$primary:       $black;//$blue;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-900;
+
+$body-bg:       $white;
+$body-color:    $gray-600;
+
+// Toggle global options
+$enable-gradients: false;
+$enable-shadows: false;
+
+// Customize some defaults
+$body-color: #333;
+$body-bg: #fff;
+$border-radius: .4rem;
+$success: #7952b3;
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $teal,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+$custom-colors: (
+  "primary-2":    #862ffc,
+  "primary-3":    #fc2ead,
+  "primary-4":    #00a8ff,
+  "neutral":      #eee,
+  "white":      $white,
+  "black":      $black
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$dark-theme: true;
+$primary-color: #f8bbd0;
+$accent-color: #6a1b9a;
+
+@if $dark-theme {
+  $primary-color: darken($primary-color, 60%);
+  $accent-color: lighten($accent-color, 60%);
+}
+
+// $accordion-icon-color:          #eee;
+// $accordion-icon-active-color:   #ddd;
+$accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus-lg' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'/></svg>");
+$accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash-lg' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z'/></svg>");
+
+
+// Line Height
+
+$line-height-base:            1.5;
+$line-height-xl:              2.5;
+$line-height-lg:              2;
+$line-height-sm:              1.25;
+
+$border-width:                1px;
+$border-width-sm:             2px;
+$border-width-md:             3px;
+$border-width-lg:             4px;
+$border-color:                $gray-300;
+
+// Border radius
+
+$border-radius:                .375rem;
+$border-radius-xl:             .75rem;
+$border-radius-lg:             .5rem;
+$border-radius-sm:             .2rem;
+
+$rounded-pill:                 50rem;
+
+// Forms
+
+$input-border-radius:          $border-radius;
+$input-border-radius-xl:       $border-radius-xl;
+$input-border-radius-lg:       $border-radius-lg;
+$input-border-radius-sm:       $border-radius-sm;
+
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:            $input-border-radius;
+$btn-border-radius-xl:         $input-border-radius-xl;
+$btn-border-radius-lg:         $input-border-radius-lg;
+$btn-border-radius-sm:         $input-border-radius;
+$btn-border-radius-xs:         $input-border-radius;
+
+// Breakpoints
+
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+$screen-xs: $breakpoint-xs;
+$screen-sm: $breakpoint-sm;
+$screen-md: $breakpoint-md;
+$screen-lg: $breakpoint-lg;
+$screen-xl: $breakpoint-xl;
+
+// Fonts
+
+$font-family-sans-serif:
+  "Poppins","Inter","Gilroy","Avenir Next","Source Sans Pro","GG","MazzardH","Segoe UI",Roboto,Helvetica Neue,Arial,
+  system-ui,
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  // Chrome < 56 for OS X (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  "Segoe UI",
+  // Android
+  "Roboto",
+  // Basic web fallback
+  "Helvetica Neue", Arial, sans-serif, serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$font-family-monospace:       SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+
+$fonts-heading:               "Poppins","GalanoGrotesque",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+$fonts-body:                  "Poppins","Avenir Next","MazzardH","Segoe UI","GG","Gilroy","Inter","Source Sans Pro",Roboto,Helvetica Neue,Arial,system-ui,-apple-system,BlinkMacSystemFont,sans-serif,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+$font-family-base:            $fonts-body;
+$font-family-code:            $font-family-monospace;
+
+$font-size-base:              1rem; // Assumes the browser default, typically `16px`
+$font-size-xl:                ($font-size-base * 1.5);
+$font-size-lg:                ($font-size-base * 1.25);
+$font-size-sm:                ($font-size-base * .875);
+$font-size-xs:                ($font-size-base * .75);
+
+$font-weight-lighter:         lighter;
+$font-weight-light:           300;
+$font-weight-normal:          400;
+$font-weight-semibold:        700;
+$font-weight-bold:            700;
+$font-weight-bolder:          bolder;
+
+$font-weight-base:            $font-weight-normal;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+// $font-sizes: (
+//   1: $h1-font-size,
+//   2: $h2-font-size,
+//   3: $h3-font-size,
+//   4: $h4-font-size,
+//   5: $h5-font-size,
+//   6: $h6-font-size
+// );
+
+$headings-margin-bottom:      math.div($spacer, 1.5);
+$headings-font-family:        inherit;
+$headings-font-weight:        $font-weight-bold;
+$headings-line-height:        1.5;
+// $headings-color:              #152c5b;
+
+$large-headings-font-weight:  $headings-font-weight;
+$small-headings-font-weight:  $font-weight-bold;
+
+$display1-size:               6rem; // 5rem
+$display2-size:               5rem; // 4.5rem
+$display3-size:               4rem;
+$display4-size:               3.5rem;
+$display5-size:               3rem;
+$display6-size:               2.5rem;
+
+$displays-font-weight:        $font-weight-bold;
+
+$display1-weight:             $displays-font-weight;
+$display2-weight:             $displays-font-weight;
+$display3-weight:             $displays-font-weight;
+$display4-weight:             $displays-font-weight;
+
+$display-line-height:         1.3;
+
+$display-font-sizes: (
+  1: $display1-size,
+  2: $display2-size,
+  3: $display3-size,
+  4: $display4-size,
+  5: $display5-size,
+  6: $display6-size
+);
+
+$display-font-weight: 300;
+$display-line-height: $headings-line-height;
+
+$lead-font-size:              ($font-size-base * 1.125);
+$lead-font-weight:            300;
+
+$input-btn-padding-y:         .5rem;
+$input-btn-padding-x:         1.25rem;
+$input-btn-font-size:         $font-size-base;
+$input-btn-line-height:       $line-height-sm;
+
+$input-btn-focus-width:       0;
+$input-btn-focus-color:       rgba($component-active-bg, .25);
+$input-btn-focus-box-shadow:  0 0 $input-btn-focus-width $input-btn-focus-color;
+
+$input-btn-padding-y-xs:      $input-btn-padding-y - 0.125;
+$input-btn-padding-x-xs:      $input-btn-padding-x - 0.125;
+$input-btn-font-size-xs:      $font-size-xs;
+$input-btn-line-height-xs:    $input-btn-line-height;
+
+$input-btn-padding-y-sm:      $input-btn-padding-y - 0.125;
+$input-btn-padding-x-sm:      $input-btn-padding-x - 0.125;
+$input-btn-font-size-sm:      $font-size-sm;
+$input-btn-line-height-sm:    $input-btn-line-height;
+
+$input-btn-padding-y-lg:      $input-btn-padding-y + 0.125;
+$input-btn-padding-x-lg:      $input-btn-padding-x + 0.125;
+$input-btn-font-size-lg:      $font-size-base;
+$input-btn-line-height-lg:    $input-btn-line-height;
+
+$input-btn-padding-y-xl:      $input-btn-padding-y + 0.125;
+$input-btn-padding-x-xl:      $input-btn-padding-x + 0.125;
+$input-btn-font-size-xl:      $font-size-base;
+$input-btn-line-height-xl:    $input-btn-line-height;
+
+$input-btn-border-width:      $border-width;
+
+
+// Buttons
+
+$btn-padding-y:               $input-btn-padding-y;
+$btn-padding-x:               $input-btn-padding-x + 0.5;
+$btn-line-height:             $input-btn-line-height;
+
+$btn-padding-y-xs:            $input-btn-padding-y-xs;
+$btn-padding-x-xs:            $input-btn-padding-x-xs;
+$btn-line-height-xs:          $input-btn-line-height-xs;
+
+$btn-padding-y-sm:            $input-btn-padding-y-sm;
+$btn-padding-x-sm:            $input-btn-padding-x-sm;
+$btn-line-height-sm:          $input-btn-line-height-sm;
+
+$btn-padding-y-lg:            $input-btn-padding-y-lg;
+$btn-padding-x-lg:            $input-btn-padding-x-lg;
+$btn-line-height-lg:          $input-btn-line-height-lg;
+
+$btn-padding-y-xl:            $input-btn-padding-y-xl;
+$btn-padding-x-xl:            $input-btn-padding-x-xl;
+$btn-line-height-xl:          $input-btn-line-height-xl;
+
+$btn-border-width:            $input-btn-border-width;
+
+$btn-font-weight:             $font-weight-normal;
+// $btn-box-shadow:              inset 0 1px 0 rgba($white, .15);
+$btn-box-shadow:              none;
+$btn-hover-width:             0;
+$btn-hover-box-shadow:        0 4px 15px rgba($primary, 0.35);
+$btn-focus-width:             $input-btn-focus-width;
+$btn-focus-box-shadow:        $input-btn-focus-box-shadow;
+
+$btn-active-box-shadow:       $btn-box-shadow;
+
+$btn-soft-bg-level:           -10;
+
+
+// Jumbotron
+
+$jumbotron-bg:                      section-color("primary");
+$jumbotron-border-radius:           5rem;
+
+// Cards
+
+$card-spacer-y:                     1.25rem;
+$card-spacer-x:                     1.75rem;
+$card-color:                        #ECEEF0; // $body-color;
+$card-bg:                           $white;
+$card-shadow:                       $box-shadow;
+$card-border-width:                 2px; // $border-width;
+$card-border-color:                 $gray-200;
+$card-border-radius:                $border-radius-xl;
+$card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width});
+
+$card-cap-bg:                       transparent;
+
+$enable-card-cap-border:            false;
+$card-cap-border-width:             0;
+$card-cap-border-color:             transparent!default;
+
+$card-img-overlay-padding:          1.25rem;
+
+$card-columns-count:                3;
+$card-columns-gap:                  1.25rem;
+$card-columns-margin:               $card-spacer-y;
+
+// Footer
+
+$footer-dark-bg:                    $gray-900;
+$footer-dark-color:                 $gray-500;
+$footer-dark-heading-color:         $gray-200;
+$footer-dark-link-color:            $gray-500;
+$footer-dark-link-hover-color:      $white;
+
+// $footer-rotate-bg:                  str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 2000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='#{$body-bg}' d='M2000,0V923.45l-195.85-538.1a76.07875,76.07875,0,0,0-58.25-48.89L536.65,123.24a76.12151,76.12151,0,0,0-71.44,26L0,703.65V0Z'/%3E%3C/svg%3E"), "#", "%23");
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: ();
+$sizes: map-merge((
+  10: 10%,
+  15: 15%,
+  80: 80%,
+  90: 90%,
+  100: 100%,
+  110: 110%,
+  120: 120%,
+  130: 130%
+), $sizes);

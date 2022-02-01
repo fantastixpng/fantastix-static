@@ -6,7 +6,13 @@ module.exports = {
     siteUrl: `https://www.fantastixpng.xyz/`,
   },
   plugins: [
-    `gatsby-plugin-sass`,
+    // `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        includePaths: ["src/scss/bootstrap"],
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {

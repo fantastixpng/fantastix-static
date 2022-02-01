@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-import './theme.css'
+// import './theme.css'
 // import './globals.css'
 
 export const GlobalStyle = createGlobalStyle`

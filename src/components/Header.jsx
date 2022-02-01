@@ -31,11 +31,11 @@ const Header = () => {
           <Navbar.Toggle/>
 
           <Navbar.Collapse className="justify-content-end">
-            <NavLink href="/who-we-are">Who We Are</NavLink>
-            <NavLink href="/our-work">Our Work</NavLink>
-            <NavLink href="/pricing">Pricing</NavLink>
-            <NavLink href="/services">Services</NavLink>
-            <NavLink href="/contact">Contact Us</NavLink>
+            <NavLink href="/#who-we-are">Who We Are</NavLink>
+            <NavLink href="/#our-work">Our Work</NavLink>
+            <NavLink href="/#services">Services</NavLink>
+            <NavLink href="/#pricing">Pricing</NavLink>
+            <NavLink href="/#contact">Contact Us</NavLink>
           </Navbar.Collapse>
 
           {/*<div className="d-grid d-lg-none">

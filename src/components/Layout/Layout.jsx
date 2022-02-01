@@ -5,7 +5,7 @@ import { GlobalStyle } from '../../styles/global'
 // import 'typeface-open-sans'
 
 import Header from "../Header"
-// import "./Layout.css"
+import "./Layout.css"
 import Footer from "../Footer"
 
 const Layout = ({ children }) => {

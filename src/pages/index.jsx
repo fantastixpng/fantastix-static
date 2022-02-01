@@ -6,6 +6,8 @@ import styled, { css } from "styled-components"
 
 import Layout from "../components/Layout/Layout"
 import Seo from "../components/Seo"
+import ContactForm from "../components/ContactForm"
+import ProjectCard from "../components/ProjectCard"
 
 const Button2 = styled.a`
   /* This renders the buttons above... Edit me! */
@@ -86,6 +88,48 @@ const IndexPage = () => (
         </svg>
       </div>
 
+    </section>
+
+    <section id="who-we-are" className="bg-dark text-light">
+      <Container>
+        <Row className="g-5 justify-content-center mb-10">
+          <Col md={9} lg={8} className="text-center">
+            <h2 className="display-5">Website Design & Development</h2>
+            <p className="lead">
+              The website plans below are for Small to Medium sized Enterprises (SME's). If there are any features outside of our plans, we can include add-ons and customisations to meet the needs of your business.
+            </p>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={12} md={6} lg={6}>Hellow</Col>
+          <Col sm={12} md={6} lg={6}>Hellow</Col>
+        </Row>
+      </Container>
+    </section>
+
+    <section id="our-work">
+      <Container>
+        <Row className="g-5 justify-content-center mb-10">
+          <Col md={9} lg={8} className="text-center">
+            <h2 className="display-5">Our Work</h2>
+            <p className="lead">Here are few of our work.</p>
+          </Col>
+        </Row>
+        <Row className="row-cols-3 g-3">
+          <Col>
+            <ProjectCard name={"Hello"} description={"Hello World"} link={"/hello-world"} image={"../images/logo.png"}/>
+          </Col>
+          <Col>
+            <ProjectCard name={"Hello"} description={"Hello World"} link={"/hello-world"} image={"../images/logo.png"}/>
+          </Col>
+          <Col>
+            <ProjectCard name={"Hello"} description={"Hello World"} link={"/hello-world"} image={"../images/logo.png"}/>
+          </Col>
+          <Col>
+            <ProjectCard name={"Hello"} description={"Hello World"} link={"/hello-world"} image={"../images/logo.png"}/>
+          </Col>
+        </Row>
+      </Container>
     </section>
 
     <section id="services" className="bg-dark text-light text-center">
@@ -232,16 +276,16 @@ const IndexPage = () => (
 
     <section id="pricing">
       <Container>
-        <div className="row g-5 justify-content-center mb-10">
-          <div className="col-md-9 col-lg-8 text-center">
+        <Row className="g-5 justify-content-center mb-10">
+          <Col md={9} lg={8} className="text-center">
             <h3 className="fw-light">Pricing</h3>
             <h2 className="display-5 text-capitalize">Website Design & Development</h2>
-            <h2 className="xdisplay-4">Small to Medium sized Enterprises (SME's)</h2>
+            {/*<h2 className="xdisplay-4">Small to Medium sized Enterprises (SME's)</h2>*/}
             <p className="mb-15 fs-4 text-muted">
               The website plans below are for Small to Medium sized Enterprises (SME's). If there are any features outside of our plans, we can include add-ons and customisations to meet the needs of your business.
             </p>
-          </div>
-        </div>
+          </Col>
+        </Row>
 
         <Row className="g-2 justify-content-center">
           <Col sm={10} md={3} lg={3} className="mb-8 mb-lg-0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
@@ -512,11 +556,32 @@ const IndexPage = () => (
       Documentation
     </Button2>
 
+    <section id="contact" className="position-relative">
+      <Container>
+        <Row className="mb-4 mb-lg-5">
+          <div className="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 mx-auto">
+            <h3 className="display-5 fw-normal">Contact us</h3>
+            <h2 className="display-3">How can we help you?</h2>
+            {/*<p>Ready to build the app of your dreams? Interested to find out more about the Fantastix? Fill out the form below to get in contact with our team to discuss your website needs.</p>*/}
+            <p>
+              We love hearing from our clients. Whether its feedback, queries or even criticism, we are all ears.
+              Contact us now to discuss how we can scale your project to the next level and we will get in touch
+              with
+              you as soon as possible, we promise🤝.
+            </p>
+          </div>
+        </Row>
+
+        <ContactForm/>
+
+      </Container>
+    </section>
+
     <section className="bg-img-2">
       <Container>
         <Row className="mb-3 text-center">
           <Col>
-            <h1 className="display-3">Hello</h1>
+            <h1 className="display-3">Let's talk about your project?</h1>
             <Button variant={"dark"}
                     className="btn-secondary rounded rounded-pill"
                     href="/request-quote">

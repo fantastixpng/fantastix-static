@@ -1,7 +1,4 @@
 @charset "UTF-8";
-//@import "variables-colors-overrides";
-//@import "~bootstrap/scss/bootstrap";
-
 
 // Bootstrap functions
 @import "../../node_modules/bootstrap/scss/functions";
@@ -16,7 +13,7 @@
 @import "mixins";
 
 // custom variables overriding bootstrap default variable
-@import "variables-colors-overrides";
+//@import "variables-colors-overrides";
 @import "variables-overrides";
 
 // Bootstrap core components

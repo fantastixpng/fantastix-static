@@ -115,7 +115,7 @@ const IndexPage = () => (
             <p className="lead">Here are few of our work.</p>
           </Col>
         </Row>
-        <Row className="row-cols-3 g-3">
+        <Row className="row-cols-sm-1 row-cols-md-3 row-cols-lg-3 g-3">
           <Col>
             <ProjectCard name={"Hello"} description={"Hello World"} link={"/hello-world"} image={"../images/logo.png"}/>
           </Col>
@@ -534,27 +534,27 @@ const IndexPage = () => (
       </Container>
     </section>
 
-    <StaticImage
-      src="../images/logo.svg"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="fantastix logo"
-      style={{ marginBottom: `1.45rem` }}
-    />
+    {/*<StaticImage*/}
+    {/*  src="../images/logo.svg"*/}
+    {/*  width={300}*/}
+    {/*  quality={95}*/}
+    {/*  formats={["auto", "webp", "avif"]}*/}
+    {/*  alt="fantastix logo"*/}
+    {/*  style={{ marginBottom: `1.45rem` }}*/}
+    {/*/>*/}
 
-    <Button2
-      href="https://github.com/styled-components/styled-components"
-      target="_blank"
-      rel="noopener"
-      primary
-    >
-      GitHub
-    </Button2>
+    {/*<Button2*/}
+    {/*  href="https://github.com/styled-components/styled-components"*/}
+    {/*  target="_blank"*/}
+    {/*  rel="noopener"*/}
+    {/*  primary*/}
+    {/*>*/}
+    {/*  GitHub*/}
+    {/*</Button2>*/}
 
-    <Button2 as={Link} href="/docs">
-      Documentation
-    </Button2>
+    {/*<Button2 as={Link} href="/docs">*/}
+    {/*  Documentation*/}
+    {/*</Button2>*/}
 
     <section id="contact" className="position-relative">
       <Container>

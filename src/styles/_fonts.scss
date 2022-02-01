@@ -1,20 +1,6 @@
 // @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
 @font-face {
-  font-family: "MazzardH";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(/fonts/MazzardH-Regular.woff2) format("woff2");
-}
-@font-face {
-  font-family: "MazzardH";
-  font-style: bold;
-  font-weight: 600;
-  font-display: swap;
-  src: url(/fonts/MazzardH-SemiBold.woff2) format("woff2");
-}
-@font-face {
   font-family: 'Poppins';
   font-style: bold;
   font-weight: 300;
@@ -76,58 +62,4 @@
   font-weight: 700;
   font-display: swap;
   src: url(/fonts/Inter-Bold.ttf) format('truetype');
-}
-@font-face {
-  font-family: "GG";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(/fonts/gg-medium.woff2) format("woff2");
-}
-@font-face {
-  font-family: "GG";
-  font-style: bold;
-  font-weight: 700;
-  font-display: swap;
-  src: url(/fonts/gg-bold.woff2) format("woff2");
-}
-@font-face {
-  font-family: "Avenir Next";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(/fonts/AvenirNextCyr-Regular.woff2) format("woff2");
-}
-@font-face {
-  font-family: "Avenir Next";
-  font-style: bold;
-  font-weight: 700;
-  font-display: swap;
-  src: url(/fonts/AvenirNextCyr-Bold.woff2) format("woff2");
-}
-@font-face {
-  font-family: "GalanoGrotesque";
-  font-weight: 400;
-  font-style: normal;
-  src: url("/fonts/GalanoGrotesqueAlt-Regular.woff2") format("woff2");
-}
-@font-face {
-  font-family: "GalanoGrotesque";
-  font-weight: 700;
-  font-style: bold;
-  src: url("/fonts/GalanoGrotesque-Bold.woff2") format("woff2");
-}
-@font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/Radomir_Tinkov_-_Gilroy-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/Radomir_Tinkov_-_Gilroy-ExtraBold.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
 }

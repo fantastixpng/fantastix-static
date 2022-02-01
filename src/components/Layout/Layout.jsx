@@ -1,11 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import PropTypes from "prop-types"
 import { GlobalStyle } from '../../styles/global'
 // import 'typeface-cantata-one'
 // import 'typeface-open-sans'
-
-import { Breadcrumb } from "react-bootstrap"
 
 import Header from "../Header"
 // import "./Layout.css"

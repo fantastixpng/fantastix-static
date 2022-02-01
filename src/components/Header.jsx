@@ -1,13 +1,9 @@
-import React, { useEffect } from "react"
-import PropTypes from "prop-types"
-import {Link} from "gatsby";
+import React  from "react";
+import { Container, Navbar, NavLink } from "react-bootstrap";
 
 import logoBlack from "../images/logo-black.svg";
-import { Container, Navbar, NavLink } from "react-bootstrap"
 
 const Header = () => {
-  let isActive = false;
-
   return (
     <header>
 

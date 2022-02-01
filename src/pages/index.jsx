@@ -2,22 +2,91 @@ import React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { Button, Col, Container, Row } from "react-bootstrap"
+import styled, { css } from "styled-components"
 
 import Layout from "../components/Layout/Layout"
 import Seo from "../components/Seo"
-import Hero from "../components/Hero"
-import FAQ from "../components/FAQ"
-import CallToActionQuote from "../components/cta/call-to-action-quote"
-import logoImg from "../images/logo.png"
-import ToolsTechSection from "../components/ToolsTech"
-import PricingSection from "../components/Pricing"
-import PricingCard4 from "../components/PricingCards/PricingCard-4"
+
+const Button2 = styled.a`
+  /* This renders the buttons above... Edit me! */
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 11rem;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+
+  /* The GitHub button is a primary button
+   * edit this to target it specifically! */
+  ${props => props.primary && css`
+    background: white;
+    color: black;
+  `}
+`
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
 
-    <Hero/>
+    <section id="hero" className="has-divider mt-10">
+      <Container>
+        <Row className="align-items-center justify-content-between">
+
+          <Col md={6} sm={ {order: 2} } className="mb-5 mb-sm-0 aos-init aos-animate" data-aos="fade-left">
+            <img src="" alt=""/>
+            <StaticImage
+              src="../images/web_development.svg"
+              alt="Web development"
+              className="img-fluid"
+            />
+          </Col>
+          <Col md={6} className="order-sm-1 pr-xl-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            {/* <h5 class="mb-2">Android + Web</h5> */}
+            {/* <h3 class="mb-0">We are</h3> */}
+            <h1 className="display-3">Welcome to Fantastix</h1>
+            {/* <h1 class="animate__animated animate__bounce">An animated element</h1> */}
+            {/* <div class="text-morph">
+            <div class="word">Android</div>
+            <div class="word">Desktop</div>
+            <div class="word">IOS</div>
+            <div class="word">Effect</div>
+          </div> */}
+            <p className="lead mb-8 mt-4">
+              Building B.E.A.U.T.I.F.U.L website that helps you to optimize your processes, deeply engage your
+              customers, and gain more profit.
+              <br/>
+            </p>
+            <div className="d-sm-flex mb-4 mt-4 mt-4">
+              <Button href="/request-quote" variant={"dark"} size={"lg"}>
+                Get a free Quote
+              </Button>
+            </div>
+          </Col>
+
+        </Row>
+      </Container>
+
+      <div className="divider mt-50">
+        <svg width="100%" height="96px" viewBox="0 0 100 100" preserveAspectRatio="none" className="injected-svg bg-dark"
+             data-src="/images/dividers/divider-5.svg">
+          <path fill="#ffffff"
+                d="M0,-2.13162821e-14 C16.6666667,66.6666667 33.3333333,100 50,100 C66.6666667,100 83.3333333,66.6666667 100,-2.13162821e-14 L100,100 L0,100 L0,-2.13162821e-14 Z"></path>
+          <path fill="#ffffff"
+                d="M0,2.13162821e-14 C11.1107835,33.3333333 19.4438711,50 24.9992629,50 C33.3328419,50 41.666421,5.09814413e-13 50,5.09814413e-13 C58.333579,5.09814413e-13 66.6671581,50 75.0007371,50 C80.5561289,50 88.8892165,33.3333333 100,2.13162821e-14 L100,100 L0,100 L0,2.13162821e-14 Z"
+                fill-opacity="0.1"></path>
+          <path fill="#ffffff"
+                d="M0,2.13162821e-14 C44.4442806,66.6666667 69.4442806,100 75,100 C80.5553918,100 88.8887251,66.6666667 100,2.13162821e-14 L100,100 L0,100 L0,2.13162821e-14 Z"
+                fill-opacity="0.1"></path>
+          <path fill="#ffffff"
+                d="M0,-2.13162821e-14 C44.4442806,66.6666667 69.4442806,100 75,100 C80.5553918,100 88.8887251,66.6666667 100,-2.13162821e-14 L100,100 L0,100 L0,-2.13162821e-14 Z"
+                fill-opacity="0.1"
+                transform="translate(50.000000, 50.000000) scale(-1, 1) translate(-50.000000, -50.000000) "></path>
+        </svg>
+      </div>
+
+    </section>
 
     <section id="services" className="bg-dark text-light text-center">
       <Container>
@@ -74,7 +143,92 @@ const IndexPage = () => (
       </Container>
     </section>
 
-    <ToolsTechSection/>
+    <section id="software-stacks" className="bg-light text-dark">
+      <Container>
+        <Row className="justify-content-center mb-10">
+          <div className="col-xl-8 col-lg-9 text-center">
+            <h2 className="display-5 mx-xl-10">Tools and Technologies</h2>
+            <p className="lead">
+              Tools and technologies I use for my projects.
+            </p>
+          </div>
+        </Row>
+        <Row className="row-cols-4 g-5 text-center">
+          <Col>
+            <StaticImage
+              src="../images/icons/android-icon.svg"
+              alt="Android"
+              height={50}
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/java-icon.svg"
+              alt="Java"
+              height={50}
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/kotlin-icon.svg"
+              alt="Kotlin"
+              height={50}
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/javascript-icon.svg"
+              alt="JavaScript"
+              height={50}
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/mongodb-icon.svg"
+              alt="MongoDB"
+              height={50}
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/mysql-icon.svg"
+              alt="MySQL"
+              height={50}
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/nodejs-icon.svg"
+              alt="NodeJs"
+              height={50}
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/php-icon.svg"
+              alt="Php"
+              height={50}
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+        </Row>
+      </Container>
+    </section>
 
     <section id="pricing">
       <Container>
@@ -89,7 +243,243 @@ const IndexPage = () => (
           </div>
         </div>
 
-        <PricingCard4/>
+        <Row className="g-2 justify-content-center">
+          <Col sm={10} md={3} lg={3} className="mb-8 mb-lg-0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <div className="d-flex flex-column justify-content-between h-100 p-6 xborder rounded-2 border-dark-3 bg-bg-3">
+              <div>
+                <h5 className="fs-2 mb-4 text-dark-2">Silver Package</h5>
+                <h2 className="display-6 mb-6">K2,500</h2>
+                {/*<p className="mb-6">Suitable for Small-Sized Businesses.*/}
+                {/*  <span className="text-nowrap">-</span>*/}
+                {/*</p>*/}
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Design Up to 5 pages</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Mobile Responsive Design</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Social Sharing Options</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Contact Form</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Google Analytics Setup</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Content Management System</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Social Media Integration</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">2 Rounds of Revisions</h6>
+                </div>
+              </div>
+              <Button href="/request-quote" className="btn-bg-1 mt-6 w-100">Enquire</Button>
+            </div>
+          </Col>
+          <Col sm={10} md={3} lg={3} className="mb-8 mb-lg-0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+            <div className="d-flex flex-column justify-content-between h-100 p-6 xborder rounded-2 border-dark-3 bg-bg-3">
+              <div>
+                <h5 className="fs-2 mb-4 text-dark-2">Bronze Package</h5>
+                <h2 className="display-6 mb-6">K5,000</h2>
+                {/*<p className="mb-6">Suitable for Medium-Sized Businesses.</p>*/}
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Design Up to 10 pages</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Mobile Responsive Design</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Social Sharing Options</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Photo Gallery</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Contact Form</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Content Management System</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Social Media Integration</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Chatbot/Livechat Setup</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Google Analytics Setup</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Google Maps Integration</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Newsletter Integration</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">2 Rounds of Revisions</h6>
+                </div>
+              </div>
+              <Button href="/request-quote" className="btn-bg-1 btn-action-1 mt-6 w-100">Enquire</Button>
+            </div>
+          </Col>
+          <Col sm={10} md={3} lg={3} className="mb-8 mb-lg-0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+            <div className="d-flex flex-column justify-content-between h-100 p-6 xborder rounded-2 border-dark-3 bg-bg-3">
+              <div>
+                <h2 className="fs-2 mb-4 text-dark-2">Gold Package</h2>
+                <h2 className="display-6 mb-6">K15,000</h2>
+                {/*<p className="mb-6">Suitable for Large Businesses.</p>*/}
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Design Up to 20 pages</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Mobile Responsive Design</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Social Sharing Options</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Photo Gallery</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Contact Form</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Content Management System</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Mobile Responsive Design</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Social Media Integration</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Chatbot/Livechat Setup</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Google Analytics Setup</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Google Maps Integration</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Search Engine Optimization</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">3 Rounds of Revisions</h6>
+                </div>
+              </div>
+              <Button href="/request-quote" className="btn-bg-1 btn-action-3 mt-6 w-100">Enquire</Button>
+            </div>
+          </Col>
+          <Col sm={10} md={3} lg={3} className="mb-8 mb-lg-0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+            <div className="d-flex flex-column justify-content-between h-100 p-6 xborder rounded-2 border-dark-3 bg-bg-3">
+              <div>
+                <h2 className="fs-2 mb-4 text-dark-2">Platinum Package</h2>
+                <h2 className="display-6 mb-6">K30,000</h2>
+                {/*<p className="mb-6">Suitable for E-commerce</p>*/}
+                {/*<strong className="mt-5 mb-2">Package details</strong>*/}
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Design Up to 30 pages</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Mobile Responsive Design</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Social Sharing Options</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Photo Gallery</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Contact Form</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Content Management System</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Social Media Integration</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Chatbot/Livechat Setup</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Google Analytics Setup</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Google Maps Integration</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Newsletter Integration</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">eCommerce Integration</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Search Engine Optimization</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Contact page, About page, Blog feed * Blog post pages</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">3 Rounds of Revisions</h6>
+                </div>
+              </div>
+              <Button href="/request-quote" className="btn-bg-1 btn-action-3 mt-6 w-100">Enquire</Button>
+            </div>
+          </Col>
+        </Row>
 
         <Row className="g-5">
           <Col className="d-grid justify-content-center">
@@ -109,17 +499,33 @@ const IndexPage = () => (
       style={{ marginBottom: `1.45rem` }}
     />
 
-    <section>
+    <Button2
+      href="https://github.com/styled-components/styled-components"
+      target="_blank"
+      rel="noopener"
+      primary
+    >
+      GitHub
+    </Button2>
+
+    <Button2 as={Link} href="/docs">
+      Documentation
+    </Button2>
+
+    <section className="bg-img-2">
       <Container>
-        <p>
-          <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-          <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-          <Link to="/using-dsg">Go to "Using DSG"</Link>
-        </p>
+        <Row className="mb-3 text-center">
+          <Col>
+            <h1 className="display-3">Hello</h1>
+            <Button variant={"dark"}
+                    className="btn-secondary rounded rounded-pill"
+                    href="/request-quote">
+              Get a free quote
+            </Button>
+          </Col>
+        </Row>
       </Container>
     </section>
-
-    <CallToActionQuote />
 
   </Layout>
 )

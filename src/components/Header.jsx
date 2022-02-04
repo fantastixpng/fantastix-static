@@ -1,7 +1,8 @@
-import React  from "react";
-import { Container, Navbar, NavLink } from "react-bootstrap";
+import React  from "react"
+import { Container, Navbar, NavLink } from "react-bootstrap"
 
-import logoBlack from "../images/logo-black.svg";
+import AnimatedIcon from "../components/AnimatedIcon"
+import logoBlack from "../images/logo-black.svg"
 
 const Header = () => {
   return (
@@ -9,12 +10,12 @@ const Header = () => {
 
       <Navbar
         variant={"light"}
-        expand={"md"}
+        expand={"lg"}
         className="navbar-custom site-navbar site-header py-3 py-lg-7"
         aria-label="Navbar"
         role="banner">
 
-        <Container xfluid={"xxl"} className="navbar-container flex-wrap flex-md-nowrap">
+        <Container xfluid={"xxl"} className="navbar-container">
 
           <Navbar.Brand href="/" className="d-flex align-items-center mb-md-0 me-md-auto text-dark text-decoration-none">
             <figure className="mb-2 mb-lg-0 me-lg-4">
@@ -28,8 +29,6 @@ const Header = () => {
             </figure>
           </Navbar.Brand>
 
-          <Navbar.Toggle/>
-
           <Navbar.Collapse className="justify-content-end">
             <NavLink href="/#who-we-are">Who We Are</NavLink>
             <NavLink href="/#our-work">Our Work</NavLink>
@@ -37,6 +36,10 @@ const Header = () => {
             <NavLink href="/#pricing">Pricing</NavLink>
             <NavLink href="/#contact">Contact Us</NavLink>
           </Navbar.Collapse>
+
+
+          <AnimatedIcon/>
+          <Navbar.Toggle/>
 
           {/*<div className="d-grid d-lg-none">
           <button

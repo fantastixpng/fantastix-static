@@ -1,45 +1,85 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import { Button, Col, Container, Row } from "react-bootstrap"
-import styled, { css } from "styled-components"
+// import styled, { css } from "styled-components"
+import { useSpring, animated } from 'react-spring'
 
 import Layout from "../components/Layout/Layout"
 import Seo from "../components/Seo"
 import ContactForm from "../components/ContactForm"
 import ProjectCard from "../components/ProjectCard"
 
-const Button2 = styled.a`
-  /* This renders the buttons above... Edit me! */
-  display: inline-block;
-  border-radius: 3px;
-  padding: 0.5rem 0;
-  margin: 0.5rem 1rem;
-  width: 11rem;
-  background: transparent;
-  color: white;
-  border: 2px solid white;
+// const Button2 = styled.a`
+//   /* This renders the buttons above... Edit me! */
+//   display: inline-block;
+//   border-radius: 3px;
+//   padding: 0.5rem 0;
+//   margin: 0.5rem 1rem;
+//   width: 11rem;
+//   background: transparent;
+//   color: white;
+//   border: 2px solid white;
+//
+//   /* The GitHub button is a primary button
+//    * edit this to target it specifically! */
+//   ${props => props.primary && css`
+//     background: white;
+//     color: black;
+//   `}
+// `
 
-  /* The GitHub button is a primary button
-   * edit this to target it specifically! */
-  ${props => props.primary && css`
-    background: white;
-    color: black;
-  `}
-`
+function Number() {
+  const [flip, set] = useState(false)
+  const { number } = useSpring({
+    reset: true,
+    reverse: flip,
+    from: { number: 0 },
+    number: 1,
+    delay: 200,
+    // config: config.molasses,
+    onRest: () => set(!flip),
+  })
+
+  return <animated.div>{number.to(n => n.toFixed(2))}</animated.div>
+}
+
+/*
+  If color has the following format: 
+  const rgbColor = {
+    r: 100,
+    g: 100, 
+    b: 100
+  }
+*/
+
+// Extracted from Polished
+// Code is licensed with an MIT license
+function getLuminance(rgbColor){
+ const [r, g, b] = Object.keys(rgbColor).map(key => {
+    // Our color numbers represent a 8bit channel. 
+    // The formula requires a sRGB channel which is defined by 
+    // ColorChannelIn8bit / 255
+    const channel = rgbColor[key] / 255
+    return channel <= 0.03928
+      ? channel / 12.92
+      : ((channel + 0.055) / 1.055) ** 2.4
+  })
+  return parseFloat((0.2126 * r + 0.7152 * g + 0.0722 * b).toFixed(3))
+}
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
+
+    {/*<Number/>*/}
 
     <section id="hero" className="has-divider mt-10">
       <Container>
         <Row className="align-items-center justify-content-between">
 
           <Col md={6} sm={ {order: 2} } className="mb-5 mb-sm-0 aos-init aos-animate" data-aos="fade-left">
-            <img src="" alt=""/>
-            <StaticImage
-              src="../images/web_development.svg"
+            <img
+              src="./web_development.svg"
               alt="Web development"
               className="img-fluid"
             />
@@ -92,19 +132,60 @@ const IndexPage = () => (
 
     <section id="who-we-are" className="bg-dark text-light">
       <Container>
-        <Row className="g-5 justify-content-center mb-10">
+        <Row className="g-5 justify-content-center mb-16">
           <Col md={9} lg={8} className="text-center">
-            <h2 className="display-5">Website Design & Development</h2>
+            <h2 className="display-5">Who We Are</h2>
             <p className="lead">
-              The website plans below are for Small to Medium sized Enterprises (SME's). If there are any features outside of our plans, we can include add-ons and customisations to meet the needs of your business.
+            Fantastix is a web design and development startup based in Madang. It was started as a personal project back in 2016.
             </p>
           </Col>
         </Row>
         <Row>
-          <Col sm={12} md={6} lg={6}>Hellow</Col>
-          <Col sm={12} md={6} lg={6}>Hellow</Col>
+          <Col sm={12} md={6} lg={6}>
+            <img src="./bg-showcase-1.jpg" alt="founder image" className="img-fluid"/>
+          </Col>
+          <Col sm={12} md={6} lg={6}>
+            <h1 className="display-1">My Story</h1>
+            <p>
+            My name is <b>Christian Augustyn</b> and I am the founder of Fantastix. Fantastix was a personal project I was working on back in 2016 when I was learning Java programming language.<br/>
+            Six years later and I decided to put my skills into building something that would help business succeed in the digital world.
+            </p>
+          </Col>
         </Row>
       </Container>
+    </section>
+
+    <section id="" className="showcase p-0">
+      <div className="container-fluid p-0">
+        <div className="row g-0">
+          <div className="col-lg-6 order-lg-2 text-white showcase-img"
+               style={{backgroundImage: "url('./bg-showcase-1.jpg')"}}></div>
+          <div className="col-lg-6 order-lg-1 my-auto px-20 showcase-text">
+            <h2>Fully Responsive Design</h2>
+            <p className="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look
+              great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+          </div>
+        </div>
+        <div className="row g-0">
+          <div className="col-lg-6 text-white showcase-img"
+               style={{backgroundImage: "url('./bg-showcase-2.jpg')"}}></div>
+          <div className="col-lg-6 my-auto px-20 showcase-text">
+            <h2>Updated For Bootstrap 5</h2>
+            <p className="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 5 is leading the way
+              in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!</p>
+          </div>
+        </div>
+        <div className="row g-0">
+          <div className="col-lg-6 order-lg-2 text-white showcase-img"
+               style={{backgroundImage: "url('./bg-showcase-3.jpg')"}}></div>
+          <div className="col-lg-6 order-lg-1 my-auto px-20 showcase-text">
+            <h2>Easy to Use &amp; Customize</h2>
+            <p className="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some
+              deeper customization options. Out of the box, just add your content and images, and your new landing page
+              will be ready to go!</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="our-work">
@@ -115,18 +196,18 @@ const IndexPage = () => (
             <p className="lead">Here are few of our work.</p>
           </Col>
         </Row>
-        <Row className="row-cols-sm-1 row-cols-md-3 row-cols-lg-3 g-3">
-          <Col>
-            <ProjectCard name={"Hello"} description={"Hello World"} link={"/hello-world"} image={"../images/logo.png"}/>
+        <Row xs={1} md={2} className="row-cols-sm-1 row-cols-md-3 row-cols-lg-3 g-3">
+          <Col className="hover-effect">
+            <ProjectCard name={"Hello"} description={"Hello World"} link={"/hello-world"} image={"./bg-showcase-1.jpg"}/>
           </Col>
-          <Col>
-            <ProjectCard name={"Hello"} description={"Hello World"} link={"/hello-world"} image={"../images/logo.png"}/>
+          <Col className="hover-effect">
+            <ProjectCard name={"Hello"} description={"Hello World"} link={"/hello-world"} image={"./bg-showcase-2.jpg"}/>
           </Col>
-          <Col>
-            <ProjectCard name={"Hello"} description={"Hello World"} link={"/hello-world"} image={"../images/logo.png"}/>
+          <Col className="hover-effect">
+            <ProjectCard name={"Hello"} description={"Hello World"} link={"/hello-world"} image={"./bg-showcase-3.jpg"}/>
           </Col>
-          <Col>
-            <ProjectCard name={"Hello"} description={"Hello World"} link={"/hello-world"} image={"../images/logo.png"}/>
+          <Col className="hover-effect">
+            <ProjectCard name={"Hello"} description={"Hello World"} link={"/hello-world"} image={"./bg-showcase-1.jpg"}/>
           </Col>
         </Row>
       </Container>
@@ -136,6 +217,7 @@ const IndexPage = () => (
       <Container>
         <Row className="justify-content-center">
           <Col md={9} lg={7} xl={6} xxl={5}>
+            <h3 className="fw-light">Services</h3>
             <h2 className="display-5 mb-6 aos-init aos-animate" data-aos="fade-down" data-aos-delay="0">Our Web Solutions</h2>
             <p className="lead mb-15 aos-init aos-animate" data-aos="fade-down" data-aos-delay="250">
               Discover what we do
@@ -158,7 +240,7 @@ const IndexPage = () => (
             <svg width="61" height="60" viewBox="0 0 61 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-action-2 d-block mx-auto"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.4545 30L1.48945 35.8463C1.18993 36.0063 0.939497 36.2447 0.764886 36.5359C0.590276 36.8272 0.498047 37.1604 0.498047 37.5C0.498047 37.8396 0.590276 38.1728 0.764886 38.4641C0.939497 38.7553 1.18993 38.9937 1.48945 39.1537L29.6145 54.1537C29.8857 54.2982 30.1884 54.3738 30.4957 54.3738C30.803 54.3738 31.1057 54.2982 31.377 54.1537L59.502 39.1537C59.8015 38.9937 60.0519 38.7553 60.2265 38.4641C60.4011 38.1728 60.4934 37.8396 60.4934 37.5C60.4934 37.1604 60.4011 36.8272 60.2265 36.5359C60.0519 36.2447 59.8015 36.0063 59.502 35.8463L48.5482 30L44.562 32.1263L54.642 37.5L30.4995 50.3737L6.35695 37.5L16.437 32.1263L12.4507 30H12.4545Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M29.6184 5.84695C29.8896 5.7025 30.1923 5.62695 30.4996 5.62695C30.807 5.62695 31.1096 5.7025 31.3809 5.84695L59.5059 20.847C59.8054 21.007 60.0558 21.2454 60.2304 21.5366C60.405 21.8279 60.4973 22.1611 60.4973 22.5007C60.4973 22.8403 60.405 23.1735 60.2304 23.4648C60.0558 23.756 59.8054 23.9944 59.5059 24.1545L31.3809 39.1545C31.1096 39.2989 30.807 39.3745 30.4996 39.3745C30.1923 39.3745 29.8896 39.2989 29.6184 39.1545L1.49336 24.1545C1.19384 23.9944 0.943403 23.756 0.768792 23.4648C0.594182 23.1735 0.501953 22.8403 0.501953 22.5007C0.501953 22.1611 0.594182 21.8279 0.768792 21.5366C0.943403 21.2454 1.19384 21.007 1.49336 20.847L29.6184 5.84695ZM6.36086 22.5007L30.4996 35.3745L54.6421 22.5007L30.4996 9.62695L6.35711 22.5007H6.36086Z"></path></svg>
             <h5 className="mb-4 mt-6">Web Development</h5>
             <p className="mb-0">
-              Affordable Website Development for<br/>your business needs.
+              We bring our vast expertise to build perfectly working and cost-effective web applications using modern robust technologies.
             </p>
           </Col>
 
@@ -169,21 +251,46 @@ const IndexPage = () => (
               E-commerce Development
             </h5>
             <p className="mb-0">
-              We build e-commerce websites to is perfect <br/>for your business needs.
+              We build e-commerce websites that is perfect <br/>for your business needs.
             </p>
           </Col>
 
         </Row>
 
-        <Row className="justify-content-center">
+        {/*<Row className="justify-content-center">
           <Col className="col-auto mt-20">
             <Button variant={"outline-light"} href="/services" className="icon-link">
               Services
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-arrow-right ml-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </Button>
           </Col>
-        </Row>
+        </Row>*/}
 
+      </Container>
+    </section>
+
+    <section id="process" className="">
+      <Container>
+        <Row className="justify-content-center">
+          <Col md={9} lg={7} xl={6} xxl={5}>
+            <h2 className="display-5 mb-10 aos-init aos-animate" data-aos="fade-down" data-aos-delay="0">How We Get Started</h2>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={12} md={6} lg={6} className="mt-10">
+            <img src="bg-showcase-1.jpg" alt="" className="img-fluid"/>
+          </Col>
+          <Col sm={12} md={6} lg={6} className="mt-10">
+            <div className="">
+              <ul className="big-bullet-points-list">
+                <li class="bullet-points">We schedule a meeting with you to discover your project</li>
+                <li class="bullet-points">Then we break down your project into iterations to estimate them with our developers</li>
+                <li class="bullet-points">We create a proposal and explain all details related to the working process</li>
+                <li class="bullet-points">Once we get a go-ahead, our project manager kicks off internal meeting to get started</li>
+              </ul>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </section>
 
@@ -200,8 +307,8 @@ const IndexPage = () => (
         <Row className="row-cols-4 g-5 text-center">
           <Col>
             <StaticImage
-              src="../images/icons/android-icon.svg"
-              alt="Android"
+              src="../images/icons/github-icon.svg"
+              alt="Kotlin"
               height={50}
               quality={95}
               formats={["auto", "webp", "avif"]}
@@ -209,8 +316,8 @@ const IndexPage = () => (
           </Col>
           <Col>
             <StaticImage
-              src="../images/icons/java-icon.svg"
-              alt="Java"
+              src="../images/icons/wordpress-icon.svg"
+              alt="Kotlin"
               height={50}
               quality={95}
               formats={["auto", "webp", "avif"]}
@@ -218,7 +325,34 @@ const IndexPage = () => (
           </Col>
           <Col>
             <StaticImage
-              src="../images/icons/kotlin-icon.svg"
+              src="../images/icons/npm.png"
+              alt="Kotlin"
+              height={50}
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/webpack-icon.png"
+              alt="Kotlin"
+              height={50}
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/gulp.png"
+              alt="Kotlin"
+              height={50}
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/react-icon.svg"
               alt="Kotlin"
               height={50}
               quality={95}
@@ -422,10 +556,6 @@ const IndexPage = () => (
                 </div>
                 <div className="position-relative mb-5">
                   <i className="bi bi-check-circle-fill"/>
-                  <h6 className="ps-7">Mobile Responsive Design</h6>
-                </div>
-                <div className="position-relative mb-5">
-                  <i className="bi bi-check-circle-fill"/>
                   <h6 className="ps-7">Social Media Integration</h6>
                 </div>
                 <div className="position-relative mb-5">
@@ -439,6 +569,10 @@ const IndexPage = () => (
                 <div className="position-relative mb-5">
                   <i className="bi bi-check-circle-fill"/>
                   <h6 className="ps-7">Google Maps Integration</h6>
+                </div>
+                <div className="position-relative mb-5">
+                  <i className="bi bi-check-circle-fill"/>
+                  <h6 className="ps-7">Newsletter Integration</h6>
                 </div>
                 <div className="position-relative mb-5">
                   <i className="bi bi-check-circle-fill"/>

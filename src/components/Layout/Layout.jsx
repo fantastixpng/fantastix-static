@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
 import { GlobalStyle } from '../../styles/global'
 // import 'typeface-cantata-one'
 // import 'typeface-open-sans'
@@ -9,21 +9,21 @@ import "./Layout.css"
 import Footer from "../Footer"
 
 const Layout = ({ children }) => {
-  const { site } = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  // const { site } = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <>
       <GlobalStyle/>
 
-      <Header siteTitle={site.siteMetadata?.title || `Title`} />
+      <Header/>
 
       {/*<Breadcrumb>*/}
       {/*  <Breadcrumb.Item href="#">Home</Breadcrumb.Item>*/}

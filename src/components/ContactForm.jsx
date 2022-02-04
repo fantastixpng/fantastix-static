@@ -1,5 +1,31 @@
-import React, { Component, useState } from "react"
-import { Alert, Button, Row, Col, Form, FloatingLabel, InputGroup } from "react-bootstrap"
+import React, { Component } from "react"
+import { Button, Row, Col, Form } from "react-bootstrap"
+import axios from "axios"
+// import { useForm, ValidationError } from '@formspree/react';
+
+// const [state, handleSubmit] = useForm("xbjwgyay");
+// if (state.succeeded) {
+//   return <p>Thanks for joining!</p>;
+// }
+// <ValidationError
+//   prefix="Message"
+//   field="message"
+//   errors={state.errors}
+// />
+
+// const [serverState, setServerState] = useState({
+//       submitting: false,
+//       status: null
+//     });
+//     const handleServerResponse = (ok, msg, form) => {
+//       setServerState({
+//         submitting: false,
+//         status: { ok, msg }
+//       });
+//       if (ok) {
+//         form.reset();
+//       }
+//     };
 
 class ContactForm extends Component {
   constructor(props) {
@@ -19,19 +45,21 @@ class ContactForm extends Component {
   }
 
   handleSubmit = (event) => {
+    event.preventDefault()
     // const $alert = document.querySelector("[role=alert]");
-    const form = event.currentTarget;
+    // const form = event.currentTarget;
+    const form = event.target;
 
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+    // if (form.checkValidity() === false) {
+    //   event.preventDefault();
+    //   event.stopPropagation();
+    // }
 
-    this.setState({
-      isSubmitted: true,
-      isLoading: true,
-      validated: true
-    })
+    // this.setState({
+    //   isSubmitted: true,
+    //   isLoading: true,
+    //   validated: true
+    // })
 
     // let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     // if(!re.test("email")){
@@ -39,9 +67,16 @@ class ContactForm extends Component {
     //   return false;
     // }
 
-    let formData = new FormData(event.target);
+    // let formData = new FormData(event.target);
 
-    console.log(formData)
+    // console.log(formData)
+
+    axios
+      .post("https://getform.io/f/d8df0e8c-f662-4cac-86cf-3f15982a9a93", {
+        message: "Hello, World",
+      })
+      .then(response => console.log(response))
+      .catch(error => console.log(error))
 
     // $.ajax({
     //   url : "/contact",
@@ -73,27 +108,27 @@ class ContactForm extends Component {
   render() {
     let { validated } = this.state;
 
-    function AlertDismissibleExample() {
-      const [show, setShow] = useState(false)
-
-      if (show) {
-        return (
-          <Alert variant={"success"} onClose={() => setShow(false)} dismissible className="mt-5" role={"alert"}>
-            <Alert.Heading>
-              Message sent!
-            </Alert.Heading>
-            <p className="mb-0">
-              We'll get back to you shortly.
-            </p>
-          </Alert>
-        )
-      }
-      return (
-        <Button variant="info" onClick={() => setShow(true)}>
-          Show Custom Styled Alert
-        </Button>
-      )
-    }
+    // function AlertDismissibleExample() {
+    //   const [show, setShow] = useState(false)
+    //
+    //   if (show) {
+    //     return (
+    //       <Alert variant={"success"} onClose={() => setShow(false)} dismissible className="mt-5" role={"alert"}>
+    //         <Alert.Heading>
+    //           Message sent!
+    //         </Alert.Heading>
+    //         <p className="mb-0">
+    //           We'll get back to you shortly.
+    //         </p>
+    //       </Alert>
+    //     )
+    //   }
+    //   return (
+    //     <Button variant="info" onClick={() => setShow(true)}>
+    //       Show Custom Styled Alert
+    //     </Button>
+    //   )
+    // }
 
     const Loading = () => {
       if (this.state.isLoading) {
@@ -182,7 +217,7 @@ class ContactForm extends Component {
 
                 <Loading/>
 
-                <AlertDismissibleExample/>
+                {/*<AlertDismissibleExample/>*/}
 
               </div>
             </Row>

@@ -50,16 +50,16 @@ class ContactForm extends Component {
     // const form = event.currentTarget;
     const form = event.target;
 
-    // if (form.checkValidity() === false) {
-    //   event.preventDefault();
-    //   event.stopPropagation();
-    // }
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
 
-    // this.setState({
+    this.setState({
     //   isSubmitted: true,
-    //   isLoading: true,
+      isLoading: true,
     //   validated: true
-    // })
+    })
 
     // let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     // if(!re.test("email")){
@@ -67,16 +67,16 @@ class ContactForm extends Component {
     //   return false;
     // }
 
-    // let formData = new FormData(event.target);
+    let formData = new FormData(form);
 
-    // console.log(formData)
+    console.log(formData)
 
-    axios
-      .post("https://getform.io/f/d8df0e8c-f662-4cac-86cf-3f15982a9a93", {
-        message: "Hello, World",
-      })
-      .then(response => console.log(response))
-      .catch(error => console.log(error))
+    // axios
+    //   .post("https://getform.io/f/d8df0e8c-f662-4cac-86cf-3f15982a9a93", {
+    //     message: "Hello, World",
+    //   })
+    //   .then(response => console.log(response))
+    //   .catch(error => console.log(error))
 
     // $.ajax({
     //   url : "/contact",
@@ -106,7 +106,8 @@ class ContactForm extends Component {
   }
 
   render() {
-    let { validated } = this.state;
+    let { validated, isLoading } = this.state;
+    console.log(isLoading)
 
     // function AlertDismissibleExample() {
     //   const [show, setShow] = useState(false)
@@ -130,16 +131,13 @@ class ContactForm extends Component {
     //   )
     // }
 
-    const Loading = () => {
-      if (this.state.isLoading) {
+    let Loader = ({isLoading}) => {
+      if (isLoading) {
         return (<div className="text-center mt-5">
-          <div className="spinner-border text-dark" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-        </div>)
-      }
-      else {
-        return ""
+                  <div className="spinner-border text-dark" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                </div>)
       }
     }
 
@@ -215,7 +213,7 @@ class ContactForm extends Component {
               <div className="col-12 col-md-10 col-lg-8 col-xl-8">
                 <Button className="bg-dark btn btn-lg text-light w-100 w-md-auto" type="submit">Send</Button>
 
-                <Loading/>
+                {/*<Loader loading={this.state.isLoading}/>*/}
 
                 {/*<AlertDismissibleExample/>*/}
 

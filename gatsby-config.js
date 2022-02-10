@@ -7,6 +7,7 @@ module.exports = {
     hello: "world"
   },
   plugins: [
+    'gatsby-plugin-theme-ui',
     // `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-sass`,

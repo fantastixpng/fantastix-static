@@ -12,13 +12,13 @@ class RequestQuoteFormStep extends Component {
 
   // go back to the previous step
   prevStep = (event) => {
-    const { step } this.state;
+    const { step } = this.state;
     this.setState({ step: step - 1 });
   }
 
   // go back to the next step
   nextStep = (event) => {
-    const { step } this.state;
+    const { step } = this.state;
     this.setState({ step: step + 1 });
   }
 
@@ -262,3 +262,13 @@ class RequestQuoteFormStep extends Component {
 }
 
 export default RequestQuoteFormStep;
+
+
+const Hello = () => {
+
+  return (
+    <>
+      Hello
+    </>
+  )
+}

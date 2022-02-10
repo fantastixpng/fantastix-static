@@ -3,9 +3,11 @@ import { createGlobalStyle } from 'styled-components'
 // import './theme.css'
 // import './globals.css'
 
-export const GlobalStyle = createGlobalStyle`
-  *, *:before, *:after {
-    box-sizing: inherit;
+export const GlobalStyles = createGlobalStyle`
+  *, 
+  *:before, 
+  *:after {
+    box-sizing: border-box;
   }
   html {
     text-rendering: optimizeLegibility;
@@ -17,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  
   html, body {
     // width: 100%;
     // height: 100%;
@@ -24,3 +27,13 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 `
+  
+  // body {
+  //   background: ${({ theme }) => theme.body};
+  //   font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  //   color: ${({ theme }) => theme.text};
+  //   height: 100vh;
+  //   margin: 0;
+  //   padding: 0;
+  //   transition: all 0.25s linear;
+  // }

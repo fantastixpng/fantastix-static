@@ -1,0 +1,23 @@
+[
+	{
+		"name": "PNGX-API",
+		"desc": "PNGX-API is an unofficial restful API that exposes stocks info from PNGX.com",
+		"imgSrc": "./bg-showcase-1.jpg",
+		"link": "https://pngx-api.clevercloud.io/stocks",
+		"stack": ["JavaScript", "NodeJs", "MongoDB"]
+	},
+	{
+		"name": "Fantastix",
+		"desc": "Fantastix's very own static website",
+		"imgSrc": "./bg-showcase-2.jpg",
+		"link": "https://www.fantastixpng.xyz",
+		"stack": ["JavaScript", "NodeJs", "Gatsby", "Bootstrap", "Scss", "ReactJs"]
+	},
+	{
+		"name": "Christian Augustyn",
+		"desc": "Christian Augustyn Personal portfolio website",
+		"imgSrc": "../images/icons/gulp.png",
+		"link": "https://www.fantastixpng.xyz",
+		"stack": ["JavaScript", "NodeJs", "Gatsby", "Bootstrap", "Scss", "ReactJs"]
+	}
+]

@@ -50,15 +50,45 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    // {
+    //   resolve: 'gatsby-plugin-mailchimp',
+    //   options: {
+    //     endpoint: '', // add your MC list endpoint here; see instructions from gatsby's website
+    //   },
+    // },
+    // {
+    //   resolve: 'gatsby-plugin-robots-txt',
+    //   options: {
+    //     host: 'https://www.example.com',
+    //     sitemap: 'https://www.example.com/sitemap.xml',
+    //     policy: [{ userAgent: '*', allow: '/' }],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `poppins:300,400,500,600,700,800,900`
+          `poppins:300,400,500,600,700,800,900`,
+          `inter:300,400,500,600,700,800,900`
         ],
         display: 'swap'
       }
     },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `DM Sans`,
+    //         variants: [`400`, `500`, `700`],
+    //       },
+    //       {
+    //         family: `Playfair Display`,
+    //         variants: [`400`, `500`, `700`],
+    //       },
+    //     ],
+    //   },
+    // },
     // {
     //   resolve: 'gatsby-plugin-load-script',
     //   options: {
@@ -118,7 +148,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+        trackingId: "UA-212537658-1",
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: false,
         // Setting this parameter is optional
@@ -130,17 +160,17 @@ module.exports = {
         // Delays sending pageview hits on route update (in milliseconds)
         pageTransitionDelay: 0,
         // Enables Google Optimize using your container Id
-        optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
+        // optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
         // Enables Google Optimize Experiment ID
-        experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
+        // experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
         // Set Variation ID. 0 for original 1,2,3....
-        variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
+        // variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
         // Defers execution of google analytics script after page load
         defer: false,
         // Any additional optional fields
         sampleRate: 5,
         siteSpeedSampleRate: 10,
-        cookieDomain: "example.com",
+        cookieDomain: "fantastixpng.xyz",
         // defaults to false
         enableWebVitalsTracking: true,
       },

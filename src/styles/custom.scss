@@ -21,7 +21,6 @@
 @media (prefers-color-scheme: dark) {
 }
 
-
 %html-body {}
 
 html {
@@ -2328,8 +2327,8 @@ body.loaded>div.preloader {
 }
 .btn-bg-1:hover {
   color: #fff;
-  background-color: black;
-  border-color: black
+  background-color: #202020;
+  border-color: #646464
 }
 
 .btn-check:focus + .btn-bg-1,

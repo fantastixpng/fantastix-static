@@ -1,8 +1,8 @@
 {
   "name": "fantastix",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
+  "description": "Fantastix's static website build using Gatsby web framework",
+  "version": "0.0.9",
   "author": "Christian Augustyn <chrisaugu61@gmail.com>",
   "scripts": {
     "dev": "gatsby develop -o",
@@ -19,6 +19,7 @@
     "@emotion/styled": "^11.6.0",
     "@formspree/react": "^2.2.4",
     "@mdx-js/react": "^2.0.0",
+    "@mojs/core": "^1.3.0",
     "axios": "^0.25.0",
     "bootstrap": "^5.1.3",
     "gatsby": "^4.6.0",
@@ -46,6 +47,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-spring": "^9.4.2",
+    "react-transition-group": "^4.4.2",
     "react-waypoint": "^10.1.0",
     "sass": "^1.49.0",
     "styled-components": "^5.3.3",

@@ -6,7 +6,7 @@ import React, { useState } from "react"
 import PropTypes from 'prop-types'
 
 // import { ThemeProvider } from 'styled-components'
-import { ThemeProvider } from "../../libs/contexts"
+// import { ThemeProvider } from "../../libs/contexts"
 // import { lightTheme, darkTheme } from '../../libs/theme'
 // import { useDarkMode } from '../../libs/useDarkMode'
 
@@ -39,8 +39,8 @@ const Layout = ({ children }) => {
   //   );
   // };
 
+    {/*<ThemeProvider theme={themeMode}>*/}
   return (
-    <ThemeProvider /*theme={themeMode}*/>
       <>
         <GlobalStyles/>
 
@@ -60,8 +60,8 @@ const Layout = ({ children }) => {
 
         <Footer/>
       </>
-    </ThemeProvider>
   )
+    {/*</ThemeProvider>*/}
 }
 
 Layout.propTypes = {

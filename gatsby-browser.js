@@ -5,6 +5,10 @@
  */
 
 // You can delete this file if you're not using it
-// import "bootstrap/dist/css/bootstrap.min.css"
+// import "@popperjs/core/dist/umd/popper.min"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.min"  
+import "bootstrap-icons/font/bootstrap-icons.css"
+
 // import "./src/styles/global.css"
 import "./src/styles/theme.scss"

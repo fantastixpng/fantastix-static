@@ -1,7 +1,5 @@
 import React, { useState } from "react"
 // import { useStaticQuery, graphql } from "gatsby"
-// import 'typeface-cantata-one'
-// import 'typeface-open-sans'
 // import 'inter-ui'
 import PropTypes from 'prop-types'
 
@@ -14,7 +12,7 @@ import Header from "../Header"
 import Footer from "../Footer2"
 
 import { GlobalStyles } from '../../styles/global'
-import "./Layout.css"
+import "./Layout.scss"
 
 const Layout = ({ children }) => {
   // const { site } = useStaticQuery(graphql`

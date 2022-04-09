@@ -48,9 +48,9 @@ function ModalButton() {
 
 
 const ProjectCard = ({data}) => {
-  // const myImg = getImage(data.imgSrc)
+  const myImg = getImage(data.imgSrc)
 
-  const imgSrc = getSrc(data.imgSrc)
+  const imgSrc = getSrc(data.imgSrc);
 
   let Bottom = styled.div`
     position: absolute;
@@ -71,7 +71,7 @@ const ProjectCard = ({data}) => {
       />*/}
 
       {/*<Image src="../images/icons/react-icon.svg" alt="d"/>*/}
-      {/*<GatsbyImage image={myImg} alt={name} />*/}
+      {/*<GatsbyImage image={myImg} alt={data.name} />*/}
 
       <Card.ImgOverlay>
         <Bottom>

@@ -11,6 +11,7 @@ import ProjectCard from "../components/ProjectCard"
 import RequestQuoteFormStep from "../components/RequestQuoteFormStep"
 
 import projects from "../dbs/projects"
+// #1f2532
 
 // const Button2 = styled.a`
 //   /* This renders the buttons above... Edit me! */
@@ -187,9 +188,10 @@ const IndexPage = () => (
 
     <section id="our-work">
       <Container>
-        <Row className="g-5 justify-content-center mb-10">
+        <Row className="section-title g-5 justify-content-center mb-10">
           <Col md={9} lg={8} className="text-center">
-            <h5 className="display-5">Our Work</h5>
+            <p>Our Work</p>
+            <h5 className="display-5">Check Some Of Our Recent Work</h5>
             <p className="lead">Here are few of our work.</p>
           </Col>
         </Row>
@@ -210,7 +212,7 @@ const IndexPage = () => (
       <Container>
         <Row className="justify-content-center">
           <Col md={9} lg={7} xl={6} xxl={5}>
-            <h3 className="fw-light">Services</h3>
+            <span className="fw-light">Services</span>
             <h5 className="display-5 mb-6 aos-init aos-animate" data-aos="fade-down" data-aos-delay="0">Our Web Solutions</h5>
             <p className="lead mb-15 aos-init aos-animate" data-aos="fade-down" data-aos-delay="250">
               Discover what we do
@@ -397,6 +399,15 @@ const IndexPage = () => (
               formats={["auto", "webp", "avif"]}
             />
           </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/gatsbyjs-icon.svg"
+              alt="Gatsby"
+              height={50}
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
         </Row>
       </Container>
     </section>
@@ -406,7 +417,8 @@ const IndexPage = () => (
         <Row className="g-5 justify-content-center mb-10">
           <Col md={9} lg={8} className="text-center text-light">
             <h3 className="fw-light">Pricing</h3>
-            <h2 className="display-5 text-capitalize">Website Design & Development</h2>
+            <h3 className="fw-light">Pricing Plans</h3>
+            {/*<h2 className="display-5 text-capitalize">Website Design & Development</h2>*/}
             {/*<h2 className="xdisplay-4">Small to Medium sized Enterprises (SME's)</h2>*/}
             <p className="mb-15 fs-4 text-muted">
               The website plans below are for Small to Medium sized Enterprises (SME's). If there are any features outside of our plans, we can include add-ons and customisations to meet the needs of your business.
@@ -722,6 +734,26 @@ const IndexPage = () => (
           </Col>
         </Row>
       </Container>
+    </section>*/}
+
+    {/*<section class="project-start-area ptb-100">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="project-start-image">
+              <img src="/bg-showcase-1.jpg" alt="project"/>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="project-start-content">
+              <h2>We Like to Start Your Project With Us</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+              <a class="default-btn" href="/contact"><i class="flaticon-web"></i>Get Started<span></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="circle-shape1"><img src="/bg-showcase-2.jpg" alt="project"/></div>
     </section>*/}
 
   </Layout>

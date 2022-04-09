@@ -1,15 +1,34 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Container, Navbar, NavLink } from "react-bootstrap"
 import Hamburger from 'hamburger-react'
 
 // import AnimatedIcon from "../components/AnimatedIcon"
 import logoBlack from "../images/logo-black.svg"
 
+const navTop = {
+  backgroundColor: "#333",
+  transition: "all 0.3s",
+};
+const navScroll = {
+  backgroundColor: "#F00",
+  transition: "all 0.3s",
+};
+
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
+  const [navState, setNavState] = useState(navTop);
+
+  useEffect(() => {
+    window.onscroll = () => {
+      const { innerHeight: height, scrollY: scrollPosition } = window;
+      scrollPosition > height - 100 
+        ? setNavState(navScroll) 
+        : setNavState(navTop);
+    };
+  }, []);
 
   return (
-    <header>
+    <header className="position-absolute w-100 top-0 " xstyle={navState}>
 
       <Navbar
         variant={"light"}

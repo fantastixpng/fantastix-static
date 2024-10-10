@@ -162,7 +162,7 @@ const IndexPage = () => (
             </p>
           </Col>
         </Row>
-        <Row>
+        {/* <Row>
           <Col sm={12} md={6} lg={6}>
             <StaticImage
               src="../images/christian-square.jpg"
@@ -182,7 +182,7 @@ const IndexPage = () => (
             I started learning to build websites back in 2013 when doing my grade 6.
             </p>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </section>
 
@@ -295,7 +295,7 @@ const IndexPage = () => (
           <div className="col-xl-8 col-lg-9 text-center">
             <h5 className="display-5 mx-xl-10">Tools and Technologies</h5>
             <p className="lead">
-              Tools and technologies I use for my projects.
+              Tools and technologies we use for our projects.
             </p>
           </div>
         </Row>

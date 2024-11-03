@@ -72,3 +72,8 @@ yarn-error.log
 .idea
 
 package-lock.json
+
+node_modules/
+.cache/
+public
+src/gatsby-types.d.ts

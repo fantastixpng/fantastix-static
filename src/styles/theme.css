@@ -13924,7 +13924,7 @@ body:not(.loaded) > div.preloader {
 }
 
 body:not(.loaded) {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 body.loaded > div.preloader {

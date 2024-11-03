@@ -8,7 +8,7 @@
 */
 // Extracted from Polished
 // Code is licensed with an MIT license
-export function getLuminance(rgbColor){
+export function getLuminance(rgbColor: { [x: string]: number }){
  const [r, g, b] = Object.keys(rgbColor).map(key => {
     // Our color numbers represent a 8bit channel. 
     // The formula requires a sRGB channel which is defined by 

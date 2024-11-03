@@ -1,8 +1,0 @@
-
-	{
-		"name": "Christian Augustyn",
-		"desc": "Christian Augustyn Personal portfolio website",
-		"imgSrc": "./bg-showcase-3.jpg",
-		"link": "https://www.fantastixpng.xyz",
-		"stack": ["JavaScript", "NodeJs", "Gatsby", "Bootstrap", "Scss", "ReactJs"]
-	}

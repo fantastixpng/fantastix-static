@@ -2218,7 +2218,7 @@ body:not(.loaded) > div.preloader {
   opacity: 1;
 }
 body:not(.loaded) {
-  overflow: hidden;
+  // overflow: hidden;
 }
 body.loaded>div.preloader {
   animation: hidePreloader .5s linear .5s forwards;
@@ -4235,4 +4235,12 @@ li.bullet-points::before {
   }
   .showcase-text {
   }
+}
+
+.navbar-light {
+  background-color: #fff;
+}
+
+.z-100 {
+  z-index: 1;
 }

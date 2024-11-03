@@ -28,7 +28,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="position-absolute w-100 top-0 " xstyle={navState}>
+    <header className="position-absolute w-100 top-0 z-100" style={navState}>
 
       <Navbar
         variant={"light"}

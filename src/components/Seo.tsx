@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 import React from 'react'
+import { useStaticQuery, graphql, Script } from "gatsby"
 import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
 import config from '../../config/website'
+import { useSiteMetadata } from '../hooks/use-site-metadata'
 
 const Seo = ({ description, lang, meta, title }) => {
   // const title = config.siteTitle
@@ -26,22 +26,10 @@ const Seo = ({ description, lang, meta, title }) => {
     },
   ]
 
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+  const site = useSiteMetadata();
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description || site.description
+  const defaultTitle = site?.title
 
   return (
     <>
@@ -86,7 +74,7 @@ const Seo = ({ description, lang, meta, title }) => {
           },
         ].concat(meta)}
       /> */}
-      <Helmet>
+      <head>
         <html lang={config.siteLanguage} />
         <title>{`${title} | Fantastix`}</title>
         <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
@@ -97,7 +85,7 @@ const Seo = ({ description, lang, meta, title }) => {
         <meta name="msapplication-config" content="browserconfig.xml" />
         <meta name="description" content={description} />
         <meta name="image" content={image} />
-        <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
+        <Script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</Script>
         <meta property="og:locale" content={config.ogLanguage} />
         <meta property="og:site_name" content={config.ogSiteName} />
         <meta property="og:title" content={title} />
@@ -109,7 +97,7 @@ const Seo = ({ description, lang, meta, title }) => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
-      </Helmet>
+      </head>
     </>
   )
 }

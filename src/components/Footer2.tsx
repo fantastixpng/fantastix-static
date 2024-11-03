@@ -2,22 +2,11 @@ import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { Col, Container, Row } from "react-bootstrap"
 
+import { useSiteMetadata } from "../hooks/use-site-metadata";
 import logoWhite from "../images/logo-white.svg"
 
 const Footer = () => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+  const { site } = useSiteMetadata()
 
   return (
     <footer className="footer py-8 bg-dark py-5 pb-5 border-top text-light">
@@ -93,4 +82,4 @@ const Footer = () => {
 )
 }
 
-export default Footer
+export default Footer;

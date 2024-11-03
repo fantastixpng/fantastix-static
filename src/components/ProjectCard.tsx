@@ -1,10 +1,7 @@
 import React, {useState} from "react"
 import PropTypes from "prop-types"
 import { Card, Modal, Button } from "react-bootstrap"
-import { StaticImage, getImage, GatsbyImage, getSrc } from "gatsby-plugin-image"
-import Image from "./Image"
-import styled from 'styled-components'
-
+import { getImage, getSrc } from "gatsby-plugin-image"
 
 function ModalButton() {
   const [show, setShow] = useState(false);
@@ -52,11 +49,6 @@ const ProjectCard = ({data}) => {
 
   const imgSrc = getSrc(data.imgSrc);
 
-  let Bottom = styled.div`
-    position: absolute;
-    bottom: 14px;
-  `
-
   return (
     <a href={data.link}>
     <Card>
@@ -74,11 +66,11 @@ const ProjectCard = ({data}) => {
       {/*<GatsbyImage image={myImg} alt={data.name} />*/}
 
       <Card.ImgOverlay>
-        <Bottom>
+        <div className="bottom">
           <Card.Title>{data.name}</Card.Title>
           <Card.Text className="text-white text-small">{data.stack.join(" . ")}</Card.Text>
           <Card.Text>{data.desc}</Card.Text>
-        </Bottom>
+        </div>
       </Card.ImgOverlay>
     </Card>
     </a>

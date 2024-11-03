@@ -8,18 +8,21 @@ function getInitialColorMode() {
   if (hasPersistedPreference) {
     return persistedColorPreference;
   }
+
   // If they haven't been explicit, let's check the media query
   const mql = window.matchMedia('(prefers-color-scheme: dark)');
   const hasMediaQueryPreference = typeof mql.matches === 'boolean';
   if (hasMediaQueryPreference) {
     return mql.matches ? 'dark' : 'light';
   }
+  
   // If they are using a browser/OS that doesn't support
   // color themes, let's default to 'light'.
   return 'light';
 }
 
-export const ThemeContext = createContext();
+export const ThemeContext = createContext({});
+
 export const ThemeProvider = ({ children }) => {
   const [colorMode, rawSetColorMode] = useState(getInitialColorMode);
   const setColorMode = (value) => {
@@ -27,6 +30,21 @@ export const ThemeProvider = ({ children }) => {
     // Persist it on update
     window.localStorage.setItem('color-mode', value);
   };
+
+  
+  // const [theme, toggleTheme] = useDarkMode();
+  // const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
+  // const Toggle = ({ toggleTheme }) => {
+    
+  //   return (
+  //     <button onClick={toggleTheme} >
+  //       Toggle theme
+  //     </button>
+  //   );
+  // };
+
+  
   return (
     <ThemeContext.Provider value={{ colorMode, setColorMode }}>
       {children}

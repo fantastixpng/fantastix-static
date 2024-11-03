@@ -1,7 +1,6 @@
-import React, { useState } from "react"
+import React, { Children, useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import { Button, Col, Container, Row, Modal } from "react-bootstrap"
-// import styled, { css } from "styled-components"
 import { useSpring, animated } from 'react-spring'
 
 import Layout from "../components/Layout/Layout"
@@ -10,7 +9,7 @@ import ContactForm from "../components/ContactForm"
 import ProjectCard from "../components/ProjectCard"
 import RequestQuoteFormStep from "../components/RequestQuoteFormStep"
 
-import projects from "../dbs/projects"
+import projects from "../data/projects"
 // #1f2532
 
 // const Button2 = styled.a`
@@ -92,8 +91,6 @@ function ModalButton() {
 
 const IndexPage = () => (
   <Layout>
-    <Seo title="Home" />
-
     {/*<Number/>*/}
 
     <section id="hero" className="has-divider mt-20">
@@ -756,7 +753,19 @@ const IndexPage = () => (
       <div class="circle-shape1"><img src="/bg-showcase-2.jpg" alt="project"/></div>
     </section>*/}
 
+    {/* <form name="contact" netlify>
+      <p>
+        <label>Name <input type="text" name="name" /></label>
+      </p>
+      <p>
+        <label>Email <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form> */}
+
   </Layout>
 )
 
-export default IndexPage
+export default IndexPage;

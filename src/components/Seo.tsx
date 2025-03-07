@@ -74,7 +74,7 @@ const Seo = ({ description, lang, meta, title }) => {
           },
         ].concat(meta)}
       /> */}
-      <head>
+      {/* <head> */}
         <html lang={config.siteLanguage} />
         <title>{`${title} | Fantastix`}</title>
         <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
@@ -97,7 +97,7 @@ const Seo = ({ description, lang, meta, title }) => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
-      </head>
+      {/* </head> */}
     </>
   )
 }

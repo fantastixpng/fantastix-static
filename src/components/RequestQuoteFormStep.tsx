@@ -3,7 +3,12 @@ import { Alert, Button, Container, Row } from "react-bootstrap"
 
 class RequestQuoteFormStep extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+
+    type StateProp = {
+      step: number;
+    };
+
     this.state = {
       step: 1,
 
@@ -262,13 +267,3 @@ class RequestQuoteFormStep extends Component {
 }
 
 export default RequestQuoteFormStep;
-
-
-const Hello = () => {
-
-  return (
-    <>
-      Hello
-    </>
-  )
-}

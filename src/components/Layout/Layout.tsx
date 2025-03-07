@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 // import 'inter-ui'
 import PropTypes from 'prop-types'
 
-import { ThemeProvider } from "../../hooks/contexts"
+import { ThemeProvider, ToastProvider } from "../../contexts/app-context"
 import { lightTheme, darkTheme } from "../../hooks/theme"
 import { useDarkMode } from "../../hooks/use-dark-mode"
 import { useSiteMetadata } from "../../hooks/use-site-metadata";
@@ -13,17 +13,19 @@ import Footer from "../Footer2"
 
 import "./Layout.scss"
 import Seo from "../Seo";
+import { ToastContainer } from "react-bootstrap"
 
 const Layout = ({ children }) => {
   const { site } = useSiteMetadata();
 
   return (
-      <>
+    <>
       {/* <ThemeProvider> */}
+      {/* <ToastProvider> */}
 
         <Seo title="Home" />
 
-        <Header/>
+        <Header />
 
         {/*<Breadcrumb>
           <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
@@ -37,9 +39,10 @@ const Layout = ({ children }) => {
 
         {children}
 
-        <Footer/>
+        <Footer />
+      {/* </ToastProvider> */}
       {/* </ThemeProvider> */}
-      </>
+    </>
   )
 }
 

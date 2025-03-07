@@ -52,7 +52,7 @@ const ProjectCard = ({data}) => {
   return (
     <a href={data.link}>
     <Card>
-      <Card.Img src={data.imgSrc} />
+      <Card.Img src={data.imgSrc} className="" />
       {/*<StaticImage
         className="card-img-top"
         src={imgSrc}
@@ -70,6 +70,7 @@ const ProjectCard = ({data}) => {
           <Card.Title>{data.name}</Card.Title>
           <Card.Text className="text-white text-small">{data.stack.join(" . ")}</Card.Text>
           <Card.Text>{data.desc}</Card.Text>
+          <Card.Text className="badge bg-secondary">{data.type.join(" . ")}</Card.Text>
         </div>
       </Card.ImgOverlay>
     </Card>

@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react"
 import { Container, Navbar, NavLink } from "react-bootstrap"
 import Hamburger from 'hamburger-react'
 
-// import AnimatedIcon from "../components/AnimatedIcon"
-import logoBlack from "../images/logo-black.svg"
+import AnimatedIcon from "../components/AnimatedIcon"
+import LogoBlack from "../images/logo-black.svg"
+import { getImage, getImageData } from "gatsby-plugin-image"
 
 const navTop = {
   backgroundColor: "#333",
@@ -42,11 +43,12 @@ const Header = () => {
           <Navbar.Brand href="/" className="d-flex align-items-center mb-md-0 me-md-auto text-dark text-decoration-none">
             <figure className="mb-0 mb-lg-0 me-lg-4">
               <img
-                src={logoBlack}
+                src={LogoBlack}
                 width={160}
                 alt="logo"
                 className="d-inline-block align-top logo"
-              />
+              >
+              </img>
               {/*<span className="fs-4 hidden">fantastix</span>*/}
             </figure>
           </Navbar.Brand>
@@ -224,7 +226,7 @@ const Header = () => {
           {/*  aria-expanded="false"*/}
           {/*  aria-label="Toggle navigation">*/}
           {/*  <span className="navbar-toggler-icon"/>*/}
-          {/*  /!*<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" className="bi" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path></svg>*!/*/}
+          {/*  /!*<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" className="bi" fill="currentColor" viewBox="0 0 16 16"><path fillRule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path></svg>*!/*/}
           {/*</button>*/}
 
           {/*<div id="navbars" className="collapse navbar-collapse justify-content-end">*/}

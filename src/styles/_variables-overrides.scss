@@ -151,8 +151,8 @@ $accent-color: #6a1b9a;
 
 // $accordion-icon-color:          #eee;
 // $accordion-icon-active-color:   #ddd;
-$accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus-lg' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'/></svg>");
-$accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash-lg' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z'/></svg>");
+$accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus-lg' viewBox='0 0 16 16'><path fillRule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'/></svg>");
+$accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash-lg' viewBox='0 0 16 16'><path fillRule='evenodd' d='M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z'/></svg>");
 
 
 // Line Height
@@ -209,7 +209,7 @@ $screen-xl: $breakpoint-xl;
 // Fonts
 
 $font-family-sans-serif:
-  "Poppins","Inter","Gilroy","Avenir Next","Source Sans Pro","GG","MazzardH","Segoe UI",Roboto,Helvetica Neue,Arial,
+  "Parkinsans","Inter","Gilroy","Avenir Next","Source Sans Pro","GG","MazzardH","Segoe UI",Roboto,Helvetica Neue,Arial,
   system-ui,
   // Safari for OS X and iOS (San Francisco)
   -apple-system,
@@ -226,8 +226,8 @@ $font-family-sans-serif:
 
 $font-family-monospace:       SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 
-$fonts-heading:               "Poppins","GalanoGrotesque",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-$fonts-body:                  "Poppins","Avenir Next","MazzardH","Segoe UI","GG","Gilroy","Inter","Source Sans Pro",Roboto,Helvetica Neue,Arial,system-ui,-apple-system,BlinkMacSystemFont,sans-serif,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+$fonts-heading:               "Parkinsans","GalanoGrotesque",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+$fonts-body:                  "Parkinsans","Avenir Next","MazzardH","Segoe UI","GG","Gilroy","Inter","Source Sans Pro",Roboto,Helvetica Neue,Arial,system-ui,-apple-system,BlinkMacSystemFont,sans-serif,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 
 $font-family-base:            $fonts-body;
 $font-family-code:            $font-family-monospace;

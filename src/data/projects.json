@@ -1,16 +1,153 @@
 [
-	{
-		"name": "PNGX-API",
-		"desc": "PNGX-API is an unofficial restful API that exposes stocks info from PNGX.com",
-		"imgSrc": "./bg-showcase-1.jpg",
-		"link": "https://pngx-api.clevercloud.io/stocks",
-		"stack": ["JavaScript", "NodeJs", "MongoDB"]
-	},
-	{
-		"name": "Fantastix",
-		"desc": "Fantastix's very own static website",
-		"imgSrc": "./bg-showcase-2.jpg",
-		"link": "https://www.fantastixpng.xyz",
-		"stack": ["JavaScript", "NodeJs", "Gatsby", "Bootstrap", "Scss", "ReactJs"]
-	}
+  {
+    "name": "Nuku-API",
+    "desc": "Nuku-API (formerly PNGX-API) is an unofficial restful API that exposes stocks info from PNGX",
+    "imgSrc": "./bg-showcase-1.jpg",
+    "link": "https://pngx-api.clevercloud.io/stocks",
+    "stack": ["JavaScript", "NodeJs", "MongoDB"],
+    "open_source": true,
+		"type": ["API"],
+    "show": true
+  },
+  {
+    "name": "Nuku Web App",
+    "desc": "Nuku Web Application",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://pngx-api-client.vercel.app",
+    "stack": ["JavaScript", "NodeJs", "ReactJs", "NextJs", "Shadcn"],
+    "open_source": false,
+		"type": ["Web", "Hybrid"],
+    "show": true
+  },
+  {
+    "name": "Nuku Mobile App",
+    "desc": "Nuku Mobile Application",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://pngx-api-client.vercel.app",
+    "stack": ["JavaScript", "NodeJs", "ReactJs", "NextJs", "Shadcn"],
+    "open_source": false,
+		"type": ["Hybrid", "Android", "iOS"],
+    "show": false
+  },
+  {
+    "name": "Nuku Desktop App",
+    "desc": "Desktop version of the Nuku Web App",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "#",
+    "stack": ["JavaScript", "NodeJs", "Electron", "Scss", "ReactJs"],
+    "open_source": false,
+		"type": ["Hybrid"],
+    "show": false
+  },
+  {
+    "name": "Fantastix",
+    "desc": "Fantastix's very own static website",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://www.fantastixpng.xyz",
+    "stack": ["JavaScript", "NodeJs", "Gatsby", "Bootstrap", "Scss", "ReactJs"],
+    "open_source": false,
+		"type": ["Web"],
+    "show": true
+  },
+  {
+    "name": "PraisDrop",
+    "desc": "PraisDrop is an intelligent product price comparision app that tells you which shops are selling products at cheaper price",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://praisdrop.vercel.app",
+    "stack": ["JavaScript", "NodeJs", "VueJs", "Bootstrap", "Scss", "CapacitorJs", "Ionic Framework"],
+    "open_source": false,
+		"type": ["Web", "Hybrid"],
+    "show": false
+  },
+  {
+    "name": "930",
+    "desc": "930 is a text-based microsocial media made with ❤️ for PNGeans",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://930.vercel.app",
+    "stack": ["JavaScript", "NodeJs", "NextJs", "NextUI", "Scss", "ReactJs"],
+    "open_source": false,
+		"type": ["Web"],
+    "show": true
+  },
+  {
+    "name": "Asset Management System",
+    "desc": "Asset Management System",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://mpg.vercel.app",
+    "stack": ["JavaScript", "NodeJs", "NextJs", "Shadcn", "Scss", "ReactJs"],
+    "open_source": false,
+		"type": ["Web"],
+    "show": true
+  },
+  {
+    "name": "Em Earthquake Ah",
+    "desc": "The web-app aggregates all earthquakes occurred in PNG",
+    "imgSrc": "./bg-showcase-3.jpg",
+    "link": "https://em-earthquake-ah.netlify.app",
+    "repo": "https://github.com/chrisaugu/EmEarthquakeAh",
+    "stack": ["JavaScript", "NodeJs", "ReactJs", "NextJs", "Grum"],
+    "open_source": true,
+		"type": ["Web"],
+    "show": true
+  },
+  {
+    "name": "Ticket",
+    "desc": "A Ticket processing software",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://github.com/chrisaugu/Ticket",
+    "stack": ["JavaScript", "NodeJs", "Gatsby", "Bootstrap", "Scss", "ReactJs"],
+    "open_source": false,
+		"type": ["Desktop", "Hybrid"],
+    "show": true
+  },
+  {
+    "name": "UptimeMonitor",
+    "desc": "Monitor you websites uptime and get realtime notifications when websites are down",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://github.com/chrisaugu/uptimemonitor",
+    "stack": ["Python", "Django", "JavaScript", "NodeJs", "VueJs", "Ant Design Vue"],
+    "open_source": false,
+		"type": ["Web"],
+    "show": false
+  },
+  {
+    "name": "WhoisLookUp",
+    "desc": "Search any .pg domain name",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://github.com/chrisaugu/whoislookup",
+    "stack": ["JavaScript", "NodeJs", "Gatsby", "Bootstrap", "Scss", "ReactJs"],
+    "open_source": false,
+		"type": ["Web"],
+    "show": false
+  },
+  {
+    "name": "Scammers Database",
+    "desc": "Search any .pg domain name",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://scammers-database.vercel.app/",
+    "stack": ["JavaScript", "TypeScript", "NodeJs", "NextJs", "Shadcn", "ReactJs"],
+    "open_source": false,
+		"type": ["Web"],
+    "show": true
+  },
+  {
+    "name": "pngNationalColor",
+    "desc": "A NPM library for getting PNG colors",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://scammers-database.vercel.app/",
+    "stack": ["JavaScript", "TypeScript", "NodeJs", "NextJs", "Shadcn", "ReactJs"],
+    "open_source": true,
+		"type": ["NPM Library"],
+    "show": true
+  },
+  {
+    "name": "Made In PNG",
+    "desc": "A public curated list of awesome things developed by PNGeans",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://chrisaugu.github.io/MadeInPNG/",
+    "stack": ["JavaScript", "TypeScript", "NodeJs", "NextJs", "Shadcn", "ReactJs"],
+    "open_source": true,
+		"type": ["Web"],
+    "show": true
+  }
 ]

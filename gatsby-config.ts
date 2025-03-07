@@ -19,17 +19,19 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: "data",
         path: `./src/data`,
       },
     },
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /images\/.*\.svg/,
-        }
-      }
-    },
+    // {
+    //   resolve: "gatsby-plugin-react-svg",
+    //   options: {
+    //     rule: {
+    //       // include: /images\/.*\.svg/,
+    //       include: /images/
+    //     }
+    //   }
+    // },
     'gatsby-plugin-theme-ui',
     {
       resolve: `gatsby-plugin-sass`,
@@ -37,7 +39,6 @@ const config: GatsbyConfig = {
       //   includePaths: ["src/scss/bootstrap"],
       // }
     },
-    // `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -71,7 +72,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `poppins:300,400,500,600,700,800,900`,
+          `parkinsans:300,400,500,600,700,800,900`,
           `inter:300,400,500,600,700,800,900`
         ],
         display: 'swap'

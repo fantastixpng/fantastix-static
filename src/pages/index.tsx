@@ -17,6 +17,7 @@ import PricingCard from "../components/Sections/PricingCard"
 import PricingCard2 from "../components/Sections/PricingCard2"
 import OurBestPractices from "../components/Sections/OurBestPractices"
 import OurServices from "../components/Sections/OurServices"
+import OurProducts from "../components/Sections/OurProducts"
 
 // #1f2532
 
@@ -118,7 +119,6 @@ const IndexPage = () => (
               alt="Web development"
               className="img-fluid"
               quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col
@@ -178,11 +178,13 @@ const IndexPage = () => (
       </div>
     </section>
 
-    <WhoWeAre/>
+    <WhoWeAre />
 
-    <OurServices/>
-    
+    <OurServices />
+
     <OurWork />
+
+    <OurProducts />
 
     <section id="process" className="">
       <Container>
@@ -260,20 +262,18 @@ const IndexPage = () => (
       <Container>
         <Row className="justify-content-center mb-10">
           <div className="col-xl-8 col-lg-9 text-center">
-            <h5 className="display-5 mx-xl-10">Tools and Technologies</h5>
+            <h5 className="display-5 mx-xl-10">Technologies and Platforms</h5>
             <p className="lead">
-              Tools and technologies we use for our projects.
+              Technologies and Platforms We Work With
             </p>
           </div>
         </Row>
-        <Row className="row-cols-4 g-5 text-center">
+        <Row className="row-cols-3 row-cols-lg-4 gy-5 text-center">
           <Col>
             <StaticImage
               src="../images/icons/github-icon.svg"
               alt="Kotlin"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col>
@@ -281,35 +281,27 @@ const IndexPage = () => (
               src="../images/icons/wordpress-icon.svg"
               alt="Kotlin"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col>
             <StaticImage
-              src="../images/icons/npm.png"
+              src="../images/icons/npm-icon.svg"
               alt="Kotlin"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col>
             <StaticImage
-              src="../images/icons/webpack-icon.png"
+              src="../images/icons/webpack-icon.svg"
               alt="Kotlin"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col>
             <StaticImage
-              src="../images/icons/gulp.png"
+              src="../images/icons/gulp-icon.svg"
               alt="Kotlin"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col>
@@ -317,8 +309,6 @@ const IndexPage = () => (
               src="../images/icons/react-icon.svg"
               alt="Kotlin"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col>
@@ -326,8 +316,6 @@ const IndexPage = () => (
               src="../images/icons/javascript-icon.svg"
               alt="JavaScript"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col>
@@ -335,8 +323,6 @@ const IndexPage = () => (
               src="../images/icons/mongodb-icon.svg"
               alt="MongoDB"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col>
@@ -344,8 +330,6 @@ const IndexPage = () => (
               src="../images/icons/mysql-icon.svg"
               alt="MySQL"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col>
@@ -353,8 +337,6 @@ const IndexPage = () => (
               src="../images/icons/nodejs-icon.svg"
               alt="NodeJs"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col>
@@ -362,8 +344,6 @@ const IndexPage = () => (
               src="../images/icons/php-icon.svg"
               alt="Php"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col>
@@ -371,8 +351,13 @@ const IndexPage = () => (
               src="../images/icons/gatsbyjs-icon.svg"
               alt="Gatsby"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/nextjs-icon.svg"
+              alt="Gatsby"
+              height={50}
             />
           </Col>
           <Col>
@@ -380,8 +365,6 @@ const IndexPage = () => (
               src="../images/icons/android-icon.svg"
               alt="Gatsby"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col>
@@ -389,8 +372,6 @@ const IndexPage = () => (
               src="../images/icons/python-icon.svg"
               alt="Gatsby"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
             />
           </Col>
           <Col>
@@ -398,8 +379,13 @@ const IndexPage = () => (
               src="../images/icons/tailwind-css-icon.svg"
               alt="Gatsby"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/bootstrap-icon-5.svg"
+              alt="Gatsby"
+              height={50}
             />
           </Col>
           <Col>
@@ -407,8 +393,69 @@ const IndexPage = () => (
               src="../images/icons/vuejs-icon.svg"
               alt="Gatsby"
               height={50}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/laravel-icon.svg"
+              alt="Laravel"
+              height={50}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/vercel-icon.svg"
+              alt="Vercel"
+              height={50}
+            />
+          </Col>
+          {/* <Col>
+            <StaticImage
+              src="../images/icons/netlify-icon.svg"
+              alt="Netlify"
+              height={50}
+            />
+          </Col> */}
+          <Col>
+            <StaticImage
+              src="../images/icons/heroku-icon.svg"
+              alt="Heroku"
+              height={50}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/kotlin-icon.svg"
+              alt="Gatsby"
+              height={50}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/redis-icon.svg"
+              alt="Gatsby"
+              height={50}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/nodemon-icon.svg"
+              alt="Gatsby"
+              height={50}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/visual-studio-code-icon.svg"
+              alt="Gatsby"
+              height={50}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/webstorm-icon.svg"
+              alt="Gatsby"
+              height={50}
             />
           </Col>
         </Row>
@@ -461,7 +508,7 @@ const IndexPage = () => (
         </Row>
 
         <ContactForm />
-        
+
       </Container>
     </section>
 

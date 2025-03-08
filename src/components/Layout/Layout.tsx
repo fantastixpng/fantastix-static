@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
       {/* <ThemeProvider> */}
       {/* <ToastProvider> */}
 
-        <Seo title="Home" />
+        {/* <Seo title="Home" /> */}
 
         <Header />
 

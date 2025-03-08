@@ -6,7 +6,7 @@ export default function OurBestPractices() {
     <section id="our-best-practices">
       <Container>
 
-        <Row className="section-title g-5 justify-content-center mb-10">
+        <Row className="justify-content-center mb-10">
           <Col md={9} lg={8} className="text-center">
             <p className="fs-2">Our Best Practices</p>
             <h5 className="display-5">Some Of Our Best Practices</h5>

@@ -135,6 +135,26 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
       react: <Email url="https://example.com" />,
     });
 
+    // const Recipient = require("mailersend").Recipient;
+    // const EmailParams = require("mailersend").EmailParams;
+    // const MailerSend = require("mailersend");
+
+    // const mailersend = new MailerSend({
+    //   apiKey: "mlsn.e74dedf97c403369855787f7c088fba47b108ca37c46dfcf23b9e0cdc7a230b4",
+    // });
+
+    // const recipients = [new Recipient("recipient@email.com", "Recipient")];
+
+    // const emailParams = new EmailParams()
+    //   .setFrom("info@domain.com")
+    //   .setFromName("Your Name")
+    //   .setRecipients(recipients)
+    //   .setSubject("Subject")
+    //   .setHtml("Greetings from the team, you got this message through MailerSend.")
+    //   .setText("Greetings from the team, you got this message through MailerSend.");
+
+    // mailersend.send(emailParams);
+
     // axios
     //   .post("https://getform.io/f/d8df0e8c-f662-4cac-86cf-3f15982a9a93", {
     //     message: "Hello, World",
@@ -195,10 +215,10 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     let $this = this;
     let { validated, isLoading, showToast, show } = this.state;
 
-    function AlertDismissibleExample() {    
+    function AlertDismissibleExample() {
       if (show) {
         return (
-          <Alert variant={"success"} onClose={() => $this.setState({show: false})} dismissible className="mt-5" role={"alert"}>
+          <Alert variant={"success"} onClose={() => $this.setState({ show: false })} dismissible className="mt-5" role={"alert"}>
             <Alert.Heading>
               Message sent!
             </Alert.Heading>
@@ -354,7 +374,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
 
                 {/*<Loader loading={this.state.isLoading}/>*/}
 
-                <AlertDismissibleExample/>
+                <AlertDismissibleExample />
 
                 {/* <Email url="hello"/> */}
               </div>

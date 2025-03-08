@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Mobile App Development",
+        "desc": "Nuku-API (formerly PNGX-API) is an unofficial restful API that exposes stocks info from PNGX",
+        "icon": "./bg-showcase-1.jpg",
+        "show": true
+    },
+    {
+        "name": "Web App Development",
+        "desc": "Nuku-API (formerly PNGX-API) is an unofficial restful API that exposes stocks info from PNGX",
+        "icon": "./bg-showcase-1.jpg",
+        "show": true
+    },
+    {
+        "name": "Backend/API Development",
+        "desc": "Nuku-API (formerly PNGX-API) is an unofficial restful API that exposes stocks info from PNGX",
+        "icon": "./bg-showcase-1.jpg",
+        "show": true
+    },
+    {
+        "name": "Hybrid App Development",
+        "desc": "Nuku-API (formerly PNGX-API) is an unofficial restful API that exposes stocks info from PNGX",
+        "icon": "./bg-showcase-1.jpg",
+        "show": true
+    }
+]

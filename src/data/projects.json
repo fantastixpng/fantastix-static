@@ -11,7 +11,7 @@
   },
   {
     "name": "Nuku Web App",
-    "desc": "Nuku Web Application",
+    "desc": "Web client application of Nuku-API",
     "imgSrc": "./bg-showcase-2.jpg",
     "link": "https://pngx-api-client.vercel.app",
     "stack": ["JavaScript", "NodeJs", "ReactJs", "NextJs", "Shadcn"],
@@ -21,7 +21,7 @@
   },
   {
     "name": "Nuku Mobile App",
-    "desc": "Nuku Mobile Application",
+    "desc": "Mobile client application of Nuku-API",
     "imgSrc": "./bg-showcase-2.jpg",
     "link": "https://pngx-api-client.vercel.app",
     "stack": ["JavaScript", "NodeJs", "ReactJs", "NextJs", "Shadcn"],
@@ -31,7 +31,7 @@
   },
   {
     "name": "Nuku Desktop App",
-    "desc": "Desktop version of the Nuku Web App",
+    "desc": "Desktop client application of Nuku-API",
     "imgSrc": "./bg-showcase-2.jpg",
     "link": "#",
     "stack": ["JavaScript", "NodeJs", "Electron", "Scss", "ReactJs"],
@@ -41,7 +41,7 @@
   },
   {
     "name": "Fantastix",
-    "desc": "Fantastix's very own static website",
+    "desc": "Fantastix's very own website",
     "imgSrc": "./bg-showcase-2.jpg",
     "link": "https://www.fantastixpng.xyz",
     "stack": ["JavaScript", "NodeJs", "Gatsby", "Bootstrap", "Scss", "ReactJs"],
@@ -51,7 +51,7 @@
   },
   {
     "name": "PraisDrop",
-    "desc": "PraisDrop is an intelligent product price comparision app that tells you which shops are selling products at cheaper price",
+    "desc": "PraisDrop is a price comparision app that tells you which shops are selling products at cheaper price",
     "imgSrc": "./bg-showcase-2.jpg",
     "link": "https://praisdrop.vercel.app",
     "stack": ["JavaScript", "NodeJs", "VueJs", "Bootstrap", "Scss", "CapacitorJs", "Ionic Framework"],
@@ -71,13 +71,13 @@
   },
   {
     "name": "Asset Management System",
-    "desc": "Asset Management System",
+    "desc": "Asset Management System for MPG",
     "imgSrc": "./bg-showcase-2.jpg",
-    "link": "https://mpg.vercel.app",
+    "link": "#",
     "stack": ["JavaScript", "NodeJs", "NextJs", "Shadcn", "Scss", "ReactJs"],
     "open_source": false,
 		"type": ["Web"],
-    "show": true
+    "show": false
   },
   {
     "name": "Em Earthquake Ah",
@@ -94,7 +94,7 @@
     "name": "Ticket",
     "desc": "A Ticket processing software",
     "imgSrc": "./bg-showcase-2.jpg",
-    "link": "https://github.com/chrisaugu/Ticket",
+    "link": "#",
     "stack": ["JavaScript", "NodeJs", "Gatsby", "Bootstrap", "Scss", "ReactJs"],
     "open_source": false,
 		"type": ["Desktop", "Hybrid"],
@@ -104,7 +104,7 @@
     "name": "UptimeMonitor",
     "desc": "Monitor you websites uptime and get realtime notifications when websites are down",
     "imgSrc": "./bg-showcase-2.jpg",
-    "link": "https://github.com/chrisaugu/uptimemonitor",
+    "link": "#",
     "stack": ["Python", "Django", "JavaScript", "NodeJs", "VueJs", "Ant Design Vue"],
     "open_source": false,
 		"type": ["Web"],
@@ -114,7 +114,7 @@
     "name": "WhoisLookUp",
     "desc": "Search any .pg domain name",
     "imgSrc": "./bg-showcase-2.jpg",
-    "link": "https://github.com/chrisaugu/whoislookup",
+    "link": "#",
     "stack": ["JavaScript", "NodeJs", "Gatsby", "Bootstrap", "Scss", "ReactJs"],
     "open_source": false,
 		"type": ["Web"],
@@ -122,7 +122,7 @@
   },
   {
     "name": "Scammers Database",
-    "desc": "Search any .pg domain name",
+    "desc": "A public collection of sms scams",
     "imgSrc": "./bg-showcase-2.jpg",
     "link": "https://scammers-database.vercel.app/",
     "stack": ["JavaScript", "TypeScript", "NodeJs", "NextJs", "Shadcn", "ReactJs"],
@@ -134,7 +134,7 @@
     "name": "pngNationalColor",
     "desc": "A NPM library for getting PNG colors",
     "imgSrc": "./bg-showcase-2.jpg",
-    "link": "https://scammers-database.vercel.app/",
+    "link": "https://www.npmjs.com/package/@chrisaugu/png-national-color",
     "stack": ["JavaScript", "TypeScript", "NodeJs", "NextJs", "Shadcn", "ReactJs"],
     "open_source": true,
 		"type": ["NPM Library"],

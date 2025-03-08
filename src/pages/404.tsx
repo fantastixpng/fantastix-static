@@ -13,7 +13,6 @@ const headingStyles = {
   marginBottom: 64,
   maxWidth: 320,
 }
-
 const paragraphStyles = {
   marginBottom: 48,
 }

@@ -40,6 +40,10 @@ type ContactFormState = {
     channel: string;
     message: string;
   };
+  status: {
+    ok: boolean;
+    msg: string;
+  },
   isSubmitted: boolean;
   isLoading: boolean;
   validated: boolean;
@@ -72,6 +76,10 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
         channel: "",
         message: "",
       },
+      status: {
+        ok: false,
+        msg: ""
+      },
       isSubmitted: false,
       isLoading: false,
       validated: false,
@@ -81,9 +89,10 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleServerResponse = this.handleServerResponse.bind(this);
   }
 
-  handleSubmit = async (event) => {
+  handleSubmit = async (event: { preventDefault: () => void; target: any; stopPropagation: () => void; }) => {
     event.preventDefault()
     // const $alert = document.querySelector("[role=alert]");
     // const form = event.currentTarget;
@@ -110,32 +119,40 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
 
     // let formData = new FormData(form)
 
-    // formData.forEach(console.log)
-
-    // const resend = new Resend("re_BQTAeJqy_7GURJ9uQngdYP9xSVtz3mCFt")
-    // await resend.emails.send({
-    //   from: "Acme <onboarding@resend.dev>",
-    //   to: ["delivered@resend.dev"],
-    //   subject: "hello world",
-    //   html: "<p>it works!</p>",
-    //   react: <Email url="https://example.com" />,
+    // const formData = new FormData();
+    // Object.entries(query).forEach(([key, value]) => {
+    //   formData.append(key, value);
     // });
 
-    axios
-      .post("https://getform.io/f/d8df0e8c-f662-4cac-86cf-3f15982a9a93", {
-        message: "Hello, World",
-      }, {
-        headers: {
-          "Accept": "application/json",
-        },
-      })
-      .then(response => {
-        $this.setState({ show: true, content: "Message sent!" })
-      })
-      .catch(error => {
-        console.log(error)
-        $this.setState({show: true})
-      });
+    // formData.forEach(console.log)
+
+    const resend = new Resend("re_BQTAeJqy_7GURJ9uQngdYP9xSVtz3mCFt")
+    await resend.emails.send({
+      from: "Acme <onboarding@resend.dev>",
+      to: ["delivered@resend.dev"],
+      subject: "hello world",
+      html: "<p>it works!</p>",
+      react: <Email url="https://example.com" />,
+    });
+
+    // axios
+    //   .post("https://getform.io/f/d8df0e8c-f662-4cac-86cf-3f15982a9a93", {
+    //     message: "Hello, World",
+    //     email: "chrisaugu61@gmail.com"
+    //   }, {
+    //     headers: {
+    //       "Accept": "application/json",
+    //     },
+    //   })
+    //   .then(response => {
+    //     $this.setState({ show: true, content: "Message sent!" })
+    //     this.handleServerResponse(true, "Thanks!", form);
+    //   })
+    //   .catch(error => {
+    //     this.handleServerResponse(false, error.response.data.error, form);
+    //     console.log(error)
+    //     $this.setState({show: true})
+    //   });
 
     // $.ajax({
     //   url : "/contact",
@@ -162,6 +179,16 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     //     $('#status').text(jqXHR);
     //   }
     // });
+  }
+  handleServerResponse = (ok: boolean, msg: string, form: any) => {
+    this.setState({
+      isSubmitted: false,
+      status: { ok, msg }
+    });
+
+    if (ok) {
+      form.reset();
+    }
   }
 
   render() {
@@ -222,7 +249,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
                   label="First Name*"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="First Name" required />
+                  <Form.Control type="text" placeholder="First Name" required name="firstname" />
                   <div className="invalid-feedback">
                     Please enter your first name
                   </div>
@@ -234,7 +261,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
                   label="Last Name*"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="Last Name" required />
+                  <Form.Control type="text" placeholder="Last Name" required name="lastname" />
                   <div className="invalid-feedback">
                     Please enter your last name
                   </div>
@@ -249,7 +276,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
                   label="Email address*"
                   className="mb-3"
                 >
-                  <Form.Control type="email" placeholder="Email" required />
+                  <Form.Control type="email" placeholder="Email" required name="" />
                   <div className="invalid-feedback">
                     Please enter your email address
                   </div>

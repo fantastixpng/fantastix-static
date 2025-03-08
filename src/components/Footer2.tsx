@@ -9,11 +9,11 @@ const Footer = () => {
   const { site } = useSiteMetadata()
 
   return (
-    <footer className="footer py-8 bg-dark py-5 pb-5 border-top text-light">
+    <footer className="footer py-8 bg-black py-5 pb-5 border-top text-light">
 
       <Container className="mt-8">
         <Row className="mb-4 justify-content-center">
-          <Col as={"feGaussianBlur"} className="col-auto">
+          <Col className="col-auto">
             <Link to="/">
               <img src={logoWhite} className="icon" role="img" alt="fantastix" width="140"/>
             </Link>

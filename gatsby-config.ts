@@ -45,10 +45,10 @@ const config: GatsbyConfig = {
         name: `fantastix`,
         short_name: `fantastix`,
         start_url: `/`,
-        background_color: `#ddd`,
+        background_color: `#000`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
-        theme_color: `#ddd`,
+        theme_color: `#000`,
         display: `minimal-ui`,
         icon: `./src/images/logo-icon.png`, // This path is relative to the root of the site.
       },

@@ -5,7 +5,7 @@ export default function PricingCard2() {
   return (
     <section id="pricing" className="bg-dark-2">
       <Container>
-        <Row className="g-5 justify-content-center mb-10">
+        <Row className="gy-5 justify-content-center mb-10">
           <Col md={9} lg={8} className="text-center text-light">
             <h3 className="fw-light">Pricing</h3>
             <h3 className="fw-light">Pricing Plans</h3>

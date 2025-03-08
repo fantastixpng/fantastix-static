@@ -5,7 +5,7 @@ export default function WhoWeAre() {
   return (
     <section id="who-we-are" className="bg-dark text-light">
       <Container>
-        <Row className="g-5 justify-content-center mb-16">
+        <Row className="gy-5 justify-content-center mb-16">
           <Col md={9} lg={8} className="text-center">
             <h5 className="display-6 fw-light">Who We Are</h5>
             <h5 className="display-2">Our story</h5>

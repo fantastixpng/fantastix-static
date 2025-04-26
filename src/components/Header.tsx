@@ -38,7 +38,7 @@ const Header = () => {
         aria-label="Navbar"
         role="banner">
 
-        <Container xfluid={"xxl"} className="navbar-container">
+        <Container className="navbar-container">
 
           <Navbar.Brand href="/" className="d-flex align-items-center mb-md-0 me-md-auto text-dark text-decoration-none">
             <figure className="mb-0 mb-lg-0 me-lg-4">
@@ -54,8 +54,8 @@ const Header = () => {
           </Navbar.Brand>
 
           {/*<AnimatedIcon/>*/}
-          <Navbar.Toggle as="div">
-            <Hamburger rounded toggled={isOpen} toggle={setOpen} size="23" />
+          <Navbar.Toggle>
+            {/* <Hamburger rounded toggled={isOpen} toggle={setOpen} size="23" /> */}
           </Navbar.Toggle>
 
           <Navbar.Collapse className="justify-content-end">

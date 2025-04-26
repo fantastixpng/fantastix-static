@@ -18,6 +18,7 @@ import PricingCard2 from "../components/Sections/PricingCard2"
 import OurBestPractices from "../components/Sections/OurBestPractices"
 import OurServices from "../components/Sections/OurServices"
 import OurProducts from "../components/Sections/OurProducts"
+import RequestQuoteForm from "../components/RequestQuoteForm"
 
 // #1f2532
 
@@ -84,7 +85,8 @@ function ModalButton() {
           <Modal.Title>Request a Quote</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <RequestQuoteFormStep />
+          {/* <RequestQuoteFormStep /> */}
+          <RequestQuoteForm />
         </Modal.Body>
         {/*<Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
@@ -139,7 +141,7 @@ const IndexPage = () => (
               <Button href="#contact" variant={"dark"} size={"lg"}>
                 Get a free Quote
               </Button>
-              {/*<ModalButton />*/}
+              {/* <ModalButton /> */}
             </div>
           </Col>
         </Row>
@@ -497,7 +499,7 @@ const IndexPage = () => (
             <h2 className="display-3">How can we help you?</h2>
             {/*<p>Ready to build the app of your dreams? Interested to find out more about the Fantastix? Fill out the form below to get in contact with our team to discuss your website needs.</p>*/}
             <p>
-              We love hearing from our clients. Whether its feedback, queries or
+              We love hearing from our clients. Whether it's feedback, queries or
               even criticism, we are all ears.
               <br />
               Contact us now to discuss how we can scale your project to the
@@ -552,18 +554,6 @@ const IndexPage = () => (
       </div>
       <div class="circle-shape1"><img src="/bg-showcase-2.jpg" alt="project"/></div>
     </section>*/}
-
-    {/* <form name="contact" netlify>
-      <p>
-        <label>Name <input type="text" name="name" /></label>
-      </p>
-      <p>
-        <label>Email <input type="email" name="email" /></label>
-      </p>
-      <p>
-        <button type="submit">Send</button>
-      </p>
-    </form> */}
 
     <section id="signature" className="bg-light text-black text-center">
       <Container>

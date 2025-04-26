@@ -1,19 +1,9 @@
-import React, { Component } from "react"
+import React, { Component, FormEvent } from "react"
 import { Button, Row, Col, Form, Toast, ToastContainer, Alert } from "react-bootstrap"
 import axios from "axios"
 import { Resend } from "resend";
+import { useForm, ValidationError } from '@formspree/react';
 import Email from "./Email";
-// import { useForm, ValidationError } from '@formspree/react';
-
-// const [state, handleSubmit] = useForm("xbjwgyay");
-// if (state.succeeded) {
-//   return <p>Thanks for joining!</p>;
-// }
-// <ValidationError
-//   prefix="Message"
-//   field="message"
-//   errors={state.errors}
-// />
 
 // const [serverState, setServerState] = useState({
 //       submitting: false,
@@ -92,12 +82,28 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     this.handleServerResponse = this.handleServerResponse.bind(this);
   }
 
-  handleSubmit = async (event: { preventDefault: () => void; target: any; stopPropagation: () => void; }) => {
+  handleSubmit = async (event) => {
     event.preventDefault()
     // const $alert = document.querySelector("[role=alert]");
     // const form = event.currentTarget;
     const form = event.target;
     const $this = this;
+    const formData = new FormData(form);
+
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: new URLSearchParams(formData).toString(),
+    // })
+    //   .then(() => {
+    //     document.querySelector('.success').innerText =
+    //       "Thank you for reaching out to us, we'd get back to you shortly.";
+    //     setName('');
+    //     setEmail('');
+    //     setPhone('');
+    //     setMessage('');
+    //   })
+    //   .catch((error) => document.querySelector('.error').innerText = 'Something went wrong, pls try again.');
 
     if (form.checkValidity() === false) {
       event.preventDefault()
@@ -105,9 +111,9 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     }
 
     this.setState({
-      //   isSubmitted: true,
+      isSubmitted: true,
       isLoading: true,
-      //   validated: true,
+      validated: true,
       showToast: false
     })
 
@@ -117,23 +123,38 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     //   return false;
     // }
 
-    // let formData = new FormData(form)
-
-    // const formData = new FormData();
     // Object.entries(query).forEach(([key, value]) => {
     //   formData.append(key, value);
     // });
 
     // formData.forEach(console.log)
 
-    const resend = new Resend("re_BQTAeJqy_7GURJ9uQngdYP9xSVtz3mCFt")
-    await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
-      to: ["delivered@resend.dev"],
-      subject: "hello world",
-      html: "<p>it works!</p>",
-      react: <Email url="https://example.com" />,
-    });
+    // const resend = new Resend("re_BQTAeJqy_7GURJ9uQngdYP9xSVtz3mCFt")
+    // await resend.emails.send({
+    //   from: "Acme <onboarding@resend.dev>",
+    //   to: ["delivered@resend.dev"],
+    //   subject: "hello world",
+    //   html: "<p>it works!</p>",
+    //   react: <Email url="https://example.com" />,
+    // });
+
+    // const response = await fetch("https://notify.cx/api/public/v1/send-email", {
+    //   method: "POST",
+    //   mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     // "x-api-key": process.env.NOTIFY_API_KEY,
+    //     "x-api-key": "1838c9dd-6009-46ff-a763-090aaf8bb0d5"
+    //   },
+    //   body: JSON.stringify({
+    //     to: 'chrisaugu61@gmail.com',
+    //     subject: 'Hello world',
+    //     message: 'Sending myself a test email from Notify! 🚀'
+    //   }),
+    // });
+    // let result = await response.text();
+    // console.log(result)
 
     // const Recipient = require("mailersend").Recipient;
     // const EmailParams = require("mailersend").EmailParams;
@@ -154,10 +175,15 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     //   .setText("Greetings from the team, you got this message through MailerSend.");
 
     // mailersend.send(emailParams);
+    // console.log(formData.entries())
 
     // axios
     //   .post("https://getform.io/f/d8df0e8c-f662-4cac-86cf-3f15982a9a93", {
-    //     message: "Hello, World",
+    //     message: `
+    //       First Name: {firstname}
+    //       Last Name: {lastname}
+    //       Email: {email}
+    //     `,
     //     email: "chrisaugu61@gmail.com"
     //   }, {
     //     headers: {
@@ -171,7 +197,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     //   .catch(error => {
     //     this.handleServerResponse(false, error.response.data.error, form);
     //     console.log(error)
-    //     $this.setState({show: true})
+    //     $this.setState({ show: true })
     //   });
 
     // $.ajax({
@@ -252,134 +278,16 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
       <>
         {/* <button onClick={toggleShowToast}>dd</button> */}
         <div role="form">
-          <Form
-            id="contact-form"
-            className="needs-validation"
-            method="post"
-            encType="multipart/form-data"
-            noValidate
-            validated={validated}
-            onSubmit={this.handleSubmit}
-          >
-            <input type="hidden" name="_gotcha" style={{ display: "none !important" }} />
-            <Row className="g-3 justify-content-center">
-              <Col md={5} lg={4} xl={4} className="col-6">
-                <Form.FloatingLabel
-                  controlId="firstname"
-                  label="First Name*"
-                  className="mb-3"
-                >
-                  <Form.Control type="text" placeholder="First Name" required name="firstname" />
-                  <div className="invalid-feedback">
-                    Please enter your first name
-                  </div>
-                </Form.FloatingLabel>
-              </Col>
-              <Col md={5} lg={4} xl={4} className="col-6">
-                <Form.FloatingLabel
-                  controlId="lastname"
-                  label="Last Name*"
-                  className="mb-3"
-                >
-                  <Form.Control type="text" placeholder="Last Name" required name="lastname" />
-                  <div className="invalid-feedback">
-                    Please enter your last name
-                  </div>
-                </Form.FloatingLabel>
-              </Col>
-            </Row>
 
-            <Row className="g-3 justify-content-center">
-              <Col md={10} lg={8} xl={8} className="col-12">
-                <Form.FloatingLabel
-                  controlId="email"
-                  label="Email address*"
-                  className="mb-3"
-                >
-                  <Form.Control type="email" placeholder="Email" required name="" />
-                  <div className="invalid-feedback">
-                    Please enter your email address
-                  </div>
-                </Form.FloatingLabel>
-              </Col>
-            </Row>
+          {/* <ContactUsForm handleSubmit={this.handleSubmit} validated={validated} /> */}
 
-            <Row className="g-3 justify-content-center">
-              <Col md={10} lg={8} xl={8} className="col-12">
-                <Form.FloatingLabel
-                  controlId="phonenumber"
-                  label="Phone number*"
-                  className="mb-3"
-                >
-                  <Form.Control
-                    type="phone"
-                    placeholder="Phone number"
-                    required
-                  />
+          {/*<Loader loading={this.state.isLoading}/>*/}
 
-                  <div className="invalid-feedback">
-                    Please enter your phone number
-                  </div>
-                </Form.FloatingLabel>
-              </Col>
-            </Row>
+          <AlertDismissibleExample />
 
-            <Row className="g-3 justify-content-center">
-              <Col md={10} lg={8} xl={8} className="col-12">
-                <Form.FloatingLabel
-                  controlId="channel"
-                  label="How did you hear about us?"
-                  className="mb-3"
-                >
-                  <Form.Select aria-label="Floating label select example">
-                    <option>Select an Option</option>
-                    <option value="Referral">Referral</option>
-                    <option value="Google Search">Google Search</option>
-                    <option value="Facebook">Facebook</option>
-                    <option value="LinkedIn">LinkedIn</option>
-                    <option value="Twitter">Twitter</option>
-                    <option value="Instagram">Instagram</option>
-                    <option value="Other">Other</option>
-                  </Form.Select>
-                </Form.FloatingLabel>
-              </Col>
-            </Row>
+          {/* <Email url="hello"/> */}
+          <ContactFormspree />
 
-            <Row className="g-3 justify-content-center">
-              <Col md={10} lg={8} xl={8} className="col-12">
-                <Form.FloatingLabel
-                  controlId="message"
-                  label="Share your project details"
-                  className="mb-3"
-                >
-                  <Form.Control
-                    as={"textarea"}
-                    placeholder="Share your project details"
-                    style={{ height: "200px" }}
-                    required
-                  />
-                  {/*<label htmlFor="message">Message</label>*/}
-                </Form.FloatingLabel>
-              </Col>
-            </Row>
-
-            <Row className="g-3 justify-content-center">
-              <div className="col-12 col-md-10 col-lg-8 col-xl-8">
-                <Button
-                  className="bg-dark btn btn-lg text-light w-100 w-md-auto"
-                  type="submit"
-                >
-                  Send
-                </Button>
-
-                {/*<Loader loading={this.state.isLoading}/>*/}
-
-                <AlertDismissibleExample />
-
-                {/* <Email url="hello"/> */}
-              </div>
-            </Row>
-          </Form>
 
           <ToastContainer>
             <Toast show={showToast} onClose={toggleShowToast}>
@@ -397,4 +305,159 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
   }
 }
 
-export default ContactForm
+// export default ContactForm;
+
+export default function ContactFormspree() {
+  const [state, handleSubmit] = useForm("xpwdwdzj");
+
+  if (state.succeeded) {
+    return <p className="container">Thanks for contacting us. We get back to you soon!</p>;
+  }
+
+  return (
+    <ContactUsForm
+      validated={null}
+      handleSubmit={handleSubmit}
+      isSubmitted={state.submitting}
+      isSubmitting={state.submitting}
+      errors={state.errors}
+    />
+  );
+}
+
+
+function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, errors }) {
+  return (
+    <Form
+      id="contact-form"
+      className="needs-validation"
+      method="post"
+      encType="multipart/form-data"
+      noValidate
+      validated={validated}
+      onSubmit={handleSubmit}
+      name="contact"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      netlify-honeypot="bot-field"
+    >
+      {/* <input type="hidden" name="_gotcha" style={{ display: "none !important" }} /> */}
+      {/* <input type="hidden" name="bot-field" /> */}
+      {/* <input type="hidden" name="form-name" value="contact" /> */}
+
+      <Row className="g-3 justify-content-center">
+        <Col md={5} lg={4} xl={4} className="col-6">
+          <Form.FloatingLabel
+            controlId="firstname"
+            label="First Name*"
+            className="mb-3"
+          >
+            <Form.Control type="text" placeholder="First Name" required name="firstname" />
+            <div className="invalid-feedback">
+              Please enter your first name
+            </div>
+          </Form.FloatingLabel>
+        </Col>
+        <Col md={5} lg={4} xl={4} className="col-6">
+          <Form.FloatingLabel
+            controlId="lastname"
+            label="Last Name*"
+            className="mb-3"
+          >
+            <Form.Control type="text" placeholder="Last Name" required name="lastname" />
+            <div className="invalid-feedback">
+              Please enter your last name
+            </div>
+          </Form.FloatingLabel>
+        </Col>
+      </Row>
+
+      <Row className="g-3 justify-content-center">
+        <Col md={10} lg={8} xl={8} className="col-12">
+          <Form.FloatingLabel
+            controlId="email"
+            label="Email address*"
+            className="mb-3"
+          >
+            <Form.Control type="email" placeholder="Email" required name="email" />
+            <div className="invalid-feedback">
+              Please enter your email address
+            </div>
+          </Form.FloatingLabel>
+        </Col>
+      </Row>
+
+      <Row className="g-3 justify-content-center">
+        <Col md={10} lg={8} xl={8} className="col-12">
+          <Form.FloatingLabel
+            controlId="phonenumber"
+            label="Phone number*"
+            className="mb-3"
+          >
+            <Form.Control
+              type="phone"
+              placeholder="Phone number"
+              required
+              name="phone"
+            />
+
+            <div className="invalid-feedback">
+              Please enter your phone number
+            </div>
+          </Form.FloatingLabel>
+        </Col>
+      </Row>
+
+      <Row className="g-3 justify-content-center">
+        <Col md={10} lg={8} xl={8} className="col-12">
+          <Form.FloatingLabel
+            controlId="channel"
+            label="How did you hear about us?"
+            className="mb-3"
+          >
+            <Form.Select aria-label="Floating label select example" name="channel">
+              <option>Select an Option</option>
+              <option value="Referral">Referral</option>
+              <option value="Google Search">Google Search</option>
+              <option value="Facebook">Facebook</option>
+              <option value="LinkedIn">LinkedIn</option>
+              <option value="Twitter">Twitter</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Other">Other</option>
+            </Form.Select>
+          </Form.FloatingLabel>
+        </Col>
+      </Row>
+
+      <Row className="g-3 justify-content-center">
+        <Col md={10} lg={8} xl={8} className="col-12">
+          <Form.FloatingLabel
+            controlId="message"
+            label="Share your project details"
+            className="mb-3"
+          >
+            <Form.Control
+              as={"textarea"}
+              placeholder="Share your project details"
+              style={{ height: "200px" }}
+              required
+              name="message"
+            />
+            {/*<label htmlFor="message">Message</label>*/}
+          </Form.FloatingLabel>
+        </Col>
+      </Row>
+
+      <Row className="g-3 justify-content-center">
+        <div className="col-12 col-md-10 col-lg-8 col-xl-8">
+          <Button
+            className="bg-dark btn btn-lg text-light w-100 w-md-auto"
+            type="submit"
+          >
+            Send
+          </Button>
+        </div>
+      </Row>
+    </Form>
+  )
+}

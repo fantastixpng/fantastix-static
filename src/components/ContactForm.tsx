@@ -311,7 +311,7 @@ export default function ContactFormspree() {
   const [state, handleSubmit] = useForm("xpwdwdzj");
 
   if (state.succeeded) {
-    return <p className="container">Thanks for contacting us. We get back to you soon!</p>;
+    return <p className="container">Thanks for contacting us. We'll get back to you soon!</p>;
   }
 
   return (

@@ -203,7 +203,7 @@ const IndexPage = () => (
         </Row>
         <Row>
           <Col sm={12} md={6} lg={6} className="mt-10">
-            <img src="bg-showcase-1.jpg" alt="" className="img-fluid" />
+            <img src="/dev-environment.svg" alt="dev" className="img-fluid" />
           </Col>
           <Col sm={12} md={6} lg={6} className="mt-10">
             <div className="">

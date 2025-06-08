@@ -18,5 +18,26 @@
     "open_source": false,
 		"type": ["Web"],
     "show": false
+  },
+  {
+    "name": "PUT Building & Construction Website",
+    "desc": "PUT Building & Construction Website",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://put-building-construction-website.vercel.app",
+    "links": "https://put-bnc-website.netlify.app",
+    "stack": ["JavaScript", "NodeJs", "Bootstrap", "Scss"],
+    "open_source": false,
+		"type": ["Web"],
+    "show": false
+  },
+  {
+    "name": "BlueLabsDesign Website",
+    "desc": "BlueLabsDesign Website",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "link": "https://bluelabsdesign.netlify.app",
+    "stack": ["JavaScript", "NodeJs", "Bootstrap", "Scss"],
+    "open_source": false,
+		"type": ["Web"],
+    "show": false
   }
 ]

@@ -1,32 +1,72 @@
-@charset "UTF-8";
+// // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+// @use "../../node_modules/bootstrap/scss/functions";
 
-// Bootstrap functions
-// @use "./scss/functions";
-// @use "./scss/variables";
-// @use "./scss/mixins";
-// @use "./scss/utilities";
+// // Custom functions
+// @use "functions-overrides";
 
-// Custom functions
-@use "functions";
-
-// Custom mixins
-@use "mixins";
-
-// custom variables overriding bootstrap default variable
+// // 2. Include any default variable overrides here
 @use "variables-overrides";
 
-// Bootstrap core components
-// @use "./scss/bootstrap";
-// @use "bootstrap";
+// // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+// // @use "../../node_modules/bootstrap/scss/variables";
+// // @use "../../node_modules/bootstrap/scss/variables-dark";
 
-// Custom utilities
-@use "utilities";
+// // 4. Include any default map overrides here
+// @use "maps-overrides";
+
+// // 5. Include remainder of required parts
+// @use "../../node_modules/bootstrap/scss/maps";
+
+// // Custom mixins
+// @use "mixins";
+
+// @use "../../node_modules/bootstrap/scss/mixins";
+// @use "../../node_modules/bootstrap/scss/root";
+
+// // Custom utilities
+// @use "utilities";
+
+// // 6. Include any other optional stylesheet partials as desired; list below is not inclusive of all available stylesheets
+// @use "../../node_modules/bootstrap/scss/utilities";
+// @use "../../node_modules/bootstrap/scss/reboot";
+// @use "../../node_modules/bootstrap/scss/type";
+// @use "../../node_modules/bootstrap/scss/images";
+// @use "../../node_modules/bootstrap/scss/containers";
+// @use "../../node_modules/bootstrap/scss/grid";
+// @use "../../node_modules/bootstrap/scss/tables";
+// @use "../../node_modules/bootstrap/scss/forms";
+// @use "../../node_modules/bootstrap/scss/buttons";
+// @use "../../node_modules/bootstrap/scss/transitions";
+// @use "../../node_modules/bootstrap/scss/dropdown";
+// @use "../../node_modules/bootstrap/scss/button-group";
+// @use "../../node_modules/bootstrap/scss/nav";
+// @use "../../node_modules/bootstrap/scss/navbar";
+// @use "../../node_modules/bootstrap/scss/card";
+// @use "../../node_modules/bootstrap/scss/accordion";
+// @use "../../node_modules/bootstrap/scss/breadcrumb";
+// @use "../../node_modules/bootstrap/scss/pagination";
+// @use "../../node_modules/bootstrap/scss/badge";
+// @use "../../node_modules/bootstrap/scss/alert";
+// @use "../../node_modules/bootstrap/scss/progress";
+// @use "../../node_modules/bootstrap/scss/list-group";
+// @use "../../node_modules/bootstrap/scss/close";
+// @use "../../node_modules/bootstrap/scss/toasts";
+// @use "../../node_modules/bootstrap/scss/modal";
+// @use "../../node_modules/bootstrap/scss/tooltip";
+// @use "../../node_modules/bootstrap/scss/popover";
+// @use "../../node_modules/bootstrap/scss/carousel";
+// @use "../../node_modules/bootstrap/scss/spinners";
+// @use "../../node_modules/bootstrap/scss/offcanvas";
+// @use "../../node_modules/bootstrap/scss/placeholders";
+
+// @use "../../node_modules/bootstrap/scss/helpers";
+
+// // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+// @use "../../node_modules/bootstrap/scss/utilities/api";
 
 //@use "icons-list";
-@use "reset";
+// @use "reset";
 
-// Bootstrap icons
-// @use "~bootstrap-icons/font/bootstrap-icons";
-
-// Custom styles
+// 8. Add additional custom code here
+@use "bootstrap/scss/bootstrap";
 @use "custom";

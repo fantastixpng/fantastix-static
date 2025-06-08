@@ -5,7 +5,7 @@ import products from "../../data/products.json";
 
 export default function OurProducts() {
   return (
-    <section id="our-work" className="p-0">
+    <section id="our-products" className="p-0">
       <div className="bg-light py-40">
         <Container>
           <Row className="justify-content-center mb-10">

@@ -1,5 +1,5 @@
-import React, { Component, FormEvent } from "react"
-import { Button, Row, Col, Form, Toast, ToastContainer, Alert } from "react-bootstrap"
+import React, { Component, FormEvent, useState } from "react"
+import { Button, Row, Col, Form, FloatingLabel, Toast, ToastContainer, Alert } from "react-bootstrap"
 import axios from "axios"
 import { Resend } from "resend";
 import { useForm, ValidationError } from '@formspree/react';
@@ -309,15 +309,28 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
 
 export default function ContactFormspree() {
   const [state, handleSubmit] = useForm("xpwdwdzj");
+  const [validated, setValidated] = useState(false);
 
   if (state.succeeded) {
     return <p className="container">Thanks for contacting us. We'll get back to you soon!</p>;
   }
 
+  const onSubmit = async (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    await handleSubmit(form);
+
+    setValidated(true);
+  }
+
   return (
     <ContactUsForm
-      validated={null}
-      handleSubmit={handleSubmit}
+      validated={validated}
+      handleSubmit={onSubmit}
       isSubmitted={state.submitting}
       isSubmitting={state.submitting}
       errors={state.errors}

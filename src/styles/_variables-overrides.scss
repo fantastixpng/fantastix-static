@@ -4,9 +4,9 @@
 
 // Color System
 
-// $white:    #FFF;
-// // $gray-100:      #f6f6f6;
-// // $gray-200:      #eaeaea;
+$white:    #FFF;
+// $gray-100:      #f6f6f6;
+// $gray-200:      #eaeaea;
 // $gray-100: #FAFBFE;
 // $gray-200: #eaecf3;
 // $gray-300: #E2E8F0;
@@ -19,7 +19,6 @@
 // $gray-900: #273444;
 // $black:    #1F2D3D;
 
-$white:    #fff;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
 $gray-300: #dee2e6;
@@ -39,10 +38,21 @@ $custom-gray: (
   "gray-dark": $gray-dark
 );
 
-// $grays: map-merge($grays, $custom-gray);
+$grays: (
+  "gray-100": $gray-100,
+  "gray-200": $gray-200,
+  "gray-300": $gray-300,
+  "gray-400": $gray-400,
+  "gray-500": $gray-500,
+  "gray-600": $gray-600,
+  "gray-700": $gray-700,
+  "gray-800": $gray-800,
+  "gray-900": $gray-900
+);
+$grays: map-merge($grays, $custom-gray);
 
 $blue:          #0d6efd;
-$blue-light:          #549ef2;
+$blue-light:    #549ef2;
 // $blue:          #007bff;
 $indigo:        #6610f2;
 $purple:        #6f42c1;
@@ -262,7 +272,7 @@ $h6-font-size:                $font-size-base;
 //   5: $h5-font-size,
 //   6: $h6-font-size
 // );
-$spacer: 1;
+$spacer: 1rem;
 
 $headings-margin-bottom:      math.div($spacer, 1.5);
 $headings-font-family:        inherit;

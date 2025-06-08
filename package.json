@@ -29,7 +29,6 @@
     "@emotion/styled": "^11.14.0",
     "@formspree/react": "^3.0.0",
     "@mdx-js/react": "^2.3.0",
-    "@netlify/functions": "^4.1.4",
     "@popperjs/core": "^2.11.8",
     "@react-email/components": "^0.0.28",
     "@theme-ui/mdx": "^0.17.1",
@@ -64,6 +63,7 @@
     "theme-ui": "^0.17.1"
   },
   "devDependencies": {
+    "@netlify/functions": "^4.1.4",
     "@netlify/plugin-gatsby": "^3.8.4",
     "@types/node": "^22.15.30",
     "@types/react": "^18.2.55",

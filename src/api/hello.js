@@ -1,7 +1,7 @@
-import nodemailer from "nodemailer"
-import formData from "form-data"
-import Mailgun from "mailgun.js"
-import Airtable from "airtable"
+// import nodemailer from "nodemailer"
+// import formData from "form-data"
+// import Mailgun from "mailgun.js"
+// import Airtable from "airtable"
 
 // const API_ENDPOINT = "https://cat-fact.herokuapp.com/facts"
 
@@ -89,31 +89,31 @@ import Airtable from "airtable"
 // }
 
 // Docs on request and context https://docs.netlify.com/functions/build/#code-your-function-2
-export default function handler(req, res) {
-  // const { city, country } = context.params
-  // return new Response(`You're visiting ${city} in ${country}!`)
+// export default function handler(req, res) {
+//   // const { city, country } = context.params
+//   // return new Response(`You're visiting ${city} in ${country}!`)
 
-  // context.waitUntil(logRequest(req))
+//   // context.waitUntil(logRequest(req))
 
-  res.status(200).json({ hello: `world` })
+//   res.status(200).json({ hello: `world` })
 
-  // try {
-  //   const response = await fetch(API_ENDPOINT)
-  //   const data = await response.json()
-  //   return Response.json({ data })
-  // } catch (error) {
-  //   console.log(error)
-  //   return Response.json({ error: "Failed fetching data" }, { status: 500 })
-  // }
+//   // try {
+//   //   const response = await fetch(API_ENDPOINT)
+//   //   const data = await response.json()
+//   //   return Response.json({ data })
+//   // } catch (error) {
+//   //   console.log(error)
+//   //   return Response.json({ error: "Failed fetching data" }, { status: 500 })
+//   // }
 
-  // try {
-  //   const url = new URL(request.url)
-  //   const subject = url.searchParams.get('name') || 'World'
+//   // try {
+//   //   const url = new URL(request.url)
+//   //   const subject = url.searchParams.get('name') || 'World'
 
-  //   return new Response(`Hello ${subject}`)
-  // } catch (error) {
-  //   return new Response(error.toString(), {
-  //     status: 500,
-  //   })
-  // }
-}
+//   //   return new Response(`Hello ${subject}`)
+//   // } catch (error) {
+//   //   return new Response(error.toString(), {
+//   //     status: 500,
+//   //   })
+//   // }
+// }

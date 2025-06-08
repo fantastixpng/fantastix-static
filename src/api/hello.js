@@ -3,90 +3,90 @@ import formData from "form-data"
 import Mailgun from "mailgun.js"
 import Airtable from "airtable"
 
-const API_ENDPOINT = "https://cat-fact.herokuapp.com/facts"
+// const API_ENDPOINT = "https://cat-fact.herokuapp.com/facts"
 
-const sendThankYouEmail = async ({ email }) => {
-  console.log("Sending the email")
-  const { MG_API_KEY: apiKey, MG_DOMAIN: domain } = process.env
-  const mailgun = new Mailgun(formData).client({
-    username: "api",
-    key: apiKey,
-  })
+// const sendThankYouEmail = async ({ email }) => {
+//   console.log("Sending the email")
+//   const { MG_API_KEY: apiKey, MG_DOMAIN: domain } = process.env
+//   const mailgun = new Mailgun(formData).client({
+//     username: "api",
+//     key: apiKey,
+//   })
 
-  const mailData = {
-    from: `Stefan Judis stefan@${domain}`,
-    to: email,
-    subject: "Thank you for your interest",
-    text: "I'll come back to you asap!",
-  }
+//   const mailData = {
+//     from: `Stefan Judis stefan@${domain}`,
+//     to: email,
+//     subject: "Thank you for your interest",
+//     text: "I'll come back to you asap!",
+//   }
 
-  await mailgun.messages.create(domain, mailData)
-}
+//   await mailgun.messages.create(domain, mailData)
+// }
 
-const saveUser = async ({ name, email, message }) => {
-  const { AT_API_KEY: apiKey, AT_BASE, AT_TABLE } = process.env
+// const saveUser = async ({ name, email, message }) => {
+//   const { AT_API_KEY: apiKey, AT_BASE, AT_TABLE } = process.env
 
-  Airtable.configure({
-    apiKey,
-  })
+//   Airtable.configure({
+//     apiKey,
+//   })
 
-  const base = Airtable.base(AT_BASE)
-  const table = base(AT_TABLE)
-  await table.create({ name, email, message })
-}
+//   const base = Airtable.base(AT_BASE)
+//   const table = base(AT_TABLE)
+//   await table.create({ name, email, message })
+// }
 
-exports.handler = async (event, context) => {
-  // export default async (request, context) => {
-  try {
-    const data = await request.json()
+// exports.handler = async (event, context) => {
+//   // export default async (request, context) => {
+//   try {
+//     const data = await request.json()
 
-    await sendThankYouEmail(data)
+//     await sendThankYouEmail(data)
 
-    if (data.receiveUpdates) {
-      await saveUser(data)
-    }
+//     if (data.receiveUpdates) {
+//       await saveUser(data)
+//     }
 
-    const contactAddress = "hey@yourwebsite.com"
+//     const contactAddress = "hey@yourwebsite.com"
 
-    const mailer = nodemailer.createTransport({
-      service: "Gmail",
-      auth: {
-        user: process.env.production.GMAIL_ADDRESS,
-        pass: process.env.production.GMAIL_PASSWORD,
-      },
-    })
-    mailer.sendMail(
-      {
-        from: req.body.from,
-        to: [contactAddress],
-        subject: req.body.subject || "[No subject]",
-        html: req.body.message || "[No message]",
-      },
-      function (err, info) {
-        if (err) return res.status(500).send(err)
-        res.json({ success: true })
-      }
-    )
-    return Response.json({
-      statusCode: 200,
-      body: JSON.stringify({
-        message: "Hello World",
-        message: "Let's become serverless conductors!!!",
-      }),
-    })
-  } catch (error) {
-    console.log(error)
-    return Response.json({ error: "Failed sending email" }, { status: 500 })
-  }
-}
+//     const mailer = nodemailer.createTransport({
+//       service: "Gmail",
+//       auth: {
+//         user: process.env.production.GMAIL_ADDRESS,
+//         pass: process.env.production.GMAIL_PASSWORD,
+//       },
+//     })
+//     mailer.sendMail(
+//       {
+//         from: req.body.from,
+//         to: [contactAddress],
+//         subject: req.body.subject || "[No subject]",
+//         html: req.body.message || "[No message]",
+//       },
+//       function (err, info) {
+//         if (err) return res.status(500).send(err)
+//         res.json({ success: true })
+//       }
+//     )
+//     return Response.json({
+//       statusCode: 200,
+//       body: JSON.stringify({
+//         message: "Hello World",
+//         message: "Let's become serverless conductors!!!",
+//       }),
+//     })
+//   } catch (error) {
+//     console.log(error)
+//     return Response.json({ error: "Failed sending email" }, { status: 500 })
+//   }
+// }
 
-async function logRequest(req) {
-  await fetch("https://example.com/log", {
-    method: "POST",
-    body: JSON.stringify({ url: req.url, timestamp: Date.now() }),
-    headers: { "Content-Type": "application/json" },
-  })
-}
+// async function logRequest(req) {
+//   await fetch("https://example.com/log", {
+//     method: "POST",
+//     body: JSON.stringify({ url: req.url, timestamp: Date.now() }),
+//     headers: { "Content-Type": "application/json" },
+//   })
+// }
 
 // Docs on request and context https://docs.netlify.com/functions/build/#code-your-function-2
 export default function handler(req, res) {

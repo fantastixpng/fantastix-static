@@ -13,7 +13,7 @@
     "name": "Nuku Web App",
     "desc": "Web client application of Nuku-API",
     "imgSrc": "./bg-showcase-2.jpg",
-    "link": "https://pngx-api-client.vercel.app",
+    "link": "https://pngx-client.netlify.app/",
     "stack": ["JavaScript", "NodeJs", "ReactJs", "NextJs", "Shadcn"],
     "open_source": false,
 		"type": ["Web", "Hybrid"],

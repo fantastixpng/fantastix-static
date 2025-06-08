@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Container, Navbar, NavLink } from "react-bootstrap"
+import { Container, Navbar, Nav } from "react-bootstrap"
 import Hamburger from 'hamburger-react'
 
 import AnimatedIcon from "../components/AnimatedIcon"
@@ -59,11 +59,13 @@ const Header = () => {
           </Navbar.Toggle>
 
           <Navbar.Collapse className="justify-content-end">
-            <NavLink href="/#who-we-are">Who We Are</NavLink>
-            <NavLink href="/#our-work">Our Work</NavLink>
-            <NavLink href="/#services">Services</NavLink>
-            <NavLink href="/#pricing">Pricing</NavLink>
-            <NavLink href="/#contact">Contact Us</NavLink>
+            <Nav className="me-end">
+              <Nav.Link href="/#who-we-are">Who We Are</Nav.Link>
+              <Nav.Link href="/#our-work">Our Work</Nav.Link>
+              <Nav.Link href="/#services">Services</Nav.Link>
+              <Nav.Link href="/#pricing">Pricing</Nav.Link>
+              <Nav.Link href="/#contact">Contact Us</Nav.Link>
+            </Nav>
           </Navbar.Collapse>
 
           {/*<div className="d-grid d-lg-none">

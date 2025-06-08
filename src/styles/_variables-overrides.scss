@@ -1,4 +1,6 @@
+@use "sass:map";
 @use "sass:math";
+@use "sass:color";
 
 // Color System
 
@@ -37,7 +39,7 @@ $custom-gray: (
   "gray-dark": $gray-dark
 );
 
-$grays: map-merge($grays, $custom-gray);
+// $grays: map-merge($grays, $custom-gray);
 
 $blue:          #0d6efd;
 $blue-light:          #549ef2;
@@ -62,21 +64,21 @@ $very-dark-blue:#4c4e61;
 $grayish-blue:  #a3a5ae;
 $very-light-gray:#fafafa;
 
-$colors: map-merge((
-  "blue":       $blue,
-  "indigo":     $indigo,
-  "purple":     $purple,
-  "pink":       $pink,
-  "red":        $red,
-  "orange":     $orange,
-  "yellow":     $yellow,
-  "green":      $green,
-  "teal":       $teal,
-  "cyan":       $cyan,
-  "white":      $white,
-  "gray":       $gray-600,
-  "gray-dark":  $gray-800
-), $colors);
+// $colors: map-merge((
+//   "blue":       $blue,
+//   "indigo":     $indigo,
+//   "purple":     $purple,
+//   "pink":       $pink,
+//   "red":        $red,
+//   "orange":     $orange,
+//   "yellow":     $yellow,
+//   "green":      $green,
+//   "teal":       $teal,
+//   "cyan":       $cyan,
+//   "white":      $white,
+//   "gray":       $gray-600,
+//   "gray-dark":  $gray-800
+// ), $colors);
 
 // $primary:       #0074d9;
 // $secondary:     #4340bd;
@@ -138,15 +140,13 @@ $custom-colors: (
   "black":      $black
 );
 
-$theme-colors: map-merge($theme-colors, $custom-colors);
-
 $dark-theme: true;
 $primary-color: #f8bbd0;
 $accent-color: #6a1b9a;
 
 @if $dark-theme {
-  $primary-color: darken($primary-color, 60%);
-  $accent-color: lighten($accent-color, 60%);
+  $primary-color: color.adjust($primary-color, $lightness: 60%);
+  $accent-color: color.adjust($accent-color, $lightness: 60%);
 }
 
 // $accordion-icon-color:          #eee;
@@ -262,6 +262,7 @@ $h6-font-size:                $font-size-base;
 //   5: $h5-font-size,
 //   6: $h6-font-size
 // );
+$spacer: 1;
 
 $headings-margin-bottom:      math.div($spacer, 1.5);
 $headings-font-family:        inherit;
@@ -309,8 +310,8 @@ $input-btn-font-size:         $font-size-base;
 $input-btn-line-height:       $line-height-sm;
 
 $input-btn-focus-width:       0;
-$input-btn-focus-color:       rgba($component-active-bg, .25);
-$input-btn-focus-box-shadow:  0 0 $input-btn-focus-width $input-btn-focus-color;
+// $input-btn-focus-color:       rgba($component-active-bg, .25);
+// $input-btn-focus-box-shadow:  0 0 $input-btn-focus-width $input-btn-focus-color;
 
 $input-btn-padding-y-xs:      $input-btn-padding-y - 0.125;
 $input-btn-padding-x-xs:      $input-btn-padding-x - 0.125;
@@ -365,7 +366,7 @@ $btn-box-shadow:              none;
 $btn-hover-width:             0;
 $btn-hover-box-shadow:        0 4px 15px rgba($primary, 0.35);
 $btn-focus-width:             $input-btn-focus-width;
-$btn-focus-box-shadow:        $input-btn-focus-box-shadow;
+// $btn-focus-box-shadow:        $input-btn-focus-box-shadow;
 
 $btn-active-box-shadow:       $btn-box-shadow;
 
@@ -383,7 +384,7 @@ $card-spacer-y:                     1.25rem;
 $card-spacer-x:                     1.75rem;
 $card-color:                        #ECEEF0; // $body-color;
 $card-bg:                           $white;
-$card-shadow:                       $box-shadow;
+// $card-shadow:                       $box-shadow;
 $card-border-width:                 2px; // $border-width;
 $card-border-color:                 $gray-200;
 $card-border-radius:                $border-radius-xl;
@@ -413,7 +414,7 @@ $footer-dark-link-hover-color:      $white;
 
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: ();
-$sizes: map-merge((
+$sizes: map.merge((
   10: 10%,
   15: 15%,
   80: 80%,

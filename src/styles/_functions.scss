@@ -1,19 +1,24 @@
+@use "sass:color";
+@use "sass:map";
+@use "sass:math";
+@use "variables-overrides";
+
 @function color($key: "blue") {
-  @return map-get($colors, $key);
+  @return map.get($colors, $key);
 }
 
 @function theme-color($key: "primary") {
-  @return map-get($theme-colors, $key);
+  @return map.get(variables-overrides.$theme-colors, $key);
 }
 
 @function gray($key: "100") {
-  @return map-get($grays, $key);
+  @return map.get($grays, $key);
 }
 
 @function theme-color-level($color-name: "primary", $level: 0) {
   $color: theme-color($color-name);
   $color-base: if($level > 0, #000, #fff);
-  $level: abs($level);
+  $level: math.abs($level);
 
-  @return mix($color-base, $color, $level * $theme-color-interval);
+  @return color.mix($color-base, $color, $level * $theme-color-interval);
 }

@@ -1,33 +1,32 @@
 @charset "UTF-8";
 
 // Bootstrap functions
-@import "./scss/functions";
-@import "./scss/variables";
-@import "./scss/mixins";
-@import "./scss/utilities";
+// @use "./scss/functions";
+// @use "./scss/variables";
+// @use "./scss/mixins";
+// @use "./scss/utilities";
 
 // Custom functions
-@import "functions";
+@use "functions";
 
 // Custom mixins
-@import "mixins";
+@use "mixins";
 
 // custom variables overriding bootstrap default variable
-@import "variables-overrides";
+@use "variables-overrides";
 
 // Bootstrap core components
-@import "./scss/bootstrap";
-// @import "bootstrap";
+// @use "./scss/bootstrap";
+// @use "bootstrap";
 
 // Custom utilities
-@import "utilities";
+@use "utilities";
 
-//@import "icons-list";
-@import "reset";
+//@use "icons-list";
+@use "reset";
 
 // Bootstrap icons
-// @import "~bootstrap-icons/font/bootstrap-icons";
+// @use "~bootstrap-icons/font/bootstrap-icons";
 
 // Custom styles
-@import "custom";
-//@import "style";
+@use "custom";

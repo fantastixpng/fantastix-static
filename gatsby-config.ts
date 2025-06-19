@@ -1,4 +1,9 @@
 import type { GatsbyConfig } from "gatsby"
+import "dotenv/config";
+
+// require("dotenv").config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// });
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -207,17 +212,28 @@ const config: GatsbyConfig = {
     //     },
     //   },
     // },
-  // "gatsby-plugin-react-helmet",
+    "gatsby-plugin-react-helmet",
+    // {
+    //   resolve: `gatsby-source-wordpress`,
+    //   options: {
+    //     // the only required plugin option for WordPress is the GraphQL url.
+    //     url:
+    //       process.env.WPGRAPHQL_URL ||
+    //       `https://wpgatsbydemo.wpengine.com/graphql`,
+    //   },
+    // },
     {
-      resolve: `gatsby-source-wordpress`,
+      resolve: `gatsby-source-strapi`,
       options: {
-        // the only required plugin option for WordPress is the GraphQL url.
-        url:
-          process.env.WPGRAPHQL_URL ||
-          `https://wpgatsbydemo.wpengine.com/graphql`,
+        // version: 4,
+        apiURL: process.env.STRAPI_API_URL || `http://localhost:1337`,
+        accessToken: process.env.STRAPI_TOKEN,
+        collectionTypes: ['article', 'category', 'author', 'user'],
+        singleTypes: ['homepage', 'about', 'global'],
+        queryLimit: 1000,
       },
     },
-
+    `gatsby-plugin-typegen`
   ],
 }
 

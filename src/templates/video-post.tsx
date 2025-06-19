@@ -2,9 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+// import Bio from "../components/bio"
+import Layout from "../components/BlogLayout"
+import Seo from "../components/Seo"
 
 const VideoPostTemplate = ({ data: { post } }) => {
   // RegEx to find YouTube IDs
@@ -45,7 +45,7 @@ const VideoPostTemplate = ({ data: { post } }) => {
         <hr />
 
         <footer>
-          <Bio />
+          {/* <Bio /> */}
         </footer>
       </article>
     </Layout>

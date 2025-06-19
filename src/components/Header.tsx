@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { Container, Navbar, Nav } from "react-bootstrap"
 import Hamburger from 'hamburger-react'
+import { getImage, getImageData } from "gatsby-plugin-image"
 
 import AnimatedIcon from "../components/AnimatedIcon"
 import LogoBlack from "../images/logo-black.svg"
-import { getImage, getImageData } from "gatsby-plugin-image"
 
 const navTop = {
   backgroundColor: "#333",
@@ -22,8 +22,8 @@ const Header = () => {
   useEffect(() => {
     window.onscroll = () => {
       const { innerHeight: height, scrollY: scrollPosition } = window;
-      scrollPosition > height - 100 
-        ? setNavState(navScroll) 
+      scrollPosition > height - 100
+        ? setNavState(navScroll)
         : setNavState(navTop);
     };
   }, []);
@@ -60,6 +60,7 @@ const Header = () => {
 
           <Navbar.Collapse className="justify-content-end">
             <Nav className="me-end">
+              <Nav.Link href="/blog">Blog</Nav.Link>
               <Nav.Link href="/#who-we-are">Who We Are</Nav.Link>
               <Nav.Link href="/#our-work">Our Work</Nav.Link>
               <Nav.Link href="/#services">Services</Nav.Link>

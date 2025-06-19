@@ -1,6 +1,6 @@
 import React, { Children, useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import { Button, Col, Container, Row, Modal, Card, CardBody, CardHeader, CardText } from "react-bootstrap"
+import { Button, Col, Container, Row, Modal } from "react-bootstrap"
 import { useSpring, animated } from "react-spring"
 
 import Layout from "../components/Layout/Layout"

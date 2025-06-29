@@ -414,6 +414,8 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     draftAndPublish: true
   }
   attributes: {
+    archivedAt: Schema.Attribute.DateTime
+    archivedReason: Schema.Attribute.Text
     author: Schema.Attribute.Relation<"manyToOne", "api::author.author">
     blocks: Schema.Attribute.DynamicZone<
       ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
@@ -427,6 +429,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime
     createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
       Schema.Attribute.Private
+    isArchived: Schema.Attribute.Boolean
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<
       "oneToMany",

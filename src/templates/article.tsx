@@ -6,31 +6,31 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout/BlogLayout"
 
-export const query = graphql`
-    query ArticleQuery($slug: String!) {
-        strapiArticle(slug: { eq: $slug }) {
-            strapi_id
-            title
-            content
-            cover {
-                url
-                alternativeText
-                localFile {
-                    id
-                    absolutePath
-                    publicURL
-                    url
-                    childImageSharp {
-                        gatsbyImageData(width: 800)
-                    }
-                }
-            }
-            publishedAt
-            updatedAt
-            createdAt
-        }
-    }
-`;
+// export const query = graphql`
+//     query ArticleQuery($slug: String!) {
+//         strapiArticle(slug: { eq: $slug }) {
+//             strapi_id
+//             title
+//             content
+//             cover {
+//                 url
+//                 alternativeText
+//                 localFile {
+//                     id
+//                     absolutePath
+//                     publicURL
+//                     url
+//                     childImageSharp {
+//                         gatsbyImageData(width: 800)
+//                     }
+//                 }
+//             }
+//             publishedAt
+//             updatedAt
+//             createdAt
+//         }
+//     }
+// `;
 
 // interface BlogPostProps {
 //     params: {
@@ -39,32 +39,34 @@ export const query = graphql`
 //     data: any;
 // }
 
-const Article/*: React.FC<BlogPostProps>*/ = ({ data }) => {
-    const article = data.strapiArticle;
+const Article/*: React.FC<BlogPostProps>*/ = ({ pageContext }) => {
+    const { article } = pageContext;
+    // const article = data.strapiArticle;
     const image = getImage(article?.cover?.localFile);
 
     return (
         <Layout>
+            <title>{article?.title} | Fantastix</title>
             <div>
                 <div
                     id="banner"
                     className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
-                    data-src={article.cover.url}
-                    data-srcset={article.cover.url}
+                    data-src={article?.cover?.url}
+                    data-srcset={article?.cover?.url}
                     data-uk-img
                 >
-                    <h1>{article.title}</h1>
+                    <h1>{article?.title}</h1>
                 </div>
                 <h1>{article?.title}</h1>
                 {image && <GatsbyImage image={image} alt={article?.title} />}
-                <img src={article?.cover?.localFile.publicURL} alt={article?.cover?.alternativeText} />
+                <img src={article?.cover?.localFile?.publicURL} alt={article?.cover?.alternativeText} />
                 <p>{article?.content}</p>
 
                 <div className="uk-section">
                     <div className="uk-container uk-container-small">
-                        {/* <ReactMarkdown source={article.content} /> */}
+                        {/* <ReactMarkdown source={article?.content} /> */}
                         <p>
-                            <Moment format="MMM Do YYYY">{article.publishedAt}</Moment>
+                            <Moment format="MMM Do YYYY">{article?.publishedAt}</Moment>
                         </p>
                     </div>
                 </div>

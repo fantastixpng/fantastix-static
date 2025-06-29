@@ -130,20 +130,20 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
 
 
-export const query = graphql`
-  query ($slug: String!) {
-    strapiArticle(slug: { eq: $slug }) {
-      strapi_id
-      title
-      content
-      slug
-      publishedAt
-      cover {
-        url
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query ($slug: String!) {
+//     strapiArticle(slug: { eq: $slug }) {
+//       strapi_id
+//       title
+//       content
+//       slug
+//       publishedAt
+//       cover {
+//         url
+//       }
+//     }
+//   }
+// `;
 
 const BlogPost = ({ data }) => {
   const slug = "hello-world";

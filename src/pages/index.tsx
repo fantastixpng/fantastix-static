@@ -1,4 +1,5 @@
 import React, { Children, useState } from "react"
+import { HeadFC } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { Button, Col, Container, Row, Modal } from "react-bootstrap"
 import { useSpring, animated } from "react-spring"
@@ -10,7 +11,6 @@ import ProjectCard from "../components/ProjectCard"
 import RequestQuoteFormStep from "../components/RequestQuoteFormStep"
 
 import signatures from "../data/signatures"
-import { HeadFC } from "gatsby"
 import WhoWeAre from "../components/Sections/WhoWeAre"
 import OurWork from "../components/Sections/OurWork"
 import PricingCard from "../components/Sections/PricingCard"
@@ -428,35 +428,42 @@ const IndexPage = () => (
           <Col>
             <StaticImage
               src="../images/icons/kotlin-icon.svg"
-              alt="Gatsby"
+              alt="Kotlin"
               height={50}
             />
           </Col>
           <Col>
             <StaticImage
               src="../images/icons/redis-icon.svg"
-              alt="Gatsby"
+              alt="Redis"
               height={50}
             />
           </Col>
           <Col>
             <StaticImage
               src="../images/icons/nodemon-icon.svg"
-              alt="Gatsby"
+              alt="Nodemon"
               height={50}
             />
           </Col>
           <Col>
             <StaticImage
               src="../images/icons/visual-studio-code-icon.svg"
-              alt="Gatsby"
+              alt="VS Code"
               height={50}
             />
           </Col>
           <Col>
             <StaticImage
               src="../images/icons/webstorm-icon.svg"
-              alt="Gatsby"
+              alt="Webstorm"
+              height={50}
+            />
+          </Col>
+          <Col>
+            <StaticImage
+              src="../images/icons/astrojs-icon.svg"
+              alt="AstroJS"
               height={50}
             />
           </Col>

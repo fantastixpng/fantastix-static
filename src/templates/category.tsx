@@ -5,8 +5,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import ArticlesComponent from "../components/ArticlesTwoCol"
 import Layout from "../components/Layout/BlogLayout"
 
-const Category = ({ data }) => {
-  const category = data.strapiCategory;
+const Category = ({ pageContext }) => {
+  const { category } = pageContext;
   // const articles = data.articles.edges
   // const category = data.category.name
 
@@ -97,17 +97,17 @@ const Category = ({ data }) => {
 
 // export default ComponentName;
 
-export const query = graphql`
-  query CategoryQuery($slug: String!) {
-    strapiCategory(slug: {eq: $slug}) {
-      strapi_id
-      slug
-      name
-      publishedAt
-      createdAt
-      updatedAt
-    }
-  }
-`;
+// export const query = graphql`
+//   query CategoryQuery($slug: String!) {
+//     strapiCategory(slug: {eq: $slug}) {
+//       strapi_id
+//       slug
+//       name
+//       publishedAt
+//       createdAt
+//       updatedAt
+//     }
+//   }
+// `;
 
 export default Category  

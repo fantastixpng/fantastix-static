@@ -53,6 +53,15 @@
         "shared.rich-text",
         "shared.slider"
       ]
+    },
+    "archivedAt": {
+      "type": "datetime"
+    },
+    "archivedReason": {
+      "type": "text"
+    },
+    "isArchived": {
+      "type": "boolean"
     }
   }
 }

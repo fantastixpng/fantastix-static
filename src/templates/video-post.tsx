@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import parse from "html-react-parser"
 
 // import Bio from "../components/bio"
-import Layout from "../components/BlogLayout"
+import Layout from "../components/Layout/BlogLayout"
 import Seo from "../components/Seo"
 
 const VideoPostTemplate = ({ data: { post } }) => {

@@ -1,9 +1,11 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, HeadFC } from "gatsby"
 import { Badge, Col, Container, Row } from "react-bootstrap"
 import ArticleCard from "../../components/ArticleCard"
 import Layout from "../../components/Layout/BlogLayout"
 import ArticlesTwoCol from "../../components/ArticlesTwoCol"
+
+export const Head: HeadFC = () => <title>Articles | Fantastix</title>
 
 const ArticlesPage = ({ data }) => (
   <Layout>
@@ -40,7 +42,7 @@ const ArticlesPage = ({ data }) => (
         <ArticlesTwoCol articles={data.allStrapiArticle.nodes} />
       </Container>
     </section>
-  </Layout>
+  </Layout >
 )
 
 export const query = graphql`

@@ -17,14 +17,17 @@ const Image = ({ src, ...rest }) => {
               fluid(maxWidth: 600) {
                 ...GatsbyImageSharpFluid
               }
+              gatsbyImageData(
+                quality: 100
+                placeholder: TRACED_SVG
+                layout: FULL_WIDTH
+              )
             }
           }
         }
       }
     }
   `);
-
-  console.log(data)
 
   // const match = useMemo(() => data.images.edges.find(({ node }) => src === node.relativePath), [data, src]);
 

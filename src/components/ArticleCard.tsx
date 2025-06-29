@@ -4,7 +4,7 @@ import { Badge, Card, CardBody, CardHeader, CardImg, CardLink, CardSubtitle, Car
 
 const ArticleCard = ({ article }) => {
     const handleClick = () => {
-        window.location.href = `/blog/articles/${article.slug}`;
+        // window.location.href = `/blog/articles/${article.slug}`;
     };
     return (
         <>

@@ -24,7 +24,7 @@ const Nav = () => {
         { name: "Contact", path: "/contact" },
     ];
 
-    const canonicalUrl = siteMetadata.siteUrl + location?.pathname
+    // const canonicalUrl = siteMetadata.siteUrl + location?.pathname
 
     const renderNavLinks = () => {
         return navLinks.map((link, index) => (

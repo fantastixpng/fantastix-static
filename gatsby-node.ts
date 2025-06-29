@@ -155,8 +155,17 @@ export const createPages = async ({ graphql, actions: {createPage} }: CreatePage
         }
       }
     }
-  `)
+  `);
   const articles = articlesQueryResult?.data?.allStrapiArticle?.nodes;
+  // createPage({
+  //   path: `/blog/articles`,
+  //   component: articleTemplatePath,
+  //   context: {
+  //     title: "Articles",
+  //     articles: articles,
+  //   },
+  // });
+  // Create a page for each article
   articles.forEach((article, index) => {
     createPage({
       path: `/blog/articles/${article.slug}`,
@@ -181,7 +190,7 @@ export const createPages = async ({ graphql, actions: {createPage} }: CreatePage
         }
       }
     }
-  `)
+  `);
   const categories = categoryQueryResult?.data?.allStrapiCategory?.nodes;
   categories.forEach((category, index) => {
     createPage({
@@ -194,35 +203,35 @@ export const createPages = async ({ graphql, actions: {createPage} }: CreatePage
     })
   });
 
-  const archivedPostsQueryResult = await graphql(`
-    query AllArchivedPostsQuery {
-      allStrapiArticle(filter: { 
-        isArchived: { eq: true }
-        // archivedAt: { notNull: true }
-        // sort: ["archivedAt:desc"]
-      }) {
-        nodes {
-          id
-          strapi_id
-          title
-          slug
-          archivedAt
-          // archivedReason
-        }
-      }
-    }
-  `)
-  const archivedPosts = archivedPostsQueryResult?.data?.allStrapiArticle?.nodes;
-  archivedPosts.forEach((article, index) => {
-    createPage({
-      path: `/blog/articles/${article.slug}`,
-      component: articleTemplatePath,
-      context: {
-        title: article.name,
-        article: article
-      },
-    })
-  });
+  // const archivedPostsQueryResult = await graphql(`
+  //   query AllArchivedPostsQuery {
+  //     allStrapiArticle(filter: { 
+  //       isArchived: { eq: true }
+  //       // archivedAt: { notNull: true }
+  //       // sort: ["archivedAt:desc"]
+  //     }) {
+  //       nodes {
+  //         id
+  //         strapi_id
+  //         title
+  //         slug
+  //         archivedAt
+  //         // archivedReason
+  //       }
+  //     }
+  //   }
+  // `)
+  // const archivedPosts = archivedPostsQueryResult?.data?.allStrapiArticle?.nodes;
+  // archivedPosts.forEach((article, index) => {
+  //   createPage({
+  //     path: `/blog/articles/${article.slug}`,
+  //     component: articleTemplatePath,
+  //     context: {
+  //       title: article.title,
+  //       article: article
+  //     },
+  //   })
+  // });
         
   // Create blog articles pages.
   // const articles = results?.data?.articles?.edges;
@@ -252,40 +261,6 @@ export const createPages = async ({ graphql, actions: {createPage} }: CreatePage
   //   })
   // });
 };
-// async function getPosts({ graphql, reporter }) {
-//   const graphqlResult = await graphql(/* GraphQL */ `
-//     query WpPosts {
-//       # Query all WordPress blog posts sorted by date
-//       allWpPost(sort: { fields: [date], order: DESC }) {
-//         edges {
-//           previous {
-//             id
-//           }
-
-//           ...
-
-//           post: node {
-//             id
-//             uri
-//             postFormats {
-//               formats: nodes {
-//                 name
-//               }
-//             }
-//           }
-
-//           next {
-//             id
-//           }
-//         }
-//       }
-//     }
-//   `)
-
-//   // ...
-
-//   return graphqlResult.data.allWpPost.edges
-// }
 
 // const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
 //   Promise.all(

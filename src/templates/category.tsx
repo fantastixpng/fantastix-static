@@ -1,19 +1,60 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-
 import ArticlesComponent from "../components/ArticlesTwoCol"
 import Layout from "../components/Layout/BlogLayout"
+import { capitalizeWord } from "../libs/utils"
 
 const Category = ({ pageContext }) => {
   const { category } = pageContext;
   // const articles = data.articles.edges
   // const category = data.category.name
 
+  // const data = useStaticQuery(graphql`
+  //   query ($id: String!) {
+  //     strapiCategory(id: {eq: $id}) {
+  //       title
+  //       content
+  //       cover {
+  //         localFile {
+  //           childImageSharp {
+  //             gatsbyImageData(width: 800)
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+  // const data = useStaticQuery(graphql`
+  //   query ($slug: String!) {
+  //     strapiCategory(slug: {eq: $slug}) {
+  //       strapi_id
+  //       title
+  //       content
+  //       slug
+  //       cover {
+  //         url
+  //         alternativeText
+  //         localFile {
+  //           absolutePath
+  //           publicURL
+  //           url
+  //           childImageSharp {
+  //             gatsbyImageData(width: 800)
+  //           }
+  //         }
+  //       }
+  //       category {
+  //         name
+  //       }
+  //     }
+  //   }
+  // `);
+
   return (
     <Layout>
       <div>
-        <h1>{category.name}</h1>
+        <h1>{capitalizeWord(category.name)}</h1>
         <p>{category.slug}</p>
       </div>
 
@@ -49,53 +90,6 @@ const Category = ({ pageContext }) => {
 //     }
 //   }
 // `;
-
-// const ComponentName = () => {
-//   //   const data = useStaticQuery(graphql`
-//   //     query ($id: String!) {
-//   //       strapiCategory(id: {eq: $id}) {
-//   //         title
-//   //         content
-//   //         cover {
-//   //           localFile {
-//   //             childImageSharp {
-//   //               gatsbyImageData(width: 800)
-//   //             }
-//   //           }
-//   //         }
-//   //       }
-//   //     }
-//   //   `)
-//   const data = useStaticQuery(graphql`
-//     query ($slug: String!) {
-//       strapiCategory(slug: {eq: $slug}) {
-//         strapi_id
-//         title
-//         content
-//         slug
-//         cover {
-//           url
-//           alternativeText
-//           localFile {
-//             absolutePath
-//             publicURL
-//             url
-//             childImageSharp {
-//               gatsbyImageData(width: 800)
-//             }
-//           }
-//         }
-//         category {
-//           name
-//         }
-//       }
-//     }
-//   `);
-
-//   return <pre>{JSON.stringify(data, null, 4)}</pre>
-// }
-
-// export default ComponentName;
 
 // export const query = graphql`
 //   query CategoryQuery($slug: String!) {

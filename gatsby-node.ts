@@ -149,6 +149,25 @@ export const createPages = async ({ graphql, actions: {createPage} }: CreatePage
                   }
               }
           }
+          author {
+            id
+            strapi_id
+            name
+            email
+            avatar {
+              id
+              url
+              alternativeText
+              localFile {
+                absolutePath
+                publicURL
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 40)
+                }
+              }
+            }
+          }
           publishedAt
           updatedAt
           createdAt

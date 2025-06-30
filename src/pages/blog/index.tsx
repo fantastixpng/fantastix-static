@@ -1,6 +1,8 @@
 import React from "react";
-import { graphql, useStaticQuery, HeadFC } from "gatsby";
+import { graphql, useStaticQuery, HeadFC, Link } from "gatsby";
 import Layout from "../../components/Layout/BlogLayout";
+import { Nav, NavItem, NavLink } from "react-bootstrap";
+import { capitalizeWord } from "../../libs/utils";
 
 export const Head: HeadFC = () => <title>Blog | Fantastix</title>
 
@@ -36,6 +38,20 @@ export default function Homepage() {
     //     }
     // `);
 
+    const data = useStaticQuery(graphql`
+        query {
+            allStrapiCategory {
+                edges {
+                    node {
+                        strapi_id
+                        name
+                        slug
+                    }
+                }
+            }
+        }
+    `);
+
     return (
         <Layout>
             <h1>Welcome to the Homepage</h1>
@@ -46,10 +62,53 @@ export default function Homepage() {
                 <p className="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you
                     scroll, this navbar remains in its original position and moves with the rest of the page.
                 </p>
-                <a className="btn btn-lg btn-primary" href="/docs/5.3/components/navbar" role="button">View navbar docs &raquo;</a>
+                <a className="btn btn-lg btn-primary" href="/navbar" role="button">View navbar docs &raquo;</a>
             </div>
 
-            <div className="container"> <header className="border-bottom lh-1 py-3"> <div className="row flex-nowrap justify-content-between align-items-center"> <div className="col-4 pt-1"> <a className="link-secondary" href="#">Subscribe</a> </div> <div className="col-4 text-center"> <a className="blog-header-logo text-body-emphasis text-decoration-none" href="#">Large</a> </div> <div className="col-4 d-flex justify-content-end align-items-center"> <a className="link-secondary" href="#" aria-label="Search"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg> </a> <a className="btn btn-sm btn-outline-secondary" href="#">Sign up</a> </div> </div> </header> <div className="nav-scroller py-1 mb-3 border-bottom"> <nav className="nav nav-underline justify-content-between"> <a className="nav-item nav-link link-body-emphasis active" href="#">World</a> <a className="nav-item nav-link link-body-emphasis" href="#">U.S.</a> <a className="nav-item nav-link link-body-emphasis" href="#">Technology</a> <a className="nav-item nav-link link-body-emphasis" href="#">Design</a> <a className="nav-item nav-link link-body-emphasis" href="#">Culture</a> <a className="nav-item nav-link link-body-emphasis" href="#">Business</a> <a className="nav-item nav-link link-body-emphasis" href="#">Politics</a> <a className="nav-item nav-link link-body-emphasis" href="#">Opinion</a> <a className="nav-item nav-link link-body-emphasis" href="#">Science</a> <a className="nav-item nav-link link-body-emphasis" href="#">Health</a> <a className="nav-item nav-link link-body-emphasis" href="#">Style</a> <a className="nav-item nav-link link-body-emphasis" href="#">Travel</a> </nav> </div> </div>
+            <div className="container">
+                <header className="border-bottom lh-1 py-3">
+                    <div className="row flex-nowrap justify-content-between align-items-center">
+                        <div className="col-4 pt-1">
+                            <a className="link-secondary" href="#">Subscribe</a>
+                        </div>
+                        <div className="col-4 text-center">
+                            <a className="blog-header-logo text-body-emphasis text-decoration-none" href="#">Large</a>
+                        </div>
+                        <div className="col-4 d-flex justify-content-end align-items-center">
+                            <a className="link-secondary" href="#" aria-label="Search">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
+                            </a>
+                            <a className="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                        </div>
+                    </div>
+                </header>
+                <div className="nav-scroller py-1 mb-3 border-bottom">
+                    <Nav className="nav nav-underline justify-content-between">
+                        {data.allStrapiCategory.edges.map((category, i) => (
+                            <NavItem as={NavLink}
+                                key={i}
+                                href={`/blog/category/${category.node.slug}`}
+                                active={false}
+                                className="link-body-emphasis"
+                            >
+                                {capitalizeWord(category.node.name)}
+                            </NavItem>
+                        ))}
+                        {/* <a className="nav-item nav-link link-body-emphasis active" href="#">World</a>
+                        <a className="nav-item nav-link link-body-emphasis" href="#">U.S.</a>
+                        <a className="nav-item nav-link link-body-emphasis" href="#">Technology</a>
+                        <a className="nav-item nav-link link-body-emphasis" href="#">Design</a>
+                        <a className="nav-item nav-link link-body-emphasis" href="#">Culture</a>
+                        <a className="nav-item nav-link link-body-emphasis" href="#">Business</a>
+                        <a className="nav-item nav-link link-body-emphasis" href="#">Politics</a>
+                        <a className="nav-item nav-link link-body-emphasis" href="#">Opinion</a>
+                        <a className="nav-item nav-link link-body-emphasis" href="#">Science</a>
+                        <a className="nav-item nav-link link-body-emphasis" href="#">Health</a>
+                        <a className="nav-item nav-link link-body-emphasis" href="#">Style</a>
+                        <a className="nav-item nav-link link-body-emphasis" href="#">Travel</a> */}
+                    </Nav>
+                </div>
+            </div>
 
             <main className="container">
                 <div className="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
@@ -105,23 +164,33 @@ export default function Homepage() {
                                             <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p> <blockquote> <p>Longer quote goes here, maybe with some <strong>emphasized text</strong> in the middle of it.</p> </blockquote> <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p> <h3>Example table</h3> <p>And don't forget about tables in these posts:</p> <table className="table"> <thead> <tr> <th>Name</th> <th>Upvotes</th> <th>Downvotes</th> </tr> </thead> <tbody> <tr> <td>Alice</td> <td>10</td> <td>11</td> </tr> <tr> <td>Bob</td> <td>4</td> <td>3</td> </tr> <tr> <td>Charlie</td> <td>7</td> <td>9</td> </tr> </tbody> <tfoot> <tr> <td>Totals</td> <td>21</td> <td>23</td> </tr> </tfoot> </table> <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p> </article> <article className="blog-post"> <h2 className="display-5 link-body-emphasis mb-1">New feature</h2> <p className="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
                                             <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p> <ul> <li>First list item</li>
                                                 <li>Second list item with a longer description</li>
-                                                <li>Third list item to close it out</li> </ul> <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p> </article> <nav className="blog-pagination" aria-label="Pagination"> <a className="btn btn-outline-primary rounded-pill" href="#">Older</a> <a className="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a> </nav> </div> <div className="col-md-4"> <div className="position-sticky" style={{ top: '2rem' }}> <div className="p-4 mb-3 bg-body-tertiary rounded"> <h4 className="fst-italic">About</h4> <p className="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p> </div> <div> <h4 className="fst-italic">Recent posts</h4> <ul className="list-unstyled"> <li> <a className="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> <svg aria-hidden="true" className="bd-placeholder-img " height="96" preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#777"></rect></svg> <div className="col-lg-8"> <h6 className="mb-0">Example blog post title</h6> <small className="text-body-secondary">January 15, 2024</small> </div> </a> </li>
-                                                    <li> <a className="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> <svg aria-hidden="true" className="bd-placeholder-img " height="96" preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#777"></rect></svg> <div className="col-lg-8"> <h6 className="mb-0">This is another blog post title</h6> <small className="text-body-secondary">January 14, 2024</small> </div> </a> </li>
-                                                    <li> <a className="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> <svg aria-hidden="true" className="bd-placeholder-img " height="96" preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#777"></rect></svg> <div className="col-lg-8"> <h6 className="mb-0">Longer blog post title: This one has multiple lines!</h6> <small className="text-body-secondary">January 13, 2024</small> </div> </a> </li> </ul> </div> <div className="p-4"> <h4 className="fst-italic">Archives</h4>
-                                                        <ol className="list-unstyled mb-0"> <li><a href="#">March 2021</a></li>
-                                                            <li><a href="#">February 2021</a></li>
-                                                            <li><a href="#">January 2021</a></li>
-                                                            <li><a href="#">December 2020</a></li>
-                                                            <li><a href="#">November 2020</a></li>
-                                                            <li><a href="#">October 2020</a></li>
-                                                            <li><a href="#">September 2020</a></li>
-                                                            <li><a href="#">August 2020</a></li>
-                                                            <li><a href="#">July 2020</a></li>
-                                                            <li><a href="#">June 2020</a></li>
-                                                            <li><a href="#">May 2020</a></li>
-                                                            <li><a href="#">April 2020</a></li> </ol> </div> <div className="p-4"> <h4 className="fst-italic">Elsewhere</h4> <ol className="list-unstyled"> <li><a href="#">GitHub</a></li>
-                                                                <li><a href="#">Social</a></li>
-                                                                <li><a href="#">Facebook</a></li> </ol> </div> </div>
+                                                <li>Third list item to close it out</li> </ul> <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p> </article> <nav className="blog-pagination" aria-label="Pagination"> <a className="btn btn-outline-primary rounded-pill" href="#">Older</a>
+                                            <a className="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a> </nav> </div> <div className="col-md-4"> <div className="position-sticky" style={{ top: '2rem' }}> <div className="p-4 mb-3 bg-body-tertiary rounded"> <h4 className="fst-italic">About</h4> <p className="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p> </div> <div> <h4 className="fst-italic">Recent posts</h4> <ul className="list-unstyled"> <li> <a className="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> <svg aria-hidden="true" className="bd-placeholder-img " height="96" preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#777"></rect></svg> <div className="col-lg-8"> <h6 className="mb-0">Example blog post title</h6> <small className="text-body-secondary">January 15, 2024</small> </div> </a> </li>
+                                                <li> <a className="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> <svg aria-hidden="true" className="bd-placeholder-img " height="96" preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#777"></rect></svg> <div className="col-lg-8"> <h6 className="mb-0">This is another blog post title</h6> <small className="text-body-secondary">January 14, 2024</small> </div> </a> </li>
+                                                <li> <a className="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> <svg aria-hidden="true" className="bd-placeholder-img " height="96" preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#777"></rect></svg> <div className="col-lg-8"> <h6 className="mb-0">Longer blog post title: This one has multiple lines!</h6> <small className="text-body-secondary">January 13, 2024</small> </div> </a> </li> </ul> </div> <div className="p-4"> <h4 className="fst-italic">Archives</h4>
+                                                    <ol className="list-unstyled mb-0"> <li><a href="#">March 2021</a></li>
+                                                        <li><a href="#">February 2021</a></li>
+                                                        <li><a href="#">January 2021</a></li>
+                                                        <li><a href="#">December 2020</a></li>
+                                                        <li><a href="#">November 2020</a></li>
+                                                        <li><a href="#">October 2020</a></li>
+                                                        <li><a href="#">September 2020</a></li>
+                                                        <li><a href="#">August 2020</a></li>
+                                                        <li><a href="#">July 2020</a></li>
+                                                        <li><a href="#">June 2020</a></li>
+                                                        <li><a href="#">May 2020</a></li>
+                                                        <li><a href="#">April 2020</a></li>
+                                                    </ol>
+                                                </div>
+                                                <div className="p-4">
+                                                    <h4 className="fst-italic">Elsewhere</h4>
+                                                    <ol className="list-unstyled">
+                                                        <li><a href="#">GitHub</a></li>
+                                                        <li><a href="#">Social</a></li>
+                                                        <li><a href="#">Facebook</a></li>
+                                                    </ol>
+                                                </div>
+                                            </div>
                     </div>
                 </div>
             </main>

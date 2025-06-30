@@ -4,8 +4,8 @@
  * See: https://www.gatsbyjs.com/docs/ssr-apis/
  */
 
-import { Script } from "gatsby"
 import * as React from "react"
+import { Script } from "gatsby"
 
 export const onRenderBody = ({ setHtmlAttributes, setPostBodyComponents }) => {
   setHtmlAttributes({ lang: "en" })

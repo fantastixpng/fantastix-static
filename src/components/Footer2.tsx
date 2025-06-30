@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
         <Row className="justify-content-center text-center">
           <Col xl={10}>
-            <p>Made with <span className="red">❤</span> from <a href="https://www.google.com/maps/place/Madang" target="_blank" className="link hover-white">Beautiful Madang</a>.</p>
+            <p>Made with <span className="red">❤</span> in <a href="https://www.google.com/maps/place/Madang" target="_blank" className="link hover-white">Beautiful Madang</a>.</p>
             <small>&copy; {new Date().getFullYear()} Fantastix. {/*View our <Link to="/privacy" className="link-secondary">Privacy Policy</Link> and <Link to="/terms" className="link-secondary">Terms of Service</Link>.<br/>*/}</small>
           </Col>
         </Row>

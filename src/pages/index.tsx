@@ -14,7 +14,6 @@ import signatures from "../data/signatures"
 import WhoWeAre from "../components/Sections/WhoWeAre"
 import OurWork from "../components/Sections/OurWork"
 import PricingCard from "../components/Sections/PricingCard"
-import PricingCard2 from "../components/Sections/PricingCard2"
 import OurBestPractices from "../components/Sections/OurBestPractices"
 import OurServices from "../components/Sections/OurServices"
 import OurProducts from "../components/Sections/OurProducts"
@@ -473,8 +472,7 @@ const IndexPage = () => (
 
     {/* <OurBestPractices/> */}
 
-    {/* <PricingCard /> */}
-    {/* <PricingCard2 /> */}
+    <PricingCard />
 
     {/*<StaticImage*/}
     {/*  src="../images/logo.svg"*/}

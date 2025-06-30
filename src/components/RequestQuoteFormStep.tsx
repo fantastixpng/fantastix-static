@@ -1,17 +1,24 @@
 import React, { Component, useState } from "react"
 import { Alert, Button, Container, Row } from "react-bootstrap"
 
-class RequestQuoteFormStep extends Component {
+type StateProp = {
+  step: number;
+  email?: string;
+  username?: string;
+  password?: string;
+  firstName?: string;
+  lastName?: string;
+  country?: string;
+  levelOfEducation?: string;
+  // [x: string]: string
+};
+class RequestQuoteFormStep extends Component<any, StateProp> {
   constructor(props) {
     super(props);
 
-    type StateProp = {
-      step: number;
-    };
 
     this.state = {
       step: 1,
-
     }
   }
 
@@ -47,35 +54,35 @@ class RequestQuoteFormStep extends Component {
           <div className="row g-3">
             <div className="col-12 col-lg-4">
               <div className="form-floating mb-3">
-                <input name="name" type="text" className="form-control" id="name" placeholder="name"/>
+                <input name="name" type="text" className="form-control" id="name" placeholder="name" />
                 <label htmlFor="name">Name*</label>
               </div>
             </div>
 
             <div className="col-12 col-lg-4">
               <div className="form-floating mb-3">
-                <input name="email" type="email" className="form-control" id="email" placeholder="name@example.com"/>
+                <input name="email" type="email" className="form-control" id="email" placeholder="name@example.com" />
                 <label htmlFor="email">Email address*</label>
               </div>
             </div>
 
             <div className="col-12 col-lg-4">
               <div className="form-floating mb-3">
-                <input name="phonenumber" type="tel" className="form-control" id="phonenumber" placeholder="phone number"/>
+                <input name="phonenumber" type="tel" className="form-control" id="phonenumber" placeholder="phone number" />
                 <label htmlFor="phonenumber">Mobile Phone*</label>
               </div>
             </div>
 
             <div className="col-12 col-lg-4">
               <div className="form-floating mb-3">
-                <input name="website" type="tel" className="form-control" id="website" placeholder="Website"/>
+                <input name="website" type="tel" className="form-control" id="website" placeholder="Website" />
                 <label htmlFor="website">Website address</label>
               </div>
             </div>
 
             <div className="col-12 col-lg-4">
               <div className="form-floating mb-3">
-                <input name="company" type="tel" className="form-control" id="company" placeholder="company"/>
+                <input name="company" type="tel" className="form-control" id="company" placeholder="company" />
                 <label htmlFor="company">Company Name</label>
               </div>
             </div>
@@ -83,7 +90,7 @@ class RequestQuoteFormStep extends Component {
             <div className="col-12 col-lg-4">
               <div className="form-floating mb-3">
                 <select name="industry" id="industry" className="form-select" aria-label="Select your industry" placeholder="Select your industry">
-                  <option value="" selected label>Select your industry</option>
+                  <option value="" selected>Select your industry</option>
                   <option value="As-soon-as-possible">As soon as possible</option>
                   <option value="With-in-a-month">With in a month</option>
                   <option value="With-in-3-months">With in 3 months</option>
@@ -221,7 +228,7 @@ class RequestQuoteFormStep extends Component {
                   {/*<label id="inputFiles" className="fs-4 mb-3">The more information, the more productive the collaboration and result will be.</label> */}
                   <div className="input-group mb-3">
                     {/* <label className="input-group-text" htmlFor="inputFiles">Upload</label> */}
-                    <input id="inputFiles" className="form-control" type="file" name="file" multiple/>
+                    <input id="inputFiles" className="form-control" type="file" name="file" multiple />
                   </div>
                 </fieldset>
               </div>
@@ -230,7 +237,7 @@ class RequestQuoteFormStep extends Component {
             <div hidden className="row g-2">
               <div className="col">
                 <div className="form-check">
-                  <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                  <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                   <label className="form-check-label" htmlFor="flexCheckDefault">
                     I'd like to sign an NDA with Fantastix Software.
                   </label>
@@ -243,13 +250,13 @@ class RequestQuoteFormStep extends Component {
             </div>
 
             <div className="alert alert-success alert-dismissible mt-5" role="alert">
-              <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"/>
+              <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close" />
               <h4 className="alert-heading">Message sent!</h4>
               <p className="mb-0">We'll get back to you shortly.</p>
             </div>
 
             <div className="alert alert-danger alert-dismissible mt-5" role="alert">
-              <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"/>
+              <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close" />
               <h4 className="alert-heading">Message sent!</h4>
               <p className="mb-0">We'll get back to you shortly.</p>
             </div>

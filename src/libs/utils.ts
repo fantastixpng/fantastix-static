@@ -41,3 +41,7 @@ export function getInitialColorMode() {
   // color themes, let's default to 'light'.
   return "light"
 }
+
+export const capitalizeWord = (str: string) => {
+  return str[0].toUpperCase() + str.substring(1, str.length);
+}

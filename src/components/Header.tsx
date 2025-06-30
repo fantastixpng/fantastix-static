@@ -39,7 +39,6 @@ const Header = () => {
         role="banner">
 
         <Container className="navbar-container">
-
           <Navbar.Brand href="/" className="d-flex align-items-center mb-md-0 me-md-auto text-dark text-decoration-none">
             <figure className="mb-0 mb-lg-0 me-lg-4">
               <img

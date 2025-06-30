@@ -16,7 +16,7 @@ const config: GatsbyConfig = {
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
-  // graphqlTypegen: true,
+  graphqlTypegen: true,
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
@@ -41,7 +41,9 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-sass`,
       // options: {
-      //   includePaths: ["src/scss/bootstrap"],
+      //   includePaths: [
+      //     "src/scss/bootstrap.scss"
+      //   ],
       // }
     },
     {
@@ -73,6 +75,17 @@ const config: GatsbyConfig = {
     //     policy: [{ userAgent: '*', allow: '/' }],
     //   },
     // },
+    // {
+    //   resolve: 'gatsby-plugin-load-script',
+    //   options: {
+    //     disable: !process.env.SENTRY_DSN, // When do you want to disable it ?
+    //     src: 'https://browser.sentry-cdn.com/5.15.4/bundle.min.js',
+    //     integrity:
+    //       'sha384-Nrg+xiw+qRl3grVrxJtWazjeZmUwoSt0FAVsbthlJ5OMpx0G08bqIq3b/v0hPjhB',
+    //     crossorigin: 'anonymous',
+    //     onLoad: `() => Sentry.init({dsn:"${process.env.SENTRY_DSN}"})`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -96,17 +109,6 @@ const config: GatsbyConfig = {
     //         variants: [`400`, `500`, `700`],
     //       },
     //     ],
-    //   },
-    // },
-    // {
-    //   resolve: 'gatsby-plugin-load-script',
-    //   options: {
-    //     disable: !process.env.SENTRY_DSN, // When do you want to disable it ?
-    //     src: 'https://browser.sentry-cdn.com/5.15.4/bundle.min.js',
-    //     integrity:
-    //       'sha384-Nrg+xiw+qRl3grVrxJtWazjeZmUwoSt0FAVsbthlJ5OMpx0G08bqIq3b/v0hPjhB',
-    //     crossorigin: 'anonymous',
-    //     onLoad: `() => Sentry.init({dsn:"${process.env.SENTRY_DSN}"})`,
     //   },
     // },
     // {
@@ -213,15 +215,6 @@ const config: GatsbyConfig = {
     //   },
     // },
     "gatsby-plugin-react-helmet",
-    // {
-    //   resolve: `gatsby-source-wordpress`,
-    //   options: {
-    //     // the only required plugin option for WordPress is the GraphQL url.
-    //     url:
-    //       process.env.WPGRAPHQL_URL ||
-    //       `https://wpgatsbydemo.wpengine.com/graphql`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-strapi`,
       options: {
@@ -233,7 +226,7 @@ const config: GatsbyConfig = {
         queryLimit: 1000,
       },
     },
-    // `gatsby-plugin-typegen`
+    `gatsby-plugin-typegen`
   ],
 }
 

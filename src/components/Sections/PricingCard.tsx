@@ -5,13 +5,13 @@ export default function PricingCard() {
   return (
     <section id="pricing" className="bg-dark-2">
       <Container>
-        <Row className="gy-5 justify-content-center mb-10">
+        <Row className="justify-content-center mb-10">
           <Col md={9} lg={8} className="text-center text-light">
-            <h3 className="fw-light">Pricing</h3>
-            <h3 className="fw-light">Pricing Plans</h3>
+            <p className="fs-2">Pricing</p>
+            <h3 className="display-5 fw-light">Pricing Plans</h3>
             {/*<h2 className="display-5 text-capitalize">Website Design & Development</h2>*/}
             {/*<h2 className="xdisplay-4">Small to Medium sized Enterprises (SME's)</h2>*/}
-            <p className="mb-15 fs-4 text-muted">
+            <p className="lead fs-4 text-muted">
               The website plans below are for Small to Medium sized Enterprises
               (SME's). If there are any features outside of our plans, we can
               include add-ons and customisations to meet the needs of your
@@ -39,6 +39,9 @@ export default function PricingCard() {
                 <div className="position-relative mb-5">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Design Up to 5 pages</h6>
+                  <h6 className="ps-7 fw-light">
+                    Contact page, About page, Blog feed * Blog post pages
+                  </h6>
                 </div>
                 <div className="position-relative mb-5">
                   <i className="bi bi-check-circle-fill" />
@@ -101,10 +104,6 @@ export default function PricingCard() {
                 </div>
                 <div className="position-relative mb-5">
                   <i className="bi bi-check-circle-fill" />
-                  <h6 className="ps-7">Photo Gallery</h6>
-                </div>
-                <div className="position-relative mb-5">
-                  <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Contact Form</h6>
                 </div>
                 <div className="position-relative mb-5">
@@ -151,6 +150,7 @@ export default function PricingCard() {
             className="mb-8 mb-lg-0 aos-init aos-animate"
             data-aos="fade-up"
             data-aos-delay="300"
+            hidden
           >
             <div className="d-flex flex-column justify-content-between h-100 p-6 xborder rounded-2 border-dark-3 bg-bg-3">
               <div>
@@ -168,10 +168,6 @@ export default function PricingCard() {
                 <div className="position-relative mb-5">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Social Sharing Options</h6>
-                </div>
-                <div className="position-relative mb-5">
-                  <i className="bi bi-check-circle-fill" />
-                  <h6 className="ps-7">Photo Gallery</h6>
                 </div>
                 <div className="position-relative mb-5">
                   <i className="bi bi-check-circle-fill" />
@@ -225,6 +221,7 @@ export default function PricingCard() {
             className="mb-8 mb-lg-0 aos-init aos-animate"
             data-aos="fade-up"
             data-aos-delay="400"
+            hidden
           >
             <div className="d-flex flex-column justify-content-between h-100 p-6 xborder rounded-2 border-dark-3 bg-bg-3">
               <div>
@@ -243,10 +240,6 @@ export default function PricingCard() {
                 <div className="position-relative mb-5">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Social Sharing Options</h6>
-                </div>
-                <div className="position-relative mb-5">
-                  <i className="bi bi-check-circle-fill" />
-                  <h6 className="ps-7">Photo Gallery</h6>
                 </div>
                 <div className="position-relative mb-5">
                   <i className="bi bi-check-circle-fill" />
@@ -316,6 +309,24 @@ export default function PricingCard() {
           </Col>
         </Row>
       </Container>
+    
+      {/* <Container>
+        <Row className="gy-5 justify-content-center mb-10">
+          <Col md={9} lg={8} className="text-center text-light">
+            <h3 className="fw-light">Pricing</h3>
+            <h3 className="fw-light">Pricing Plans</h3>
+            <h2 className="display-5 text-capitalize">Website Design & Development</h2>
+            <h2 className="xdisplay-4">Small to Medium sized Enterprises (SME's)</h2>
+            <p className="mb-15 fs-4 text-muted">
+              The website plans below are for Small to Medium sized Enterprises
+              (SME's). If there are any features outside of our plans, we can
+              include add-ons and customisations to meet the needs of your
+              business.
+            </p>
+          </Col>
+        </Row>
+
+      </Container> */}
     </section>
   )
 }

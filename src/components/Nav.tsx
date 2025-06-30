@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, StaticQuery, graphql, useStaticQuery } from "gatsby"
 import { useSiteMetadata } from "../hooks/use-site-metadata";
+import { capitalizeWord } from "../libs/utils";
 
 const Nav = () => {
     const siteMetadata = useSiteMetadata();
@@ -55,7 +56,7 @@ const Nav = () => {
                             return (
                                 <li className="nav-item" key={category.node.strapi_id}>
                                     <Link to={`/blog/category/${category.node.slug}`} className="nav-link">
-                                        {category.node.name}
+                                        {capitalizeWord(category.node.name)}
                                     </Link>
                                 </li>
                             )

@@ -1,4 +1,6 @@
-/* Custom blog styles */
+/*
+ * Blog posts
+ */
 .blog-post {
   margin-bottom: 4rem;
 }
@@ -8,4 +10,8 @@
 .blog-post-meta {
   margin-bottom: 1.25rem;
   color: #727272;
+}
+/* Pagination */
+.blog-pagination {
+  margin-bottom: 4rem;
 }

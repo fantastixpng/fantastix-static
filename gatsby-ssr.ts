@@ -6,9 +6,10 @@
 
 import * as React from "react"
 import { Script } from "gatsby"
+import config from "./config/website"
 
 export const onRenderBody = ({ setHtmlAttributes, setPostBodyComponents }) => {
-  setHtmlAttributes({ lang: "en" })
+  setHtmlAttributes({ lang: config.siteLanguage })
 
   setPostBodyComponents([
     // <Script type="text/javascript" src="/every-page.js" key="every-page-js" defer></Script>,

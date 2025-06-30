@@ -1,3 +1,4 @@
+@use "sass:list";
 @mixin transition($transition) {
   -moz-transition: all $transition ease;
   -o-transition: all $transition ease;
@@ -33,13 +34,13 @@
 }
 
 @mixin _assert-ascending($list) {
-  @if length($list) < 2 {
+  @if list.length($list) < 2 {
     @warn "List is too short to assert ascending order.";
   }
 
-  $prev: nth($list, 1);
-  @for $i from 2 through length($list) {
-    $current: nth($list, $i);
+  $prev: list.nth($list, 1);
+  @for $i from 2 through list.length($list) {
+    $current: list.nth($list, $i);
     @if $current < $prev {
       @error "List is not in ascending order at index #{$i}: #{$current} < #{$prev}.";
     }

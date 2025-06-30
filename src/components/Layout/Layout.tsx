@@ -2,18 +2,16 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 // import 'inter-ui'
 import PropTypes from 'prop-types'
-
+import { ToastContainer } from "react-bootstrap"
 import { ThemeProvider, ToastProvider } from "../../contexts/app-context"
 import { lightTheme, darkTheme } from "../../hooks/theme"
 import { useDarkMode } from "../../hooks/use-dark-mode"
 import { useSiteMetadata } from "../../hooks/use-site-metadata";
-
 import Header from "../Header"
 import Footer from "../Footer2"
 
 import "./Layout.scss"
-import Seo from "../Seo";
-import { ToastContainer } from "react-bootstrap"
+import Seo from "../Seo"
 
 const Layout = ({ children }) => {
   const { site } = useSiteMetadata();
@@ -22,7 +20,6 @@ const Layout = ({ children }) => {
     <>
       {/* <ThemeProvider> */}
       {/* <ToastProvider> */}
-
         {/* <Seo title="Home" /> */}
 
         <Header />

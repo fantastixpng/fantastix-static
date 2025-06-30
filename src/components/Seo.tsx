@@ -7,9 +7,9 @@
 import React from 'react'
 import { useStaticQuery, graphql, Script } from "gatsby"
 import PropTypes from "prop-types"
+import { Helmet } from "react-helmet";
 import config from '../../config/website'
 import { useSiteMetadata } from '../hooks/use-site-metadata';
-import { Helmet } from "react-helmet";
 
 type SeoProps = {
   description?: string;
@@ -104,7 +104,6 @@ const Seo = ({ description, lang, meta, title }: SeoProps) => {
         ].concat(meta)}
       /> */}
       <Helmet>
-        {/* <html lang={config.siteLanguage}> */}
         <title>{`${title} | Fantastix`}</title>
         <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
@@ -126,7 +125,6 @@ const Seo = ({ description, lang, meta, title }: SeoProps) => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
-        {/* </html> */}
       </Helmet>
     </>
   )

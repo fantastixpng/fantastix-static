@@ -1,4 +1,4 @@
 @use "sass:map";
-@import "variables-overrides";
+@use "variables-overrides";
 
-$theme-colors: map.merge($theme-colors, $custom-colors);
+variables-overrides.$theme-colors: map.merge(variables-overrides.$theme-colors, variables-overrides.$custom-colors);

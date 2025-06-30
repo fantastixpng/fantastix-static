@@ -65,12 +65,7 @@ export default function OurServices() {
 
                         <h5 className="mb-4 mt-6">Mobile App Development</h5>
                         <p className="mb-0">
-                            Affordable Mobile App Development for
-                            <br />
-                            your business needs. We build top-notch, up-to-date integrated
-                            seamless native android apps for various android smartphones and
-                            tablets. No matter you open the app on any android device, your
-                            customers get the same visual quality and experience
+                            We create high-quality, modern native Android apps tailored to your business needs. Our apps work smoothly across all Android smartphones and tablets, ensuring your customers enjoy the same visual quality and seamless experience on any device.
                         </p>
                     </Col>
 
@@ -97,8 +92,7 @@ export default function OurServices() {
                         </svg>
                         <h5 className="mb-4 mt-6">Web App Development</h5>
                         <p className="mb-0">
-                            We bring our vast expertise to build perfectly working and
-                            cost-effective web applications using modern robust technologies.
+                            We design and build modern web applications that are fast, responsive, and easy to use. Whether it's a business dashboard, online service, or customer portal, our web apps work smoothly across all devices and browsers. We focus on creating user-friendly designs and reliable features to help your business grow online.
                         </p>
                     </Col>
 
@@ -119,12 +113,7 @@ export default function OurServices() {
                         </svg>
                         <h5 className="mb-4 mt-6">Backend/API Development</h5>
                         <p className="mb-0">
-                            Affordable Mobile App Development for
-                            <br />
-                            your business needs. We build top-notch, up-to-date integrated
-                            seamless native android apps for various android smartphones and
-                            tablets. No matter you open the app on any android device, your
-                            customers get the same visual quality and experience
+                            We build powerful and secure backend systems to support your mobile apps, websites, and software. Our custom APIs are designed for speed, scalability, and easy integration with any platform. Whether you're managing users, storing data, or connecting services, we make sure your backend runs smoothly and reliably behind the scenes.
                         </p>
                     </Col>
 
@@ -151,8 +140,7 @@ export default function OurServices() {
                         </svg>
                         <h5 className="mb-4 mt-6">Hybrid App Development</h5>
                         <p className="mb-0">
-                            We build hybrid apps that features consistent experience across
-                            devices.
+                            We create fast and reliable hybrid apps that work on both Android and iOS using a single codebase. This means quicker development, lower costs, and a consistent user experience across devices. Whether it's a business tool or a customer-facing app, we build apps that look and feel great on any platform.
                         </p>
                     </Col>
                 </Row>

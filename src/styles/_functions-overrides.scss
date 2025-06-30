@@ -1,14 +1,14 @@
 @use "sass:color";
 @use "sass:map";
 @use "sass:math";
-@use "variables-overrides";
+@import "variables-overrides";
 
 @function color($key: "blue") {
   @return map.get($colors, $key);
 }
 
 @function theme-color($key: "primary") {
-  @return map.get(variables-overrides.$theme-colors, $key);
+  @return map.get($theme-colors, $key);
 }
 
 @function gray($key: "100") {
@@ -21,4 +21,24 @@
   $level: math.abs($level);
 
   @return color.mix($color-base, $color, $level * $theme-color-interval);
+}
+
+// Function: Returns either black or white depending on background color brightness
+@function contrast-color($color) {
+  $r: color.channel($color, "blue", $space: rgb);
+  $g: color.channel($color, "green", $space: rgb);
+  $b: color.channel($color, "blue", $space: rgb);
+
+  // Calculate luminance using the YIQ formula
+  $yiq: calc((($r * 299) + ($g * 587) + ($b * 114)) / 1000);
+
+  @if ($yiq >= 128) {
+    @return #000000; // dark text for light backgrounds
+  } @else {
+    @return #ffffff; // light text for dark backgrounds
+  }
+}
+
+@function lighten-color($color, $amount) {
+  @return color.adjust($color, $lightness: $amount);
 }

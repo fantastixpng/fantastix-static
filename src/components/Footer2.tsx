@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="row mb-4">
           <div className="col">
             <ul className="nav justify-content-center">
-              <li className="nav-item"><Link to="/blog" className="nav-link link-secondary">Blog</Link></li>
+              {/* <li className="nav-item"><Link to="/blog" className="nav-link link-secondary">Blog</Link></li> */}
               <li className="nav-item"><Link to="/#who-we-are" className="nav-link link-secondary">Who We Are</Link></li>
               <li className="nav-item"><Link to="/#our-work" className="nav-link link-secondary">Our Work</Link></li>
               <li className="nav-item"><Link to="/#services" className="nav-link link-secondary">Services</Link></li>

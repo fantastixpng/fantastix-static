@@ -76,6 +76,8 @@ node_modules/
 public
 src/gatsby-types.d.ts
 src/__generated__/gatsby-types.d.ts
+blog
+src/templates/
 
 # Local Netlify folder
 .netlify

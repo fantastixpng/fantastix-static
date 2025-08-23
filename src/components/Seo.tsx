@@ -37,8 +37,8 @@ const Seo = ({ description, lang, meta, title }: SeoProps) => {
   // shareImage {
   //   url
   // }
-  const { strapiGlobal } = useStaticQuery(query);
-  const { defaultSeo, siteName, favicon } = strapiGlobal;
+  // const { strapiGlobal } = useStaticQuery(query);
+  // const { defaultSeo, siteName, favicon } = strapiGlobal;
 
   // const title = config.siteTitle
   // const description = config.siteDescription
@@ -55,10 +55,10 @@ const Seo = ({ description, lang, meta, title }: SeoProps) => {
     },
   ]
 
-  const site = useSiteMetadata();
+  // const site = useSiteMetadata();
 
-  const metaDescription = description || site.description
-  const defaultTitle = site?.title
+  // const metaDescription = description || site.description
+  // const defaultTitle = site?.title
 
   return (
     <>

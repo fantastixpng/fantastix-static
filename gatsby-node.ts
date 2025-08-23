@@ -45,182 +45,182 @@ export const onCreateWebpackConfig = ({ stage, actions }: CreateWebpackConfigArg
 //   }
 // };
 
-const articleTemplatePath = path.resolve("./src/templates/article.tsx");
-const categoryTemplatePath = path.resolve("./src/templates/category.tsx");
-const blogPostTemplatePath = path.resolve("./src/templates/blog-post.tsx");
-const blogPostArchiveTemplatePath = path.resolve("./src/templates/blog-post-archive.tsx");
-const videoPostTemplatePath = path.resolve("./src/templates/video-post.tsx");
+// const articleTemplatePath = path.resolve("./src/templates/article.tsx");
+// const categoryTemplatePath = path.resolve("./src/templates/category.tsx");
+// const blogPostTemplatePath = path.resolve("./src/templates/blog-post.tsx");
+// const blogPostArchiveTemplatePath = path.resolve("./src/templates/blog-post-archive.tsx");
+// const videoPostTemplatePath = path.resolve("./src/templates/video-post.tsx");
 
-export const createPages = async ({ graphql, actions: {createPage} }: CreatePagesArgs) => {
-  // const results = await graphql(`
-  //   {
-  //     articles: allStrapiArticle {
-  //       edges {
-  //         node {
-  //           strapi_id
-  //           slug
-  //           title
-  //           content
-  //           cover {
-  //             url
-  //             alternativeText
-  //             localFile {
-  //               id
-  //               absolutePath
-  //               publicURL
-  //               url
-  //               childImageSharp {
-  //                 gatsbyImageData(width: 800)
-  //               }
-  //             }
-  //           }
-  //           publishedAt
-  //           updatedAt
-  //           createdAt
-  //         }
-  //       }
-  //     }
-  //     categories: allStrapiCategory {
-  //       edges {
-  //         node {
-  //           strapi_id
-  //           slug
-  //         }
-  //       }
-  //     }
-  //     // videoPosts: allStrapiVideoPost {
-  //     //   allStrapiArticle(: { type: { eq: "video" } }) {
-  //     //     id
-  //     //     title
-  //     //     slug
-  //     //     publishedAt
-  //     //     # videoUrl
-  //     //     # thumbnail {
-  //     //     #   url
-  //     //     # }
-  //     //   }
-  //     // }
-  //     // archivedPosts: allStrapiArticle( {
-  //     //   articles(
-  //     //     filters: { 
-  //     //       status: { eq: "archived" } 
-  //     //       # OR using an archive date field:
-  //     //       # archivedAt: { notNull: true }
-  //     //     }
-  //     //     sort: ["archivedAt:desc"]
-  //     //   ) {
-  //     //     data {
-  //     //       id
-  //     //       attributes {
-  //     //         title
-  //     //         slug
-  //     //         archivedAt
-  //     //         archivedReason
-  //     //       }
-  //     //     }
-  //     //   }
-  //     // }
-  //   }
-  // `);
+// export const createPages = async ({ graphql, actions: {createPage} }: CreatePagesArgs) => {
+//   // const results = await graphql(`
+//   //   {
+//   //     articles: allStrapiArticle {
+//   //       edges {
+//   //         node {
+//   //           strapi_id
+//   //           slug
+//   //           title
+//   //           content
+//   //           cover {
+//   //             url
+//   //             alternativeText
+//   //             localFile {
+//   //               id
+//   //               absolutePath
+//   //               publicURL
+//   //               url
+//   //               childImageSharp {
+//   //                 gatsbyImageData(width: 800)
+//   //               }
+//   //             }
+//   //           }
+//   //           publishedAt
+//   //           updatedAt
+//   //           createdAt
+//   //         }
+//   //       }
+//   //     }
+//   //     categories: allStrapiCategory {
+//   //       edges {
+//   //         node {
+//   //           strapi_id
+//   //           slug
+//   //         }
+//   //       }
+//   //     }
+//   //     // videoPosts: allStrapiVideoPost {
+//   //     //   allStrapiArticle(: { type: { eq: "video" } }) {
+//   //     //     id
+//   //     //     title
+//   //     //     slug
+//   //     //     publishedAt
+//   //     //     # videoUrl
+//   //     //     # thumbnail {
+//   //     //     #   url
+//   //     //     # }
+//   //     //   }
+//   //     // }
+//   //     // archivedPosts: allStrapiArticle( {
+//   //     //   articles(
+//   //     //     filters: { 
+//   //     //       status: { eq: "archived" } 
+//   //     //       # OR using an archive date field:
+//   //     //       # archivedAt: { notNull: true }
+//   //     //     }
+//   //     //     sort: ["archivedAt:desc"]
+//   //     //   ) {
+//   //     //     data {
+//   //     //       id
+//   //     //       attributes {
+//   //     //         title
+//   //     //         slug
+//   //     //         archivedAt
+//   //     //         archivedReason
+//   //     //       }
+//   //     //     }
+//   //     //   }
+//   //     // }
+//   //   }
+//   // `);
   
-  // if (results.errors) {
-  //   throw results.errors;
-  // }
+//   // if (results.errors) {
+//   //   throw results.errors;
+//   // }
 
-  const articlesQueryResult = await graphql(`
-    query AllArticlesQuery {
-      allStrapiArticle {
-        nodes {
-          id
-          strapi_id
-          title
-          slug
-          content
-          cover {
-              url
-              alternativeText
-              localFile {
-                  id
-                  absolutePath
-                  publicURL
-                  url
-                  childImageSharp {
-                      gatsbyImageData(width: 800)
-                  }
-              }
-          }
-          author {
-            id
-            strapi_id
-            name
-            email
-            avatar {
-              id
-              url
-              alternativeText
-              localFile {
-                absolutePath
-                publicURL
-                url
-                childImageSharp {
-                  gatsbyImageData(width: 40)
-                }
-              }
-            }
-          }
-          publishedAt
-          updatedAt
-          createdAt
-        }
-      }
-    }
-  `);
-  const articles = articlesQueryResult?.data?.allStrapiArticle?.nodes;
-  // createPage({
-  //   path: `/blog/articles`,
-  //   component: articleTemplatePath,
-  //   context: {
-  //     title: "Articles",
-  //     articles: articles,
-  //   },
-  // });
-  // Create a page for each article
-  articles.forEach((article, index) => {
-    createPage({
-      path: `/blog/articles/${article.slug}`,
-      component: articleTemplatePath,
-      context: {
-        title: article.name,
-        article: article
-      },
-    })
-  });
+//   const articlesQueryResult = await graphql(`
+//     query AllArticlesQuery {
+//       allStrapiArticle {
+//         nodes {
+//           id
+//           strapi_id
+//           title
+//           slug
+//           content
+//           cover {
+//               url
+//               alternativeText
+//               localFile {
+//                   id
+//                   absolutePath
+//                   publicURL
+//                   url
+//                   childImageSharp {
+//                       gatsbyImageData(width: 800)
+//                   }
+//               }
+//           }
+//           author {
+//             id
+//             strapi_id
+//             name
+//             email
+//             avatar {
+//               id
+//               url
+//               alternativeText
+//               localFile {
+//                 absolutePath
+//                 publicURL
+//                 url
+//                 childImageSharp {
+//                   gatsbyImageData(width: 40)
+//                 }
+//               }
+//             }
+//           }
+//           publishedAt
+//           updatedAt
+//           createdAt
+//         }
+//       }
+//     }
+//   `);
+//   const articles = articlesQueryResult?.data?.allStrapiArticle?.nodes;
+//   // createPage({
+//   //   path: `/blog/articles`,
+//   //   component: articleTemplatePath,
+//   //   context: {
+//   //     title: "Articles",
+//   //     articles: articles,
+//   //   },
+//   // });
+//   // Create a page for each article
+//   articles.forEach((article, index) => {
+//     createPage({
+//       path: `/blog/articles/${article.slug}`,
+//       component: articleTemplatePath,
+//       context: {
+//         title: article.name,
+//         article: article
+//       },
+//     })
+//   });
   
-  const categoryQueryResult = await graphql(`
-    query AllCategoriesQuery {
-      allStrapiCategory {
-        nodes {
-          strapi_id
-          slug
-          name
-          publishedAt
-          createdAt
-          updatedAt
-        }
-      }
-    }
-  `);
-  const categories = categoryQueryResult?.data?.allStrapiCategory?.nodes;
-  categories.forEach((category, index) => {
-    createPage({
-      path: `/blog/category/${category.slug}`,
-      component: categoryTemplatePath,
-      context: {
-        title: category.name,
-        category: category
-      },
-    })
-  });
+//   const categoryQueryResult = await graphql(`
+//     query AllCategoriesQuery {
+//       allStrapiCategory {
+//         nodes {
+//           strapi_id
+//           slug
+//           name
+//           publishedAt
+//           createdAt
+//           updatedAt
+//         }
+//       }
+//     }
+//   `);
+//   const categories = categoryQueryResult?.data?.allStrapiCategory?.nodes;
+//   categories.forEach((category, index) => {
+//     createPage({
+//       path: `/blog/category/${category.slug}`,
+//       component: categoryTemplatePath,
+//       context: {
+//         title: category.name,
+//         category: category
+//       },
+//     })
+//   });
 
   // const archivedPostsQueryResult = await graphql(`
   //   query AllArchivedPostsQuery {
@@ -279,7 +279,7 @@ export const createPages = async ({ graphql, actions: {createPage} }: CreatePage
   //     },
   //   })
   // });
-};
+// };
 
 // const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
 //   Promise.all(

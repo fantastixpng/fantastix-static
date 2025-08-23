@@ -4,20 +4,20 @@ import { useSiteMetadata } from "../hooks/use-site-metadata";
 import { capitalizeWord } from "../libs/utils";
 
 const Nav = () => {
-    const siteMetadata = useSiteMetadata();
-    const data = useStaticQuery(graphql`
-        query {
-            allStrapiCategory {
-                edges {
-                    node {
-                        strapi_id
-                        name
-                        slug
-                    }
-                }
-            }
-        }
-    `);
+    // const siteMetadata = useSiteMetadata();
+    // const data = useStaticQuery(graphql`
+    //     query {
+    //         allStrapiCategory {
+    //             edges {
+    //                 node {
+    //                     strapi_id
+    //                     name
+    //                     slug
+    //                 }
+    //             }
+    //         }
+    //     }
+    // `);
 
     const navLinks = [
         { name: "Home", path: "/" },

@@ -14,7 +14,7 @@ import "./Layout.scss"
 import Seo from "../Seo"
 
 const Layout = ({ children }) => {
-  const { site } = useSiteMetadata();
+  // const { site } = useSiteMetadata();
 
   return (
     <>

@@ -13,19 +13,19 @@ export const Head = () => <Seo title="Blog | Fantastix" />
 const Layout = ({ isHomePage = false, children }) => {
   const title = ""
 
-  const data = useStaticQuery(graphql`
-        query {
-            allStrapiCategory {
-                edges {
-                    node {
-                        strapi_id
-                        name
-                        slug
-                    }
-                }
-            }
-        }
-    `);
+  // const data = useStaticQuery(graphql`
+  //       query {
+  //           allStrapiCategory {
+  //               edges {
+  //                   node {
+  //                       strapi_id
+  //                       name
+  //                       slug
+  //                   }
+  //               }
+  //           }
+  //       }
+  //   `);
 
   return (
     <div data-is-root-path={isHomePage}>
@@ -61,7 +61,7 @@ const Layout = ({ isHomePage = false, children }) => {
         </header>
         <div className="nav-scroller py-1 mb-3 border-bottom">
           <Nav className="nav nav-underline justify-content-between">
-            {data.allStrapiCategory.edges.map((category, i) => (
+            {/* {data.allStrapiCategory.edges.map((category, i) => (
               <NavItem as={NavLink}
                 key={i}
                 href={`/blog/category/${category.node.slug}`}
@@ -70,7 +70,7 @@ const Layout = ({ isHomePage = false, children }) => {
               >
                 {capitalizeWord(category.node.name)}
               </NavItem>
-            ))}
+            ))} */}
             {/* <a className="nav-item nav-link link-body-emphasis active" href="#">World</a>
                         <a className="nav-item nav-link link-body-emphasis" href="#">U.S.</a>
                         <a className="nav-item nav-link link-body-emphasis" href="#">Technology</a>
@@ -117,10 +117,6 @@ const Layout = ({ isHomePage = false, children }) => {
       </footer>
     </div>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout;

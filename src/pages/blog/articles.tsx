@@ -8,7 +8,7 @@ import ArticlesTwoCol from "../../components/ArticlesTwoCol"
 export const Head: HeadFC = () => <title>Articles | Fantastix</title>
 
 const ArticlesPage = ({ data }) => {
-  const articles = data.allStrapiArticle.nodes;
+  const articles = []//data?.allStrapiArticle?.nodes;
 
   return (
     <Layout>
@@ -26,9 +26,9 @@ const ArticlesPage = ({ data }) => {
           </Row>
 
           <Row className="row-cols-3 g-2 text-center">
-            {articles.map(article => (
+            {/* {articles.map(article => (
               <ArticleCard key={`article__${article.id}`} article={article} />
-            ))}
+            ))} */}
           </Row>
         </Container>
         
@@ -42,66 +42,66 @@ const ArticlesPage = ({ data }) => {
             </div>
           </Row>
 
-          <ArticlesTwoCol articles={data.allStrapiArticle.nodes} />
+          {/* <ArticlesTwoCol articles={data.allStrapiArticle.nodes} /> */}
         </Container>
       </section>
     </Layout>
   )
 }
 
-export const query = graphql`
-  query ArticlesQuery {
-    allStrapiArticle {
-      nodes {
-        id
-        strapi_id
-        title
-        content
-        slug
-        cover {
-          url
-          alternativeText
-          localFile {
-            absolutePath
-            publicURL
-            url
-            childImageSharp {
-              gatsbyImageData(width: 800)
-            }
-          }
-        }
-        category {
-          name
-          slug
-          parent {
-            id
-          }
-        }
-        author {
-          id
-          strapi_id
-          name
-          email
-          avatar {
-            id
-            url
-            alternativeText
-            localFile {
-              absolutePath
-              publicURL
-              url
-              childImageSharp {
-                gatsbyImageData(width: 40)
-              }
-            }
-          }
-        }
-        publishedAt
-        createdAt
-        updatedAt
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query ArticlesQuery {
+//     allStrapiArticle {
+//       nodes {
+//         id
+//         strapi_id
+//         title
+//         content
+//         slug
+//         cover {
+//           url
+//           alternativeText
+//           localFile {
+//             absolutePath
+//             publicURL
+//             url
+//             childImageSharp {
+//               gatsbyImageData(width: 800)
+//             }
+//           }
+//         }
+//         category {
+//           name
+//           slug
+//           parent {
+//             id
+//           }
+//         }
+//         author {
+//           id
+//           strapi_id
+//           name
+//           email
+//           avatar {
+//             id
+//             url
+//             alternativeText
+//             localFile {
+//               absolutePath
+//               publicURL
+//               url
+//               childImageSharp {
+//                 gatsbyImageData(width: 40)
+//               }
+//             }
+//           }
+//         }
+//         publishedAt
+//         createdAt
+//         updatedAt
+//       }
+//     }
+//   }
+// `
 
 export default ArticlesPage

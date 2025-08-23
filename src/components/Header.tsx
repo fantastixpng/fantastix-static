@@ -59,7 +59,7 @@ const Header = () => {
 
           <Navbar.Collapse className="justify-content-end">
             <Nav className="me-end">
-              <Nav.Link href="/blog">Blog</Nav.Link>
+              {/* <Nav.Link href="/blog">Blog</Nav.Link> */}
               <Nav.Link href="/#who-we-are">Who We Are</Nav.Link>
               <Nav.Link href="/#our-work">Our Work</Nav.Link>
               <Nav.Link href="/#services">Services</Nav.Link>

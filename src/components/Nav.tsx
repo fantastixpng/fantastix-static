@@ -52,7 +52,7 @@ const Nav = () => {
 
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <ul className="navbar-nav ml-auto justify-content-end flex-grow-1 pe-3">
-                        {data.allStrapiCategory.edges.map((category, i) => {
+                        {/* {data.allStrapiCategory.edges.map((category, i) => {
                             return (
                                 <li className="nav-item" key={category.node.strapi_id}>
                                     <Link to={`/blog/category/${category.node.slug}`} className="nav-link">
@@ -60,7 +60,7 @@ const Nav = () => {
                                     </Link>
                                 </li>
                             )
-                        })}
+                        })} */}
 
                         {/* <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#">Home</a>

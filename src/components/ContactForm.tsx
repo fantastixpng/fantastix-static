@@ -317,6 +317,7 @@ export default function ContactFormspree() {
 
   const onSubmit = async (event) => {
     const form = event.currentTarget;
+
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
@@ -343,16 +344,16 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
   return (
     <Form
       id="contact-form"
+      name="contact"
       className="needs-validation"
       method="post"
       encType="multipart/form-data"
       noValidate
       validated={validated}
       onSubmit={handleSubmit}
-      name="contact"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      netlify-honeypot="bot-field"
+      // data-netlify="true"
+      // data-netlify-honeypot="bot-field"
+      // netlify-honeypot="bot-field"
     >
       {/* <input type="hidden" name="_gotcha" style={{ display: "none !important" }} /> */}
       {/* <input type="hidden" name="bot-field" /> */}

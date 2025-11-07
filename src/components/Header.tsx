@@ -19,17 +19,17 @@ const Header = () => {
   const [isOpen, setOpen] = useState(false);
   const [navState, setNavState] = useState(navTop);
 
-  useEffect(() => {
-    window.onscroll = () => {
-      const { innerHeight: height, scrollY: scrollPosition } = window;
-      scrollPosition > height - 100
-        ? setNavState(navScroll)
-        : setNavState(navTop);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.onscroll = () => {
+  //     const { innerHeight: height, scrollY: scrollPosition } = window;
+  //     scrollPosition > height - 100
+  //       ? setNavState(navScroll)
+  //       : setNavState(navTop);
+  //   };
+  // }, []);
 
   return (
-    <header className="position-absolute w-100 top-0 z-100" style={navState}>
+    <header className="position-absolute w-100 top-0 z-100 main-header" style={navState}>
 
       <Navbar
         variant={"light"}
@@ -53,12 +53,12 @@ const Header = () => {
           </Navbar.Brand>
 
           {/*<AnimatedIcon/>*/}
-          <Navbar.Toggle>
-            {/* <Hamburger rounded toggled={isOpen} toggle={setOpen} size="23" /> */}
+          <Navbar.Toggle className="border-0">
+            <Hamburger rounded toggled={isOpen} toggle={setOpen} size="23" />
           </Navbar.Toggle>
 
           <Navbar.Collapse className="justify-content-end">
-            <Nav className="me-end">
+            <Nav className="me-end main-nav">
               {/* <Nav.Link href="/blog">Blog</Nav.Link> */}
               <Nav.Link href="/#who-we-are">Who We Are</Nav.Link>
               <Nav.Link href="/#our-work">Our Work</Nav.Link>
@@ -260,6 +260,7 @@ const Header = () => {
         </Container>
 
       </Navbar>
+
     </header>
   )
 }

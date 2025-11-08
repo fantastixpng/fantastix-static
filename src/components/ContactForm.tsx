@@ -312,19 +312,26 @@ export default function ContactFormspree() {
   const [validated, setValidated] = useState(false);
 
   if (state.succeeded) {
-    return <p className="container">Thanks for contacting us. We'll get back to you soon!</p>;
+    return <p className="col-6 mx-auto text-center">Thanks for contacting us. We'll get back to you soon!</p>;
   }
 
-  const onSubmit = async (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // const form = event.target;
+    const form = new FormData(event.currentTarget)
+    // if (event.target.checkValidity() === false) {
+    //   setValidated(false);
+    //   event.preventDefault();
+    //   event.stopPropagation();
+    // }
 
-    await handleSubmit(form);
-
-    setValidated(true);
+    // form.set('firstname', 'Christian');
+    // form.set('lastname', 'Augustyn');
+    // form.set('email', 'chrisaugu61@gmail.com');
+    // form.set('phone', '70523228');
+    // form.set('channel', 'channel');
+    // form.set('message', 'hello world');
+    handleSubmit(form);
   }
 
   return (
@@ -338,7 +345,6 @@ export default function ContactFormspree() {
   );
 }
 
-
 function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, errors }) {
   return (
     <Form
@@ -346,7 +352,6 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
       className="needs-validation"
       method="post"
       encType="multipart/form-data"
-      noValidate
       validated={validated}
       onSubmit={handleSubmit}
       name="contact"
@@ -369,6 +374,7 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
             <div className="invalid-feedback">
               Please enter your first name
             </div>
+            <ValidationError prefix="FirstName" field="firstname" errors={errors} />
           </Form.FloatingLabel>
         </Col>
         <Col md={5} lg={4} xl={4} className="col-6">
@@ -381,6 +387,7 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
             <div className="invalid-feedback">
               Please enter your last name
             </div>
+            <ValidationError prefix="LastName" field="lastname" errors={errors} />
           </Form.FloatingLabel>
         </Col>
       </Row>
@@ -397,6 +404,7 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
               Please enter your email address
             </div>
           </Form.FloatingLabel>
+          <ValidationError prefix="Email" field="email" errors={errors} />
         </Col>
       </Row>
 
@@ -417,6 +425,7 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
             <div className="invalid-feedback">
               Please enter your phone number
             </div>
+            <ValidationError prefix="Phone" field="phone" errors={errors} />
           </Form.FloatingLabel>
         </Col>
       </Row>
@@ -438,6 +447,7 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
               <option value="Instagram">Instagram</option>
               <option value="Other">Other</option>
             </Form.Select>
+            <ValidationError prefix="Channel" field="channel" errors={errors} />
           </Form.FloatingLabel>
         </Col>
       </Row>
@@ -457,6 +467,7 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
               name="message"
             />
             {/*<label htmlFor="message">Message</label>*/}
+            <ValidationError prefix="Message" field="message" errors={errors} />
           </Form.FloatingLabel>
         </Col>
       </Row>

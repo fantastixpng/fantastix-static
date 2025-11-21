@@ -314,6 +314,19 @@ export default function ContactFormspree() {
     return <p className="col-6 mx-auto text-center">Thanks for contacting us. We'll get back to you soon!</p>;
   }
 
+<<<<<<< HEAD
+  const onSubmit = async (event) => {
+    const form = event.currentTarget;
+
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    await handleSubmit(form);
+
+    setValidated(true);
+=======
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget)
@@ -323,6 +336,7 @@ export default function ContactFormspree() {
     //   event.stopPropagation();
     // }
     handleSubmit(form);
+>>>>>>> master
   }
 
   return (
@@ -340,15 +354,15 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
   return (
     <Form
       id="contact-form"
+      name="contact"
       className="needs-validation"
       method="post"
       encType="multipart/form-data"
       validated={validated}
       onSubmit={handleSubmit}
-      name="contact"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      netlify-honeypot="bot-field"
+      // data-netlify="true"
+      // data-netlify-honeypot="bot-field"
+      // netlify-honeypot="bot-field"
     >
       {/* <input type="hidden" name="_gotcha" style={{ display: "none !important" }} /> */}
       {/* <input type="hidden" name="bot-field" /> */}

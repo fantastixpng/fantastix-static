@@ -15,6 +15,10 @@ export const onCreateWebpackConfig = ({ stage, actions }: CreateWebpackConfigArg
   });
 };
 
+export const onPostBuild = ({ reporter }: {reporter: any}) => {
+  reporter.info(`Your Gatsby site has been built!`)
+}
+
 // export const onCreatePage = ({ page, actions }: CreatePageArgs) => {
 //   if (page.path.match(/^\/user/)) {
 //     page.matchPath = "/user/:id";

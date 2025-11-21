@@ -3,3 +3,18 @@ At Fantastix, everything we do is proudly made in PNG. We are committed to harne
 
 do one thing, and do it perfectly.
 follow unix philosophy
+
+
+# Services
+- Hybrid App Development
+  - Backend Integration
+- Mobile App Development
+  - Backend Integration
+- Frontend App Development
+  - UI Design
+- Backend App Development
+  - Database Integration
+
+## Add-On Services
+- Payment Gateway Integration
+- 

@@ -129,7 +129,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
 
     // formData.forEach(console.log)
 
-    // const resend = new Resend(process.env.RESEND_API_KET)
+    // const resend = new Resend(process.env.GATSBY_RESEND_API_KET)
     // await resend.emails.send({
     //   from: "Acme <onboarding@resend.dev>",
     //   to: ["delivered@resend.dev"],
@@ -144,10 +144,10 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     //   headers: {
     //     "Accept": "application/json",
     //     "Content-Type": "application/json",
-    // "x-api-key": process.env.NOTIFY_API_KEY,
+    // "x-api-key": process.env.GATSBY_NOTIFY_API_KEY,
     //   },
     //   body: JSON.stringify({
-    //     to: process.env.EMAIL_ADDRESS,
+    //     to: process.env.GATSBY_EMAIL_ADDRESS,
     //     subject: 'Hello world',
     //     message: 'Sending myself a test email from Notify! 🚀'
     //   }),
@@ -160,7 +160,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     // const MailerSend = require("mailersend");
 
     // const mailersend = new MailerSend({
-    //   apiKey: process.env.MAILER_API_KEY,
+    //   apiKey: process.env.GATSBY_MAILER_API_KEY,
     // });
 
     // const recipients = [new Recipient("recipient@email.com", "Recipient")];
@@ -183,7 +183,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     //       Last Name: {lastname}
     //       Email: {email}
     //     `,
-    //     email: process.env.EMAIL_ADDRESS
+    //     email: process.env.GATSBY_EMAIL_ADDRESS
     //   }, {
     //     headers: {
     //       "Accept": "application/json",
@@ -314,19 +314,6 @@ export default function ContactFormspree() {
     return <p className="col-6 mx-auto text-center">Thanks for contacting us. We'll get back to you soon!</p>;
   }
 
-<<<<<<< HEAD
-  const onSubmit = async (event) => {
-    const form = event.currentTarget;
-
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    await handleSubmit(form);
-
-    setValidated(true);
-=======
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget)
@@ -336,7 +323,6 @@ export default function ContactFormspree() {
     //   event.stopPropagation();
     // }
     handleSubmit(form);
->>>>>>> master
   }
 
   return (
@@ -360,9 +346,9 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
       encType="multipart/form-data"
       validated={validated}
       onSubmit={handleSubmit}
-      // data-netlify="true"
-      // data-netlify-honeypot="bot-field"
-      // netlify-honeypot="bot-field"
+    // data-netlify="true"
+    // data-netlify-honeypot="bot-field"
+    // netlify-honeypot="bot-field"
     >
       {/* <input type="hidden" name="_gotcha" style={{ display: "none !important" }} /> */}
       {/* <input type="hidden" name="bot-field" /> */}

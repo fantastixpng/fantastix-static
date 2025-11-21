@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.GATSBY_RESEND_API_KEY);
 
 await resend.emails.send({
     from: 'Acme <onboarding@resend.dev>',

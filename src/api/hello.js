@@ -51,8 +51,8 @@
 //     const mailer = nodemailer.createTransport({
 //       service: "Gmail",
 //       auth: {
-//         user: process.env.production.GMAIL_ADDRESS,
-//         pass: process.env.production.GMAIL_PASSWORD,
+//         user: process.env.GMAIL_ADDRESS,
+//         pass: process.env.GMAIL_PASSWORD,
 //       },
 //     })
 //     mailer.sendMail(

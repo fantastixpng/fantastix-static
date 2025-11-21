@@ -4,9 +4,18 @@
     "desc": "Fantastix's very own website",
     "imgSrc": "./bg-showcase-2.jpg",
     "link": "https://www.fantastixpng.xyz",
-    "stack": ["JavaScript", "NodeJs", "Gatsby", "Bootstrap", "Scss", "ReactJs"],
+    "stack": [
+      "JavaScript",
+      "NodeJs",
+      "Gatsby",
+      "Bootstrap",
+      "Scss",
+      "ReactJs"
+    ],
     "open_source": false,
-		"type": ["Web"],
+    "type": [
+      "Web"
+    ],
     "show": true
   },
   {
@@ -14,30 +23,56 @@
     "desc": "Asset Management System for MPG",
     "imgSrc": "./bg-showcase-2.jpg",
     "link": "#",
-    "stack": ["JavaScript", "NodeJs", "NextJs", "Shadcn", "Scss", "ReactJs"],
+    "stack": [
+      "JavaScript",
+      "NodeJs",
+      "NextJs",
+      "Shadcn",
+      "Scss",
+      "ReactJs"
+    ],
     "open_source": false,
-		"type": ["Web"],
+    "type": [
+      "Web"
+    ],
     "show": false
   },
   {
     "name": "PUT Building & Construction Website",
     "desc": "PUT Building & Construction Website",
-    "imgSrc": "./bg-showcase-2.jpg",
-    "link": "https://put-building-construction-website.vercel.app",
-    "links": "https://put-bnc-website.netlify.app",
-    "stack": ["JavaScript", "NodeJs", "Bootstrap", "Scss"],
+    "imgSrc": "./screenshots/put-builders-homepage.png",
+    "link": "https://www.putbuilders.com/",
+    "links": [
+      "https://put-bnc-website.netlify.app",
+      "https://put-building-construction-website.vercel.app"
+    ],
+    "stack": [
+      "JavaScript",
+      "AstroJs",
+      "Bootstrap",
+      "Scss"
+    ],
     "open_source": false,
-		"type": ["Web"],
-    "show": false
+    "type": [
+      "Web"
+    ],
+    "show": true
   },
   {
     "name": "BlueLabsDesign Website",
     "desc": "BlueLabsDesign Website",
     "imgSrc": "./bg-showcase-2.jpg",
     "link": "https://bluelabsdesign.netlify.app",
-    "stack": ["JavaScript", "NodeJs", "Bootstrap", "Scss"],
+    "stack": [
+      "JavaScript",
+      "NodeJs",
+      "Bootstrap",
+      "Scss"
+    ],
     "open_source": false,
-		"type": ["Web"],
+    "type": [
+      "Web"
+    ],
     "show": false
   }
 ]

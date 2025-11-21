@@ -129,7 +129,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
 
     // formData.forEach(console.log)
 
-    // const resend = new Resend("re_BQTAeJqy_7GURJ9uQngdYP9xSVtz3mCFt")
+    // const resend = new Resend(process.env.RESEND_API_KET)
     // await resend.emails.send({
     //   from: "Acme <onboarding@resend.dev>",
     //   to: ["delivered@resend.dev"],
@@ -144,11 +144,10 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     //   headers: {
     //     "Accept": "application/json",
     //     "Content-Type": "application/json",
-    //     // "x-api-key": process.env.NOTIFY_API_KEY,
-    //     "x-api-key": "1838c9dd-6009-46ff-a763-090aaf8bb0d5"
+    // "x-api-key": process.env.NOTIFY_API_KEY,
     //   },
     //   body: JSON.stringify({
-    //     to: 'chrisaugu61@gmail.com',
+    //     to: process.env.EMAIL_ADDRESS,
     //     subject: 'Hello world',
     //     message: 'Sending myself a test email from Notify! 🚀'
     //   }),
@@ -161,7 +160,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     // const MailerSend = require("mailersend");
 
     // const mailersend = new MailerSend({
-    //   apiKey: "mlsn.e74dedf97c403369855787f7c088fba47b108ca37c46dfcf23b9e0cdc7a230b4",
+    //   apiKey: process.env.MAILER_API_KEY,
     // });
 
     // const recipients = [new Recipient("recipient@email.com", "Recipient")];
@@ -178,13 +177,13 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     // console.log(formData.entries())
 
     // axios
-    //   .post("https://getform.io/f/d8df0e8c-f662-4cac-86cf-3f15982a9a93", {
+    //   .post(`https://getform.io/f/${process.env.GETFORM_API_KEY}`, {
     //     message: `
     //       First Name: {firstname}
     //       Last Name: {lastname}
     //       Email: {email}
     //     `,
-    //     email: "chrisaugu61@gmail.com"
+    //     email: process.env.EMAIL_ADDRESS
     //   }, {
     //     headers: {
     //       "Accept": "application/json",
@@ -308,13 +307,14 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
 // export default ContactForm;
 
 export default function ContactFormspree() {
-  const [state, handleSubmit] = useForm("xpwdwdzj");
+  const [state, handleSubmit] = useForm(process.env.GATSBY_FORMSPREE_APK_KEY);
   const [validated, setValidated] = useState(false);
 
   if (state.succeeded) {
-    return <p className="container">Thanks for contacting us. We'll get back to you soon!</p>;
+    return <p className="col-6 mx-auto text-center">Thanks for contacting us. We'll get back to you soon!</p>;
   }
 
+<<<<<<< HEAD
   const onSubmit = async (event) => {
     const form = event.currentTarget;
 
@@ -326,6 +326,17 @@ export default function ContactFormspree() {
     await handleSubmit(form);
 
     setValidated(true);
+=======
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget)
+    // if (event.target.checkValidity() === false) {
+    //   setValidated(false);
+    //   event.preventDefault();
+    //   event.stopPropagation();
+    // }
+    handleSubmit(form);
+>>>>>>> master
   }
 
   return (
@@ -339,7 +350,6 @@ export default function ContactFormspree() {
   );
 }
 
-
 function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, errors }) {
   return (
     <Form
@@ -348,7 +358,6 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
       className="needs-validation"
       method="post"
       encType="multipart/form-data"
-      noValidate
       validated={validated}
       onSubmit={handleSubmit}
       // data-netlify="true"
@@ -370,6 +379,7 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
             <div className="invalid-feedback">
               Please enter your first name
             </div>
+            <ValidationError prefix="FirstName" field="firstname" errors={errors} />
           </Form.FloatingLabel>
         </Col>
         <Col md={5} lg={4} xl={4} className="col-6">
@@ -382,6 +392,7 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
             <div className="invalid-feedback">
               Please enter your last name
             </div>
+            <ValidationError prefix="LastName" field="lastname" errors={errors} />
           </Form.FloatingLabel>
         </Col>
       </Row>
@@ -398,6 +409,7 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
               Please enter your email address
             </div>
           </Form.FloatingLabel>
+          <ValidationError prefix="Email" field="email" errors={errors} />
         </Col>
       </Row>
 
@@ -418,6 +430,7 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
             <div className="invalid-feedback">
               Please enter your phone number
             </div>
+            <ValidationError prefix="Phone" field="phone" errors={errors} />
           </Form.FloatingLabel>
         </Col>
       </Row>
@@ -439,6 +452,7 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
               <option value="Instagram">Instagram</option>
               <option value="Other">Other</option>
             </Form.Select>
+            <ValidationError prefix="Channel" field="channel" errors={errors} />
           </Form.FloatingLabel>
         </Col>
       </Row>
@@ -458,6 +472,7 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
               name="message"
             />
             {/*<label htmlFor="message">Message</label>*/}
+            <ValidationError prefix="Message" field="message" errors={errors} />
           </Form.FloatingLabel>
         </Col>
       </Row>

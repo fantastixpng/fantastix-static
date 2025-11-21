@@ -129,7 +129,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
 
     // formData.forEach(console.log)
 
-    // const resend = new Resend("re_BQTAeJqy_7GURJ9uQngdYP9xSVtz3mCFt")
+    // const resend = new Resend(process.env.RESEND_API_KET)
     // await resend.emails.send({
     //   from: "Acme <onboarding@resend.dev>",
     //   to: ["delivered@resend.dev"],
@@ -144,11 +144,10 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     //   headers: {
     //     "Accept": "application/json",
     //     "Content-Type": "application/json",
-    //     // "x-api-key": process.env.NOTIFY_API_KEY,
-    //     "x-api-key": "1838c9dd-6009-46ff-a763-090aaf8bb0d5"
+    // "x-api-key": process.env.NOTIFY_API_KEY,
     //   },
     //   body: JSON.stringify({
-    //     to: 'chrisaugu61@gmail.com',
+    //     to: process.env.EMAIL_ADDRESS,
     //     subject: 'Hello world',
     //     message: 'Sending myself a test email from Notify! 🚀'
     //   }),
@@ -161,7 +160,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     // const MailerSend = require("mailersend");
 
     // const mailersend = new MailerSend({
-    //   apiKey: "mlsn.e74dedf97c403369855787f7c088fba47b108ca37c46dfcf23b9e0cdc7a230b4",
+    //   apiKey: process.env.MAILER_API_KEY,
     // });
 
     // const recipients = [new Recipient("recipient@email.com", "Recipient")];
@@ -178,13 +177,13 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
     // console.log(formData.entries())
 
     // axios
-    //   .post("https://getform.io/f/d8df0e8c-f662-4cac-86cf-3f15982a9a93", {
+    //   .post(`https://getform.io/f/${process.env.GETFORM_API_KEY}`, {
     //     message: `
     //       First Name: {firstname}
     //       Last Name: {lastname}
     //       Email: {email}
     //     `,
-    //     email: "chrisaugu61@gmail.com"
+    //     email: process.env.EMAIL_ADDRESS
     //   }, {
     //     headers: {
     //       "Accept": "application/json",
@@ -308,7 +307,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
 // export default ContactForm;
 
 export default function ContactFormspree() {
-  const [state, handleSubmit] = useForm("xpwdwdzj");
+  const [state, handleSubmit] = useForm(process.env.GATSBY_FORMSPREE_APK_KEY);
   const [validated, setValidated] = useState(false);
 
   if (state.succeeded) {
@@ -317,20 +316,12 @@ export default function ContactFormspree() {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // const form = event.target;
     const form = new FormData(event.currentTarget)
     // if (event.target.checkValidity() === false) {
     //   setValidated(false);
     //   event.preventDefault();
     //   event.stopPropagation();
     // }
-
-    // form.set('firstname', 'Christian');
-    // form.set('lastname', 'Augustyn');
-    // form.set('email', 'chrisaugu61@gmail.com');
-    // form.set('phone', '70523228');
-    // form.set('channel', 'channel');
-    // form.set('message', 'hello world');
     handleSubmit(form);
   }
 

@@ -13,9 +13,6 @@ const config: GatsbyConfig = {
     siteUrl: `https://www.fantastixpng.xyz/`,
     logo: ""
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
     `gatsby-plugin-image`,
@@ -217,17 +214,17 @@ const config: GatsbyConfig = {
     //   },
     // },
     "gatsby-plugin-react-helmet",
-    {
-      resolve: `gatsby-source-strapi`,
-      options: {
-        // version: 4,
-        apiURL: process.env.STRAPI_API_URL || `http://localhost:1337`,
-        accessToken: process.env.STRAPI_TOKEN,
-        collectionTypes: ['article', 'category', 'author', 'user'],
-        singleTypes: ['homepage', 'about', 'global'],
-        queryLimit: 1000,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-strapi`,
+    //   options: {
+    //     // version: 4,
+    //     apiURL: process.env.STRAPI_API_URL || `http://localhost:1337`,
+    //     accessToken: process.env.STRAPI_TOKEN,
+    //     collectionTypes: ['article', 'category', 'author', 'user'],
+    //     singleTypes: ['homepage', 'about', 'global'],
+    //     queryLimit: 1000,
+    //   },
+    // },
     `gatsby-plugin-typegen`
   ],
 }

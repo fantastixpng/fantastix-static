@@ -129,7 +129,7 @@ class ContactForm extends Component<ContactFormProps, ContactFormState> {
 
     // formData.forEach(console.log)
 
-    // const resend = new Resend(process.env.GATSBY_RESEND_API_KET)
+    // const resend = new Resend(process.env.RESEND_API_KEY)
     // await resend.emails.send({
     //   from: "Acme <onboarding@resend.dev>",
     //   to: ["delivered@resend.dev"],

@@ -17,4 +17,3 @@ follow unix philosophy
 
 ## Add-On Services
 - Payment Gateway Integration
-- 

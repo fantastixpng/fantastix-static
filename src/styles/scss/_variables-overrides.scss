@@ -284,6 +284,21 @@ $font-sizes: (
 );
 $spacer: 1rem;
 
+$spacers: (
+  0: 0,
+  1: $spacer * 0.2,
+  2: $spacer * 0.4,
+  3: $spacer * 0.8,
+  4: $spacer * 1.2,
+  5: $spacer * 2.5,
+  6: $spacer * 3.2,
+  7: $spacer * 4,
+  8: $spacer * 4.8
+);
+
+$enable-negative-margins: true;
+$grid-gutter-width: 1.5rem;
+
 $headings-margin-bottom:      math.div($spacer, 1.5);
 $headings-font-family:        inherit;
 $headings-font-weight:        $font-weight-bold;
@@ -293,13 +308,6 @@ $headings-line-height:        1.5;
 $large-headings-font-weight:  $headings-font-weight;
 $small-headings-font-weight:  $font-weight-bold;
 
-$display1-size:               6rem; // 5rem
-$display2-size:               5rem; // 4.5rem
-$display3-size:               4rem;
-$display4-size:               3.5rem;
-$display5-size:               3rem;
-$display6-size:               2.5rem;
-
 $displays-font-weight:        $font-weight-bold;
 
 $display1-weight:             $displays-font-weight;
@@ -308,6 +316,13 @@ $display3-weight:             $displays-font-weight;
 $display4-weight:             $displays-font-weight;
 
 $display-line-height:         1.3;
+
+$display1-size:               6rem;
+$display2-size:               5rem;
+$display3-size:               4rem;
+$display4-size:               3.5rem;
+$display5-size:               3rem;
+$display6-size:               2.5rem;
 
 $display-font-sizes: (
   1: $display1-size,

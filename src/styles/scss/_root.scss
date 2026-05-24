@@ -1,0 +1,10 @@
+:root {
+    @each $color, $value in $theme-colors {
+        --#{$prefix}#{$color}-dark: #{darken($value, 10%)};
+        --#{$prefix}#{$color}-light: #{lighten($value, 10%)};
+    }
+    
+    --#{$prefix}focus-ring-width: #{$focus-ring-width};
+    --#{$prefix}focus-ring-opacity: #{$focus-ring-opacity};
+    --#{$prefix}focus-ring-color: #{$focus-ring-color};
+}

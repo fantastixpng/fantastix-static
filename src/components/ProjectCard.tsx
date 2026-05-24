@@ -1,5 +1,4 @@
-import React, {useState} from "react"
-import PropTypes from "prop-types"
+import React, { useState } from "react"
 import { Card, Modal, Button } from "react-bootstrap"
 import { getImage, getSrc } from "gatsby-plugin-image"
 
@@ -15,8 +14,8 @@ function ModalButton() {
         Get a free Quote
       </Button>
 
-      <Modal 
-        show={show} 
+      <Modal
+        show={show}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
@@ -44,16 +43,16 @@ function ModalButton() {
 
 
 
-const ProjectCard = ({data}) => {
+const ProjectCard = ({ data }) => {
   const myImg = getImage(data.imgSrc)
 
   const imgSrc = getSrc(data.imgSrc);
 
   return (
     <a href={data.link}>
-    <Card>
-      <Card.Img src={data.imgSrc} className="" />
-      {/*<StaticImage
+      <Card>
+        <Card.Img src={data.imgSrc} className="" />
+        {/*<StaticImage
         className="card-img-top"
         src={imgSrc}
         placeholder="blurred"
@@ -62,24 +61,27 @@ const ProjectCard = ({data}) => {
         formats={["auto", "webp", "avif"]}
       />*/}
 
-      {/*<Image src="../images/icons/react-icon.svg" alt="d"/>*/}
-      {/*<GatsbyImage image={myImg} alt={data.name} />*/}
+        {/*<Image src="../images/icons/react-icon.svg" alt="d"/>*/}
+        {/*<GatsbyImage image={myImg} alt={data.name} />*/}
 
-      <Card.ImgOverlay>
-        <div className="bottom">
-          <Card.Title>{data.name}</Card.Title>
-          <Card.Text className="text-white text-small">{data.stack.join(" . ")}</Card.Text>
-          <Card.Text>{data.desc}</Card.Text>
-          <Card.Text className="badge bg-secondary">{data.type.join(" . ")}</Card.Text>
-        </div>
-      </Card.ImgOverlay>
-    </Card>
+        <Card.ImgOverlay>
+          <div className="bottom">
+            <Card.Title>{data.name}</Card.Title>
+            <Card.Text className="badge bg-secondary">{data.type?.join(" . ")}</Card.Text>
+            <Card.Text>{data.desc}</Card.Text>
+            {/* <Card.Text className="badge bg-secondary">{data.stack.join(" . ")}</Card.Text> */}
+            <div className="mb-3">
+              {data.stack && data.stack.slice(0, 3).map((tag, index) => (
+                <span key={index} className="badge bg-secondary me-1 mb-1">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </Card.ImgOverlay>
+      </Card>
     </a>
   )
 }
 
-ProjectCard.propType = {
-  data: PropTypes.string.isRequired
-}
-
-export default ProjectCard
+export default ProjectCard;

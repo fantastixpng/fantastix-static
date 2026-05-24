@@ -466,7 +466,8 @@ function ContactUsForm({ validated, handleSubmit, isSubmitting, isSubmitted, err
       <Row className="g-3 justify-content-center">
         <div className="col-12 col-md-10 col-lg-8 col-xl-8">
           <Button
-            className="bg-dark btn btn-lg text-light w-100 w-md-auto"
+            size="lg"
+            className="text-light w-100 w-md-auto btn-dark"
             type="submit"
           >
             Send

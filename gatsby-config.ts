@@ -90,7 +90,7 @@ const config: GatsbyConfig = {
           `parkinsans:300,400,500,600,700,800,900`,
           `inter:300,400,500,600,700,800,900`,
           `DM Sans:400,500,700`,
-          `Playfair Display:400,500,700`,
+          // `Playfair Display:400,500,700`,
         ],
         display: 'swap'
       }

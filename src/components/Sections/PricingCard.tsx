@@ -24,7 +24,7 @@ export default function PricingCard() {
           </Col>
         </Row>
 
-        <Row className="g-2 justify-content-center text-dark">
+        <Row className="g-2 justify-content-center text-dark mb-4">
           <Col
             sm={10}
             md={3}
@@ -40,43 +40,43 @@ export default function PricingCard() {
                 {/*<p className="mb-6">Suitable for Small-Sized Businesses.*/}
                 {/*  <span className="text-nowrap">-</span>*/}
                 {/*</p>*/}
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Design Up to 5 pages</h6>
                   <h6 className="ps-7 fw-light">
                     Contact page, About page, Blog feed * Blog post pages
                   </h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Mobile Responsive Design</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Social Sharing Options</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Contact Form</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Google Analytics Setup</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Content Management System</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Social Media Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">2 Rounds of Revisions</h6>
                 </div>
               </div>
-              <Button href="#contact" className="btn-bg-1 mt-6 w-100">
+              <Button href="#contact" className="btn-bg-1 btn-dark mt-6 w-100">
                 Enquire
               </Button>
             </div>
@@ -94,54 +94,54 @@ export default function PricingCard() {
                 <h5 className="fs-2 mb-4 text-dark-2">Bronze Package</h5>
                 <h2 className="display-6 mb-6">K5,000</h2>
                 {/*<p className="mb-6">Suitable for Medium-Sized Businesses.</p>*/}
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Design Up to 10 pages</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Mobile Responsive Design</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Social Sharing Options</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Contact Form</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Content Management System</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Social Media Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Chatbot/Livechat Setup</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Google Analytics Setup</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Google Maps Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Newsletter Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">2 Rounds of Revisions</h6>
                 </div>
               </div>
               <Button
                 href="#contact"
-                className="btn-bg-1 btn-action-1 mt-6 w-100"
+                className="btn-bg-1 btn-dark btn-action-1 mt-6 w-100"
               >
                 Enquire
               </Button>
@@ -161,58 +161,58 @@ export default function PricingCard() {
                 <h2 className="fs-2 mb-4 text-dark-2">Gold Package</h2>
                 <h2 className="display-6 mb-6">K15,000</h2>
                 {/*<p className="mb-6">Suitable for Large Businesses.</p>*/}
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Design Up to 20 pages</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Mobile Responsive Design</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Social Sharing Options</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Contact Form</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Content Management System</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Social Media Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Chatbot/Livechat Setup</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Google Analytics Setup</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Google Maps Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Newsletter Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Search Engine Optimization</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">3 Rounds of Revisions</h6>
                 </div>
               </div>
               <Button
                 href="#contact"
-                className="btn-bg-1 btn-action-3 mt-6 w-100"
+                className="btn-bg-1 btn-dark btn-action-3 mt-6 w-100"
               >
                 Enquire
               </Button>
@@ -233,68 +233,68 @@ export default function PricingCard() {
                 <h2 className="display-6 mb-6">K30,000</h2>
                 {/*<p className="mb-6">Suitable for E-commerce</p>*/}
                 {/*<strong className="mt-5 mb-2">Package details</strong>*/}
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Design Up to 30 pages</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Mobile Responsive Design</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Social Sharing Options</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Contact Form</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Content Management System</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Social Media Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Chatbot/Livechat Setup</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Google Analytics Setup</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Google Maps Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Newsletter Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">eCommerce Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Search Engine Optimization</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">
                     Contact page, About page, Blog feed * Blog post pages
                   </h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">3 Rounds of Revisions</h6>
                 </div>
               </div>
               <Button
                 href="#contact"
-                className="btn-bg-1 btn-action-3 mt-6 w-100"
+                className="btn-bg-1 btn-dark btn-action-3 mt-6 w-100"
               >
                 Enquire
               </Button>
@@ -333,38 +333,38 @@ export default function PricingCard() {
               <div>
                 <h2 className="fs-2 mb-4 text-dark-2">Backend Development</h2>
                 {/* <h2 className="display-6 mb-6">K5,000</h2> */}
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Database Development</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">REST API or GraphQL API</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Authentication (JWT / OAuth2)</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">CRUD operations for all modules</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Integrations (SMS, payments, maps, etc.)</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Real-time support (SSE/WebSocket)</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">3 Rounds of Revisions</h6>
                 </div>
               </div>
               <Button
                 href="#contact"
-                className="btn-bg-1 btn-action-3 mt-6 w-100"
+                className="btn-bg-1 btn-dark btn-action-3 mt-6 w-100"
               >
                 Enquire
               </Button>
@@ -383,38 +383,38 @@ export default function PricingCard() {
               <div>
                 <h2 className="fs-2 mb-4 text-dark-2">Web Application Development</h2>
                 {/* <h2 className="display-6 mb-6">K5,000</h2> */}
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Backend Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Responsive frontend</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Authentication & authorization</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Dashboard, charts, tables</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Notifications</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Admin portal</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">3 Rounds of Revisions</h6>
                 </div>
               </div>
               <Button
                 href="#contact"
-                className="btn-bg-1 btn-action-3 mt-6 w-100"
+                className="btn-bg-1 btn-dark btn-action-3 mt-6 w-100"
               >
                 Enquire
               </Button>
@@ -433,38 +433,38 @@ export default function PricingCard() {
               <div>
                 <h2 className="fs-2 mb-4 text-dark-2">Mobile Application Development</h2>
                 {/* <h2 className="display-6 mb-6">K5,000</h2> */}
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Backend Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Cross-platform or native build</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Login, onboarding, main screens</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Offline support</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Push notifications</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Maps, camera, GPS (if required)</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">3 Rounds of Revisions</h6>
                 </div>
               </div>
               <Button
                 href="#contact"
-                className="btn-bg-1 btn-action-3 mt-6 w-100"
+                className="btn-bg-1 btn-dark btn-action-3 mt-6 w-100"
               >
                 Enquire
               </Button>
@@ -483,31 +483,31 @@ export default function PricingCard() {
               <div>
                 <h2 className="fs-2 mb-4 text-dark-2">Desktop Application Development</h2>
                 <h2 className="display-6 mb-6">K5,000</h2>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Backend Integration</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Cross-platform build</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Login, onboarding, main screens</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Offline support</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Push notifications</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">Maps, camera, GPS (if required)</h6>
                 </div>
-                <div className="position-relative mb-5">
+                <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
                   <h6 className="ps-7">3 Rounds of Revisions</h6>
                 </div>

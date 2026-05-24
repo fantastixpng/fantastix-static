@@ -1,4 +1,5 @@
 @use "sass:list";
+
 @mixin transition($transition) {
   -moz-transition: all $transition ease;
   -o-transition: all $transition ease;

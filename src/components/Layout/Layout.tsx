@@ -1,17 +1,17 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-// import 'inter-ui'
-import PropTypes from 'prop-types'
-import { ToastContainer } from "react-bootstrap"
-import { ThemeProvider, ToastProvider } from "../../contexts/app-context"
-import { lightTheme, darkTheme } from "../../hooks/theme"
-import { useDarkMode } from "../../hooks/use-dark-mode"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import 'inter-ui';
+import PropTypes from 'prop-types';
+import { ToastContainer } from "react-bootstrap";
+import { ThemeProvider, ToastProvider } from "../../contexts/app-context";
+import { lightTheme, darkTheme } from "../../hooks/theme";
+import { useDarkMode } from "../../hooks/use-dark-mode";
 import { useSiteMetadata } from "../../hooks/use-site-metadata";
-import Header from "../Header"
-import Footer from "../Footer2"
+import Header from "../Header";
+import Footer from "../Footer2";
 
-import "./Layout.scss"
-import Seo from "../Seo"
+import "./Layout.scss";
+import Seo from "../Seo";
 
 const Layout = ({ children }) => {
   // const { site } = useSiteMetadata();
@@ -20,11 +20,11 @@ const Layout = ({ children }) => {
     <>
       {/* <ThemeProvider> */}
       {/* <ToastProvider> */}
-        {/* <Seo title="Home" /> */}
+      {/* <Seo title="Home" /> */}
 
-        <Header />
+      <Header />
 
-        {/*<Breadcrumb>
+      {/*<Breadcrumb>
           <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
           <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
             Library
@@ -32,11 +32,11 @@ const Layout = ({ children }) => {
           <Breadcrumb.Item active>Data</Breadcrumb.Item>
         </Breadcrumb>*/}
 
-        {/*<Toggle toggleTheme={toggleTheme} />*/}
+      {/*<Toggle toggleTheme={toggleTheme} />*/}
 
-        {children}
+      {children}
 
-        <Footer />
+      <Footer />
       {/* </ToastProvider> */}
       {/* </ThemeProvider> */}
     </>

@@ -564,7 +564,7 @@ const IndexPage = () => (
       <Container>
         <Row className="justify-content-center">
           <Col md={9} lg={7} xl={6} xxl={5}>
-            <span className="fw-light">Our Signature</span>
+            <span className="fw-light fs-4">Our Signature</span>
             <h5
               className="display-5 mb-6 aos-init aos-animate"
               data-aos="fade-down"

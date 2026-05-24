@@ -1,10 +1,18 @@
 [
   {
+    "id": 1,
     "name": "Fantastix",
-    "desc": "Fantastix's very own website",
+    "customerRequirements": "Develop a modern, responsive website for Fantastix that reflects the company's brand identity, values, and technical capabilities.",
+    "problem": "Fantastix needed a website that clearly incorporated its minimalistic design theme while effectively communicating its services, mission, and expertise in building real-time software solutions.",
+    "solution": "We designed and developed a clean, modern website that aligns with Fantastix’s visual identity and philosophy. The site delivers a clear presentation of services, streamlined navigation, and a responsive layout to ensure a consistent experience across all devices.",
     "imgSrc": "./bg-showcase-2.jpg",
-    "link": "https://www.fantastixpng.xyz",
-    "stack": [
+    "links": [
+      {
+        "label": "Live",
+        "url": "https://www.fantastixpng.xyz"
+      }
+    ],
+    "technologies": [
       "JavaScript",
       "NodeJs",
       "Gatsby",
@@ -13,17 +21,23 @@
       "ReactJs"
     ],
     "open_source": false,
-    "type": [
+    "tags": [
       "Web"
     ],
     "show": true
   },
   {
+    "id": 2,
     "name": "Asset Management System",
-    "desc": "Asset Management System for MPG",
+    "problem": "Asset Management System for MPG",
     "imgSrc": "./bg-showcase-2.jpg",
-    "link": "#",
-    "stack": [
+    "links": [
+      {
+        "label": "Live",
+        "url": "#"
+      }
+    ],
+    "technologies": [
       "JavaScript",
       "NodeJs",
       "NextJs",
@@ -32,47 +46,171 @@
       "ReactJs"
     ],
     "open_source": false,
-    "type": [
+    "tags": [
       "Web"
     ],
     "show": false
   },
   {
+    "id": 3,
     "name": "PUT Building & Construction Website",
-    "desc": "PUT Building & Construction Website",
     "imgSrc": "./screenshots/put-builders-homepage.png",
-    "link": "https://www.putbuilders.com/",
     "links": [
-      "https://put-bnc-website.netlify.app",
-      "https://put-building-construction-website.vercel.app"
+      {
+        "label": "Live",
+        "url": "https://www.putbuilders.com/"
+      }
     ],
-    "stack": [
+    "technologies": [
       "JavaScript",
       "AstroJs",
       "Bootstrap",
       "Scss"
     ],
+    "customerRequirements": "Develop a professional website for PUT Builders to establish a strong online presence and showcase its construction services.",
+    "problem": "PUT Builders lacked an online presence, making it difficult for potential clients to discover the company, understand its services, and make contact.",
+    "solution": "We designed and developed a modern, responsive website that presents PUT Builders' services, projects, and contact information clearly, helping the company build credibility and reach a wider audience online.",
     "open_source": false,
-    "type": [
+    "tags": [
       "Web"
     ],
     "show": true
   },
   {
+    "id": 4,
     "name": "BlueLabsDesign Website",
-    "desc": "BlueLabsDesign Website",
+    "problem": "BlueLabsDesign Website",
     "imgSrc": "./bg-showcase-2.jpg",
-    "link": "https://bluelabsdesign.netlify.app",
-    "stack": [
+    "links": [
+      {
+        "label": "Live",
+        "url": "https://bluelabsdesign.netlify.app"
+      }
+    ],
+    "technologies": [
       "JavaScript",
       "NodeJs",
       "Bootstrap",
       "Scss"
     ],
     "open_source": false,
-    "type": [
+    "tags": [
       "Web"
     ],
     "show": false
+  },
+  {
+    "id": 5,
+    "name": "E-Commerce Platform Redesign",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "tags": [
+      "Web Development",
+      "UI/UX",
+      "E-commerce"
+    ],
+    "customerRequirements": "Create a modern, mobile-first e-commerce platform with seamless checkout process, personalized recommendations, and real-time inventory management.",
+    "problem": "Existing platform had high cart abandonment rates (68%), slow loading times (avg. 8s), and poor mobile experience resulting in 40% lower mobile conversions.",
+    "problemDetails": [
+      "Complex checkout process with 5+ steps",
+      "No mobile optimization",
+      "Slow API response times",
+      "No personalized user experience"
+    ],
+    "solution": "Developed a progressive web app with server-side rendering, implemented one-click checkout, AI-powered recommendations, and real-time analytics dashboard.",
+    "solutionFeatures": [
+      "Redesigned UI/UX with mobile-first approach",
+      "Integrated payment gateway with one-click checkout",
+      "Implemented Redis caching for faster load times",
+      "Added personalized product recommendations using machine learning"
+    ],
+    "technologies": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Redis",
+      "AWS",
+      "Stripe"
+    ],
+    "timeline": {
+      "start": "Jan 2024",
+      "end": "Jun 2024",
+      "status": "Completed"
+    },
+    "team": [
+      {
+        "name": "Alex Johnson",
+        "role": "Project Manager"
+      },
+      {
+        "name": "Maria Garcia",
+        "role": "Lead Developer"
+      },
+      {
+        "name": "David Chen",
+        "role": "UI/UX Designer"
+      },
+      {
+        "name": "Sarah Williams",
+        "role": "DevOps Engineer"
+      }
+    ],
+    "results": [
+      {
+        "value": "42%",
+        "label": "Increase in conversions"
+      },
+      {
+        "value": "2.3s",
+        "label": "Average page load time"
+      },
+      {
+        "value": "92%",
+        "label": "Customer satisfaction"
+      },
+      {
+        "value": "75%",
+        "label": "Reduced cart abandonment"
+      }
+    ],
+    "testimonial": {
+      "quote": "The new platform exceeded our expectations. Mobile sales have tripled since launch.",
+      "author": "Michael Thompson",
+      "position": "CEO, RetailCorp"
+    },
+    "links": [
+      {
+        "label": "Live Demo",
+        "url": "https://demo.example.com"
+      },
+      {
+        "label": "Case Study",
+        "url": "https://docs.example.com/case-study"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Healthcare Data Analytics Dashboard",
+    "imgSrc": "./bg-showcase-2.jpg",
+    "tags": [
+      "Data Analytics",
+      "Healthcare",
+      "Dashboard"
+    ],
+    "customerRequirements": "Develop a secure, HIPAA-compliant dashboard for healthcare providers to analyze patient data, track treatment outcomes, and identify trends.",
+    "problem": "Healthcare providers struggled with fragmented patient data across multiple systems, making it difficult to identify patterns and improve patient outcomes.",
+    "solution": "Built a unified data platform with real-time analytics, predictive modeling, and secure role-based access controls.",
+    "technologies": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "D3.js",
+      "Docker"
+    ],
+    "timeline": {
+      "start": "Mar 2024",
+      "end": "Present",
+      "status": "In Progress"
+    }
   }
 ]

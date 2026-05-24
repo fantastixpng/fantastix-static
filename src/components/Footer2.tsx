@@ -31,7 +31,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="row justify-content-center mt-5 mb-5">
+        <div className="row justify-content-center my-4">
           <div className="col-auto">
             <ul className="nav">
               {/*<li className="nav-item">

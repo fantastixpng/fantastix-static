@@ -8,5 +8,5 @@
 import "@popperjs/core/dist/umd/popper.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
 
-import "bootstrap-icons/font/bootstrap-icons.scss";
-import "./src/styles/theme.scss"
+// import "bootstrap-icons/font/bootstrap-icons.scss";
+import "./src/styles/scss/theme.scss"

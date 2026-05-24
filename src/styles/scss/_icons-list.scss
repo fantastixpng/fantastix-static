@@ -1,0 +1,4 @@
+$bootstrap-icons-font-src: url("~bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),
+						   url("~bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff") !default;
+
+@use "~bootstrap-icons/font/bootstrap-icons" with ($bootstrap-icons-font-src: $bootstrap-icons-font-src);

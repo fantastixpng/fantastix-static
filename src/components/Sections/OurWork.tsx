@@ -1,9 +1,23 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import ProjectCard from "../ProjectCard";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import ProjectCard from "../ProjectCard2";
 import projects from "../../data/projects.json";
+import ProjectModal from "../ProjectModal";
 
 export default function OurWork() {
+  const [selectedProject, setSelectedProject] = React.useState(null);
+  const [showModal, setShowModal] = React.useState(false);
+
+  const handleProjectClick = (project) => {
+    setSelectedProject(project);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedProject(null);
+  };
+
   return (
     <section id="our-work" className="">
       <Container>
@@ -24,11 +38,19 @@ export default function OurWork() {
             .filter(project => !project.open_source)
             .filter(project => project.show)
             .map((project, key) => (
-              <Col className="hover-effect" key={key}>
-                <ProjectCard data={project} />
+              <Col key={project.id} md={6} lg={4} className="mb-4 hover-effect">
+                <ProjectCard data={project} onClick={() => handleProjectClick(project)} />
               </Col>
             ))}
         </Row>
+
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            show={showModal}
+            onHide={handleCloseModal}
+          />
+        )}
       </Container>
     </section>
   )

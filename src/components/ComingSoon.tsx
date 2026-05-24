@@ -26,7 +26,7 @@ const ComingSoon = () => (
                 <input className="form-control" id="email" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email"/>
               </div>
               <div className="col-auto">
-                <button className="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button>
+                <button className="btn btn-dark disabled" id="submitButton" type="submit">Notify Me!</button>
               </div>
             </div>
             <div className="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>

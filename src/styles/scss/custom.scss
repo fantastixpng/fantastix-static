@@ -2,7 +2,6 @@
 @import "mixins";
 
 :root {
-  --data: #0d6efd;
   --bg-1: #000;
   --bg-2: #f5f5f5;
   --bg-3: #fff;
@@ -5130,3 +5129,18 @@ h6 {
 //   padding: 1rem;
 //   border-radius: 0.5rem;
 // }
+
+
+.hover-shadow:hover {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.bottom {
+  bottom: 1px;
+  position: absolute;
+}

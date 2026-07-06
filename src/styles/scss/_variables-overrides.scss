@@ -333,11 +333,11 @@ $display-font-sizes: (
   6: $display6-size
 );
 
-$display-font-weight: 300;
-$display-line-height: $headings-line-height;
+$display-font-weight:   300;
+$display-line-height:   $headings-line-height;
 
 $lead-font-size:              ($font-size-base * 1.125);
-$lead-font-weight:            300;
+$lead-font-weight:      300;
 
 $focus-ring-width:      .25rem;
 $focus-ring-opacity:    .25;

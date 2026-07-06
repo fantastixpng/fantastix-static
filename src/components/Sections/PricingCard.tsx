@@ -355,7 +355,7 @@ export default function PricingCard() {
                 </div>
                 <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
-                  <h6 className="ps-7">Real-time support (SSE/WebSocket)</h6>
+                  <h6 className="ps-7">Real-time support (Webhook/SSE/WebSocket)</h6>
                 </div>
                 <div className="position-relative mb-2">
                   <i className="bi bi-check-circle-fill" />
